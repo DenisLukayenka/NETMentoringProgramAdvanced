@@ -1,9 +1,12 @@
-﻿namespace Cart.Service.Options;
+﻿using System.ComponentModel.DataAnnotations;
 
-public class RedisOptions
+namespace Cart.Service.Options;
+
+public sealed class RedisOptions
 {
     public const string Position = "Redis";
 
+    [Required]
     public string? ConnectionString { get; set; }
 
     public int DbNumber { get; set; } = 1;

@@ -19,9 +19,8 @@ public static class ProgramServices
     public static WebApplicationBuilder RegisterAppServices(this WebApplicationBuilder builder)
     {
         builder.Services.AddAppSerialization();
-
-        var a = builder.Configuration.GetSection(RedisOptions.Position).Get<RedisOptions>();
         builder.Services.Configure<RedisOptions>(builder.Configuration.GetSection(RedisOptions.Position));
+
         builder.Services.AddAppOpenApi(builder.Environment);
 
         builder.Services
