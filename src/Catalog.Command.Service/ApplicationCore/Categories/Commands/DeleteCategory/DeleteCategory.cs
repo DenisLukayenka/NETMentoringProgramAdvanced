@@ -1,6 +1,4 @@
-﻿using ApplicationCore.Common.Interfaces;
-
-namespace ApplicationCore.Categories.Commands.DeleteCategory;
+﻿namespace ApplicationCore.Categories.Commands.DeleteCategory;
 
 public record DeleteCategoryCommand(int CategoryId) : IRequest;
 
@@ -13,6 +11,6 @@ public class DeleteCategoryCommandHandler(ICategoryRepository repository) : IReq
         if (entity is null)
             throw new EntityNotFoundException();
 
-        await repository.Delete(entity.Id, cancellationToken);
+        await repository.Delete(entity, cancellationToken);
     }
 }

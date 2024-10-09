@@ -1,6 +1,4 @@
-﻿using ApplicationCore.Common.Interfaces;
-
-namespace ApplicationCore.Products.Commands.DeleteProduct;
+﻿namespace ApplicationCore.Products.Commands.DeleteProduct;
 
 public record DeleteProductCommand(int ProductId) : IRequest;
 
@@ -13,6 +11,6 @@ public class DeleteProductCommandHandler(IProductRepository repository) : IReque
         if (entity is null)
             throw new EntityNotFoundException();
 
-        await repository.Delete(entity.Id, cancellationToken);
+        await repository.Delete(entity, cancellationToken);
     }
 }

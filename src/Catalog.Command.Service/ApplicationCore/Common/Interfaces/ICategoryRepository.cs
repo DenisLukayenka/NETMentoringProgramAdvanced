@@ -8,5 +8,5 @@ public interface ICategoryRepository
     Task<Category[]> List(CancellationToken cancellationToken = default);
     Task<Category> Add(Category category, CancellationToken cancellationToken = default);
     Task Update(Category category, CancellationToken cancellationToken = default);
-    Task Delete(int id, CancellationToken cancellationToken = default);
+    Task Delete(Category category, CancellationToken cancellationToken = default);
 }
