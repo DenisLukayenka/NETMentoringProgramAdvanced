@@ -1,4 +1,4 @@
-﻿namespace Cart.Service.Services.Abstractions;
+﻿namespace Cart.Service.BusinessLogic.Services.Abstractions;
 
 public interface ICartItemService
 {

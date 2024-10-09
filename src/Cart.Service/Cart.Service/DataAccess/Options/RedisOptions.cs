@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Cart.Service.Options;
+namespace Cart.Service.DataAccess.Options;
 
 public sealed class RedisOptions
 {

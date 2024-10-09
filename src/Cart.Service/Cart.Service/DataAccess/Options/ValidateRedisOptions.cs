@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Options;
+﻿using Cart.Service.DataAccess.Options;
+using Microsoft.Extensions.Options;
 
 namespace Cart.Service.Options;
 

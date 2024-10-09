@@ -1,4 +1,4 @@
-﻿namespace Cart.Service.Repositories.Abstractions;
+﻿namespace Cart.Service.DataAccess.Repositories.Abstractions;
 
 public interface ICartRepository
 {

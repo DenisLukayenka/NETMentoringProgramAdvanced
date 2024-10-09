@@ -1,4 +1,4 @@
-﻿using Cart.Service.Services.Abstractions;
+﻿using Cart.Service.BusinessLogic.Services.Abstractions;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cart.Service.Endpoints;

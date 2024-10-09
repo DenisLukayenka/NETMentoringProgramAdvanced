@@ -1,5 +1,5 @@
 ﻿using Cart.Service.Endpoints;
-using Cart.Service.Platform.OpenApi;
+using Cart.Service.Platform;
 
 namespace Cart.Service;
 

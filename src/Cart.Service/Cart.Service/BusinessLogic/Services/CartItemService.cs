@@ -1,12 +1,18 @@
-﻿using Cart.Service.Repositories.Abstractions;
-using Cart.Service.Services.Abstractions;
+﻿using Cart.Service.BusinessLogic.Services.Abstractions;
+using Cart.Service.DataAccess.Repositories.Abstractions;
+using FluentValidation;
 
-namespace Cart.Service.Services;
+namespace Cart.Service.BusinessLogic.Services;
 
-internal class CartItemService(ICartRepository repository) : ICartItemService
+internal class CartItemService(
+    ICartRepository repository,
+    ILogger<CartItemService> logger,
+    IValidator<Models.CartItem> cartItemValidator) : ICartItemService
 {
     public async Task<Models.CartItem[]> List(string cartId, CancellationToken cancellationToken)
     {
+        logger.LogInformation("{MethodName} method was called", nameof(List));
+
         var cart = await repository.Get(cartId, cancellationToken);
         return cart?.Items ?? [];
     }
@@ -15,10 +21,14 @@ internal class CartItemService(ICartRepository repository) : ICartItemService
 
     public async Task Add(string cartId, Models.CartItem cartItem, CancellationToken cancellationToken)
     {
+        logger.LogInformation("{MethodName} method was called", nameof(Add));
+        cartItemValidator.ValidateAndThrow(cartItem);
+
         var currentCart = await repository.Get(cartId, cancellationToken);
 
         if (currentCart is null)
         {
+            logger.LogWarning("Cart with id: {CartId} was not found. Initializing empty cart.", cartId);
             currentCart = InitEmptyCart(cartId, cartItem);
         }
         else
@@ -45,7 +55,7 @@ internal class CartItemService(ICartRepository repository) : ICartItemService
         var existingCartItem = cart.Items.FirstOrDefault(x => x.ItemId == item.ItemId);
         if (existingCartItem != null)
         {
-            existingCartItem.Quantity += 1;
+            existingCartItem.Quantity += item.Quantity;
         }
         else
         {
@@ -57,6 +67,8 @@ internal class CartItemService(ICartRepository repository) : ICartItemService
 
     public async Task Remove(string cartId, int id, CancellationToken cancellationToken)
     {
+        logger.LogInformation("{MethodName} method was called", nameof(Remove));
+
         var currentCart = await repository.Get(cartId, cancellationToken);
         if (currentCart is null)
             return;
@@ -77,6 +89,7 @@ internal class CartItemService(ICartRepository repository) : ICartItemService
 
     public async Task Clear(string cartId, CancellationToken cancellationToken)
     {
+        logger.LogInformation("{MethodName} method was called", nameof(Clear));
         await repository.Remove(cartId, cancellationToken);
     }
 }

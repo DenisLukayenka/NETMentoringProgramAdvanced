@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace Cart.Service.Platform.OpenApi;
+namespace Cart.Service.Platform;
 
 public static class OpenApiRegistrations
 {

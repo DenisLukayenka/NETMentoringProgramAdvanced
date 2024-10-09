@@ -1,8 +1,8 @@
-﻿using Cart.Service.Repositories.Abstractions;
+﻿using Cart.Service.DataAccess.Repositories.Abstractions;
 using StackExchange.Redis;
 using StackExchange.Redis.Extensions.Core.Abstractions;
 
-namespace Cart.Service.Repositories;
+namespace Cart.Service.DataAccess.Repositories;
 
 internal class CartRepository(IRedisDatabase database) : ICartRepository
 {
