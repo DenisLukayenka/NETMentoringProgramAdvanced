@@ -24,7 +24,7 @@ public static class ProgramServices
         builder.Services.AddAppOpenApi(builder.Environment);
 
         builder.Services
-            .AddTransient<ICartService, CartService>()
+            .AddTransient<ICartItemService, CartItemService>()
             .AddTransient<ICartRepository, CartRepository>()
             .AddSingleton<IRedisConnectionPoolManager>(sp =>
             {

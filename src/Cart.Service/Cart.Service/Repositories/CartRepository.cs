@@ -6,38 +6,20 @@ namespace Cart.Service.Repositories;
 
 internal class CartRepository(IRedisDatabase database) : ICartRepository
 {
-    public async Task<Models.Cart[]> List(string userId, CancellationToken cancellationToken)
+    public async Task<Models.Cart?> Get(string cartId, CancellationToken cancellationToken)
     {
-        var carts = await database.GetAsync<Models.Cart[]>(userId, CommandFlags.PreferReplica);
+        var cart = await database.GetAsync<Models.Cart>(cartId, CommandFlags.PreferReplica);
 
-        return carts ?? [];
+        return cart;
     }
 
-    public async Task Add(string userId, Models.Cart cart, CancellationToken cancellationToken)
+    public async Task Upsert(string cartId, Models.Cart cart, CancellationToken cancellationToken)
     {
-        var carts = await database.GetAsync<Models.Cart[]>(userId, CommandFlags.PreferReplica);
-
-        carts ??= [];
-        carts = [.. carts, cart];
-
-        await database.AddAsync(userId, carts, When.Always);
-        await database.ReplaceAsync(userId, carts, When.Always, CommandFlags.DemandMaster);
+        await database.ReplaceAsync(cartId, cart, When.Always, CommandFlags.DemandMaster);
     }
 
-    public async Task Remove(string userId, int id, CancellationToken cancellationToken)
+    public async Task Remove(string cartId, CancellationToken cancellationToken)
     {
-        var carts = await database.GetAsync<Models.Cart[]>(userId, CommandFlags.PreferReplica);
-
-        if (carts is null || carts.Length == 0)
-            return;
-
-        carts = carts.Where(x => x.Id != id).ToArray();
-
-        await database.ReplaceAsync(userId, carts, When.Always, CommandFlags.DemandMaster);
-    }
-
-    public async Task Clear(string userId, CancellationToken cancellationToken)
-    {
-        await database.RemoveAsync(userId, CommandFlags.DemandMaster);
+        await database.RemoveAsync(cartId, CommandFlags.DemandMaster);
     }
 }

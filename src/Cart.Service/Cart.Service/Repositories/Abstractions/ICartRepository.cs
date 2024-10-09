@@ -2,10 +2,9 @@
 
 public interface ICartRepository
 {
-    Task<Models.Cart[]> List(string userId, CancellationToken cancellationToken);
+    Task<Models.Cart?> Get(string cartId, CancellationToken cancellationToken);
 
-    Task Add(string userId, Models.Cart cart, CancellationToken cancellationToken);
-    Task Remove(string userId, int id, CancellationToken cancellationToken);
+    Task Upsert(string cartId, Models.Cart cart, CancellationToken cancellationToken);
 
-    Task Clear(string userId, CancellationToken cancellationToken);
+    Task Remove(string cartId, CancellationToken cancellationToken);
 }
