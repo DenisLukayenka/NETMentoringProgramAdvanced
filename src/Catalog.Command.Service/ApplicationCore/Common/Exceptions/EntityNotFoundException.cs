@@ -1,4 +1,4 @@
-﻿namespace ApplicationCore.Exceptions;
+﻿namespace ApplicationCore.Common.Exceptions;
 
 public class EntityNotFoundException : Exception
 {

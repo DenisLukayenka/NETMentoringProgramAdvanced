@@ -1,4 +1,5 @@
-﻿using Domain.Entities;
+﻿using ApplicationCore.Common.Interfaces;
+using Domain.Entities;
 
 namespace ApplicationCore.Categories.Queries.GetCategoryById;
 

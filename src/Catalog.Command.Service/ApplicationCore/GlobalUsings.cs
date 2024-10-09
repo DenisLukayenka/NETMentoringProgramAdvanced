@@ -1,3 +1,3 @@
-﻿global using ApplicationCore.Exceptions;
-global using ApplicationCore.Interfaces;
+﻿global using ApplicationCore.Common.Exceptions;
+global using ApplicationCore.Common.Interfaces;
 global using MediatR;

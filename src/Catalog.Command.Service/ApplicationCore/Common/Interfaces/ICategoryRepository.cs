@@ -1,6 +1,6 @@
 ﻿using Domain.Entities;
 
-namespace ApplicationCore.Interfaces;
+namespace ApplicationCore.Common.Interfaces;
 
 public interface ICategoryRepository
 {

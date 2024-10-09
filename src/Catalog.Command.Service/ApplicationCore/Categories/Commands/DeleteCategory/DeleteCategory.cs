@@ -1,4 +1,6 @@
-﻿namespace ApplicationCore.Categories.Commands.DeleteCategory;
+﻿using ApplicationCore.Common.Interfaces;
+
+namespace ApplicationCore.Categories.Commands.DeleteCategory;
 
 public record DeleteCategoryCommand(int CategoryId) : IRequest;
 

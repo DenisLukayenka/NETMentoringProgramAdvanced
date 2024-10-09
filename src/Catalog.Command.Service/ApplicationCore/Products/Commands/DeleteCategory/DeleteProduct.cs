@@ -1,4 +1,6 @@
-﻿namespace ApplicationCore.Products.Commands.DeleteProduct;
+﻿using ApplicationCore.Common.Interfaces;
+
+namespace ApplicationCore.Products.Commands.DeleteProduct;
 
 public record DeleteProductCommand(int ProductId) : IRequest;
 

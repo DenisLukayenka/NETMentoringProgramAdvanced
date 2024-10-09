@@ -1,4 +1,6 @@
-﻿namespace ApplicationCore.Categories.Commands.UpdateCategory;
+﻿using ApplicationCore.Common.Interfaces;
+
+namespace ApplicationCore.Categories.Commands.UpdateCategory;
 
 public record UpdateCategoryCommand(int CategoryId, string? Name, string? Image) : IRequest;
 
