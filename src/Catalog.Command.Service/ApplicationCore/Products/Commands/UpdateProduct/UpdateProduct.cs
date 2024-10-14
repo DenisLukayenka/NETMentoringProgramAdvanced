@@ -1,6 +1,4 @@
-﻿using ApplicationCore.Common.Interfaces;
-
-namespace ApplicationCore.Products.Commands.UpdateProduct;
+﻿namespace ApplicationCore.Products.Commands.UpdateProduct;
 
 public record UpdateProductCommand(
     int ProductId,

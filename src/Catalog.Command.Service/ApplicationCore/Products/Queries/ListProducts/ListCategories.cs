@@ -1,5 +1,4 @@
-﻿using ApplicationCore.Common.Interfaces;
-using Domain.Entities;
+﻿using Domain.Entities;
 
 namespace ApplicationCore.Products.Queries.ListProducts;
 
