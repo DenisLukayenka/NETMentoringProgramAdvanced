@@ -14,5 +14,8 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
 
         builder.Property(x => x.Category)
             .IsRequired();
+
+        builder.Property(x => x.Price)
+            .HasColumnType("money");
     }
 }
