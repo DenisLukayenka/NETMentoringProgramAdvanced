@@ -7,6 +7,9 @@ namespace Infrastructure.Data;
 
 internal class ApplicationDbContext : DbContext, IApplicationDbContext
 {
+    public ApplicationDbContext()
+    { }
+
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
     { }
 

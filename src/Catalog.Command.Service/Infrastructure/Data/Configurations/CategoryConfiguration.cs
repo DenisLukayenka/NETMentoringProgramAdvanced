@@ -13,6 +13,13 @@ public class CategoryConfiguration : IEntityTypeConfiguration<Category>
             .HasMaxLength(50);
 
         builder
-            .HasMany(x => x.Products);
+            .HasMany(x => x.Products)
+            .WithOne(x => x.Category)
+            .HasForeignKey(x => x.CategoryId);
+
+        builder
+            .HasOne(x => x.ParentCategory)
+            .WithMany(x => x.ChildCategories)
+            .HasForeignKey(x => x.ParentCategoryId);
     }
 }

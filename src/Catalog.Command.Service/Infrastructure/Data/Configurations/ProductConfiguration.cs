@@ -12,9 +12,6 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
             .IsRequired()
             .HasMaxLength(50);
 
-        builder.Property(x => x.Category)
-            .IsRequired();
-
         builder.Property(x => x.Price)
             .HasColumnType("money");
     }
