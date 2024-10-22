@@ -31,9 +31,25 @@ internal class ProductRepository(IApplicationDbContext context) : IProductReposi
         return entity;
     }
 
-    public async Task<Product[]> List(CancellationToken cancellationToken = default)
+    public async Task<Product[]> List(int? categoryId, int currentPage, int pageSize, CancellationToken cancellationToken = default)
     {
-        var entities = await context.Products
+        var skipCount = pageSize * currentPage;
+
+        IQueryable<Product> products = context.Products;
+
+        if (categoryId.HasValue)
+        {
+            products = products
+                .Where(x => x.CategoryId == categoryId);
+        }
+
+        // Apply pagination
+        products = products
+            .OrderBy(x => x.Id)
+            .Skip(skipCount)
+            .Take(pageSize);
+
+        var entities = await products
             .AsNoTracking()
             .ToArrayAsync(cancellationToken);
 
