@@ -1,6 +1,6 @@
 using ApplicationCore.Categories.Commands.DeleteCategory;
 
-namespace Catalog.Commands.Categories;
+namespace API.Commands.Categories;
 
 public class DeleteCategory(ILogger<UpdateCategory> logger, IMediator sender)
 {

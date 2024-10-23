@@ -1,6 +1,6 @@
 using ApplicationCore.Categories.Commands.UpdateCategory;
 
-namespace Catalog.Commands.Categories;
+namespace API.Commands.Categories;
 
 public class UpdateCategory(ILogger<UpdateCategory> logger, IMediator sender)
 {

@@ -1,6 +1,6 @@
 ﻿using ApplicationCore.Categories.Commands.CreateCategory;
 
-namespace Catalog.Commands.Categories;
+namespace API.Commands.Categories;
 
 public class CreateCategory(ILogger<CreateCategory> logger, IMediator sender)
 {

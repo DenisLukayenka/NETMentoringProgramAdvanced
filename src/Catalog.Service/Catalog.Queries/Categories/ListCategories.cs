@@ -1,6 +1,6 @@
 using ApplicationCore.Categories.Queries.ListCategories;
 
-namespace Catalog.Queries.Categories;
+namespace API.Queries.Categories;
 
 public class ListCategories(ILogger<ListCategories> logger, IMediator sender)
 {

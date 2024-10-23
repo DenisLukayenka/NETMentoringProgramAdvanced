@@ -15,11 +15,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{71828C3D-4412-45C6-AC8D-F2ECB39834A4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "APIs", "APIs", "{3554D07C-CFF6-4409-8E5D-8425DEF5081F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.Queries", "Catalog.Queries\API.Queries.csproj", "{368D8DAD-76BF-4046-AA77-EF0BDA3D9C19}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Queries", "Catalog.Queries\Catalog.Queries.csproj", "{368D8DAD-76BF-4046-AA77-EF0BDA3D9C19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.Commands", "Catalog.Commands\API.Commands.csproj", "{3BD8A938-9BB0-4EFC-A83E-B96F0FB387AF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Commands", "Catalog.Commands\Catalog.Commands.csproj", "{3BD8A938-9BB0-4EFC-A83E-B96F0FB387AF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{6585CFE0-AF05-434F-81B6-E2E8CE91263E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,8 +52,8 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{368D8DAD-76BF-4046-AA77-EF0BDA3D9C19} = {3554D07C-CFF6-4409-8E5D-8425DEF5081F}
-		{3BD8A938-9BB0-4EFC-A83E-B96F0FB387AF} = {3554D07C-CFF6-4409-8E5D-8425DEF5081F}
+		{368D8DAD-76BF-4046-AA77-EF0BDA3D9C19} = {6585CFE0-AF05-434F-81B6-E2E8CE91263E}
+		{3BD8A938-9BB0-4EFC-A83E-B96F0FB387AF} = {6585CFE0-AF05-434F-81B6-E2E8CE91263E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FF74334C-68F7-4390-AD40-F0A7DBFAE068}

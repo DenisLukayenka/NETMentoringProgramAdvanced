@@ -1,6 +1,6 @@
 using ApplicationCore.Products.Queries.ListProducts;
 
-namespace Catalog.Queries.Products;
+namespace API.Queries.Products;
 
 public class ListProducts(ILogger<ListProducts> logger, IMediator sender)
 {
