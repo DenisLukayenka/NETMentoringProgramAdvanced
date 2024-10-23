@@ -11,3 +11,14 @@ Content-Type: application/json
   "image": null,
   "parentCategoryId": 1
 }
+
+###
+# @name UpdateCategory
+PUT {{function_url}}/categories
+Content-Type: application/json
+
+{
+  "categoryId": 1,
+  "name": "Updated category",
+  "image": "http://localhost/image.png"
+}
