@@ -1,0 +1,13 @@
+# For more info on HTTP files go to https://aka.ms/vs/httpfile
+@function_url = http://localhost:7048/api
+
+###
+# @name CreateCategory
+POST {{function_url}}/categories
+Content-Type: application/json
+
+{
+  "name": "Test category",
+  "image": null,
+  "parentCategoryId": 1
+}

@@ -2,11 +2,11 @@
 
 namespace ApplicationCore.Categories.Commands.CreateCategory;
 
-public record CreateCategoryCommand(string Name, string? Image, int? ParentCategoryId) : IRequest<int>;
+public record CreateCategoryCommand(string Name, string? Image, int? ParentCategoryId) : IRequest<Category>;
 
-public class CreateCategoryCommandHandler(ICategoryRepository repository) : IRequestHandler<CreateCategoryCommand, int>
+public class CreateCategoryCommandHandler(ICategoryRepository repository) : IRequestHandler<CreateCategoryCommand, Category>
 {
-    public async Task<int> Handle(CreateCategoryCommand request, CancellationToken cancellationToken)
+    public async Task<Category> Handle(CreateCategoryCommand request, CancellationToken cancellationToken)
     {
         Category? parentCategory = null;
         if (request.ParentCategoryId.HasValue)
@@ -20,11 +20,11 @@ public class CreateCategoryCommandHandler(ICategoryRepository repository) : IReq
         {
             Name = request.Name,
             Image = request.Image,
-            ParentCategory = parentCategory
+            ParentCategoryId = parentCategory!.Id
         };
 
         entity = await repository.Add(entity, cancellationToken);
 
-        return entity.Id;
+        return entity;
     }
 }

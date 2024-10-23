@@ -11,7 +11,6 @@ var host = new HostBuilder()
 
         services.ConfigureAppServices();
         services.ConfigureInfrastructureServices(context.Configuration, configuration => services.Configure<SqlDatabaseOptions>(configuration));
-
     })
     .Build();
 
