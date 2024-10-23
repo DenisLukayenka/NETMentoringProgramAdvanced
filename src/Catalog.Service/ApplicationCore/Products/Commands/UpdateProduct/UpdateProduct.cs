@@ -34,7 +34,10 @@ public class UpdateProductCommandHandler(
         if (request.CategoryId.HasValue)
         {
             var category = await categoryRepository.Get(request.CategoryId.Value, cancellationToken);
-            entity.Category = category;
+            if (category is null)
+                throw new EntityNotFoundException();
+
+            entity.CategoryId = category.Id;
         }
         if (request.Price.HasValue)
         {

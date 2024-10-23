@@ -9,16 +9,15 @@ Content-Type: application/json
 {
   "name": "Test category",
   "image": null,
-  "parentCategoryId": 1
+  "parentCategoryId": 2
 }
 
 ###
 # @name UpdateCategory
-PUT {{function_url}}/categories
+PUT {{function_url}}/categories/2
 Content-Type: application/json
 
 {
-  "categoryId": 1,
   "name": "Updated category",
   "image": "http://localhost/image.png"
 }
@@ -26,4 +25,3 @@ Content-Type: application/json
 ###
 # @name DeleteCategory
 DELETE {{function_url}}/categories/1
-Content-Type: application/json
