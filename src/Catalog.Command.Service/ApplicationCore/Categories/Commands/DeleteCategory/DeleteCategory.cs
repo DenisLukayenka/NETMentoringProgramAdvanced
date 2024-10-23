@@ -11,6 +11,9 @@ public class DeleteCategoryCommandHandler(ICategoryRepository repository) : IReq
         if (entity is null)
             throw new EntityNotFoundException();
 
+        var dependentCategories = await repository.List(entity.Id, cancellationToken);
+        entity.ChildCategories = dependentCategories;
+
         await repository.Delete(entity, cancellationToken);
     }
 }

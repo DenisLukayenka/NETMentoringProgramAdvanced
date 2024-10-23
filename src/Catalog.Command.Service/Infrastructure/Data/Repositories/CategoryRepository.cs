@@ -31,9 +31,16 @@ internal class CategoryRepository(IApplicationDbContext context) : ICategoryRepo
         return entity;
     }
 
-    public async Task<Category[]> List(CancellationToken cancellationToken = default)
+    public async Task<Category[]> List(int? parentCategory, CancellationToken cancellationToken = default)
     {
-        var entities = await context.Categories
+        IQueryable<Category> categories = context.Categories;
+        if (parentCategory.HasValue)
+        {
+            categories = categories
+                .Where(x => x.ParentCategoryId == parentCategory.Value);
+        }
+
+        var entities = await categories
             .AsNoTracking()
             .ToArrayAsync(cancellationToken);
 

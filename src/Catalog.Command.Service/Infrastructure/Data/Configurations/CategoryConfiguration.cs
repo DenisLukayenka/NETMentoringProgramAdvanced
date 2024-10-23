@@ -15,11 +15,13 @@ public class CategoryConfiguration : IEntityTypeConfiguration<Category>
         builder
             .HasMany(x => x.Products)
             .WithOne(x => x.Category)
-            .HasForeignKey(x => x.CategoryId);
+            .HasForeignKey(x => x.CategoryId)
+            .OnDelete(DeleteBehavior.ClientCascade);
 
         builder
             .HasOne(x => x.ParentCategory)
             .WithMany(x => x.ChildCategories)
-            .HasForeignKey(x => x.ParentCategoryId);
+            .HasForeignKey(x => x.ParentCategoryId)
+            .OnDelete(DeleteBehavior.ClientSetNull);
     }
 }

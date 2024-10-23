@@ -19,7 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "APIs", "APIs", "{3554D07C-C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Queries", "Catalog.Queries\Catalog.Queries.csproj", "{368D8DAD-76BF-4046-AA77-EF0BDA3D9C19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Commands", "Catalog.Commands\Catalog.Commands.csproj", "{3BD8A938-9BB0-4EFC-A83E-B96F0FB387AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Commands", "Catalog.Commands\Catalog.Commands.csproj", "{3BD8A938-9BB0-4EFC-A83E-B96F0FB387AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

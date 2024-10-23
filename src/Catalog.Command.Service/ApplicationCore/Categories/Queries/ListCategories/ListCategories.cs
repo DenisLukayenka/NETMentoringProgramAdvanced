@@ -8,7 +8,7 @@ public class ListCategoriesQueryHandler(ICategoryRepository categoryRepository) 
 {
     public async Task<Category[]> Handle(ListCategoriesQuery request, CancellationToken cancellationToken)
     {
-        var categories = await categoryRepository.List(cancellationToken);
+        var categories = await categoryRepository.List(null, cancellationToken);
 
         return categories;
     }

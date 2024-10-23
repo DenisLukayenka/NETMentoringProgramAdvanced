@@ -22,3 +22,8 @@ Content-Type: application/json
   "name": "Updated category",
   "image": "http://localhost/image.png"
 }
+
+###
+# @name DeleteCategory
+DELETE {{function_url}}/categories/1
+Content-Type: application/json
