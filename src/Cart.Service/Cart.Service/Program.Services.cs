@@ -10,8 +10,8 @@ public static class ProgramServices
     public static WebApplicationBuilder RegisterAppServices(this WebApplicationBuilder builder)
     {
         builder.Services.AddAppSerialization();
-        builder.Services.AddAppOpenApi(builder.Environment);
         builder.Services.AddAppProblemDetails();
+        builder.Services.AddAppVersioning();
 
         builder.Services
             .ConfigureBusinessLogicServices(builder.Configuration)

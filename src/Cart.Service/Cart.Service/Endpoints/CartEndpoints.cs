@@ -9,68 +9,67 @@ public static class CartEndpoints
 
     public static WebApplication RegisterCartEndpoints(this WebApplication app)
     {
-        var cartApi = app.MapGroup("/api");
+        var versionOne = new Asp.Versioning.ApiVersion(1, 0);
+        var currentVersion = new Asp.Versioning.ApiVersion(Program.CurrentVersion.Major, Program.CurrentVersion.Minor);
+        var versionSet = app
+            .NewApiVersionSet()
+            .HasApiVersion(versionOne)
+            .HasApiVersion(currentVersion)
+            .Build();
+
+        var cartApi = app.MapGroup("/api/v{version:apiVersion}");
 
         cartApi
-            .MapGet("cart/{cartId}/items", ListCartItems)
+            .MapGet("/carts/{cartId}", GetCart)
             .WithTags(CartEndpointsPrefix)
-            .WithName($"{CartEndpointsPrefix}_{nameof(ListCartItems)}")
-            .Produces<Models.Cart[]>(StatusCodes.Status200OK);
+            .WithName($"{CartEndpointsPrefix}_{nameof(GetCart)}")
+            .Produces<Models.Cart[]>(StatusCodes.Status200OK)
+            .WithApiVersionSet(versionSet)
+            .MapToApiVersion(versionOne);
 
         cartApi
-            .MapPost("cart/{cartId}/item", AddCartItem)
+            .MapGet("/carts/{cartId}", GetCartItems)
             .WithTags(CartEndpointsPrefix)
-            .WithName($"{CartEndpointsPrefix}_{nameof(AddCartItem)}")
-            .Produces(StatusCodes.Status204NoContent);
+            .WithName($"{CartEndpointsPrefix}_{nameof(GetCartItems)}")
+            .Produces<Models.Cart[]>(StatusCodes.Status200OK)
+            .WithApiVersionSet(versionSet)
+            .MapToApiVersion(currentVersion);
 
         cartApi
-            .MapDelete("cart/{cartId}/item/{itemId:int}", RemoveCartItem)
+            .MapDelete("/carts/{cartId}", ClearCart)
             .WithTags(CartEndpointsPrefix)
-            .WithName($"{CartEndpointsPrefix}_{nameof(RemoveCartItem)}")
-            .Produces(StatusCodes.Status204NoContent);
-
-        cartApi
-            .MapDelete("cart/{cartId}/items/clear", ClearCartItems)
-            .WithTags(CartEndpointsPrefix)
-            .WithName($"{CartEndpointsPrefix}_{nameof(ClearCartItems)}")
-            .Produces(StatusCodes.Status204NoContent);
+            .WithName($"{CartEndpointsPrefix}_{nameof(ClearCart)}")
+            .Produces(StatusCodes.Status204NoContent)
+            .WithApiVersionSet(versionSet)
+            .IsApiVersionNeutral();
 
         return app;
     }
 
-    private static async Task<IResult> ListCartItems(
+    private static async Task<IResult> GetCart(
         [FromRoute] string cartId,
-        [FromServices] ICartItemService cartService,
+        [FromServices] ICartService cartService,
         CancellationToken cancellationToken)
     {
-        var carts = await cartService.List(cartId, cancellationToken);
+        var cart = await cartService.Get(cartId, cancellationToken);
 
-        return Results.Ok(carts);
+        if (cart is null)
+            return Results.NotFound();
+
+        return Results.Ok(cart);
     }
 
-    private static async Task<IResult> AddCartItem(
+    private static async Task<IResult> GetCartItems(
         [FromRoute] string cartId,
-        [FromBody] Models.CartItem item,
-        [FromServices] ICartItemService cartService,
+        [FromServices] ICartService cartService,
         CancellationToken cancellationToken)
     {
-        await cartService.Add(cartId, item, cancellationToken);
+        var cart = await cartService.Get(cartId, cancellationToken);
 
-        return Results.NoContent();
+        return Results.Ok(cart?.Items ?? []);
     }
 
-    private static async Task<IResult> RemoveCartItem(
-        [FromRoute] string cartId,
-        [FromRoute] int itemId,
-        [FromServices] ICartItemService cartService,
-        CancellationToken cancellationToken)
-    {
-        await cartService.Remove(cartId, itemId, cancellationToken);
-
-        return Results.NoContent();
-    }
-
-    private static async Task<IResult> ClearCartItems(
+    private static async Task<IResult> ClearCart(
         [FromRoute] string cartId,
         [FromServices] ICartItemService cartService,
         CancellationToken cancellationToken)
