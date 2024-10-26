@@ -10,7 +10,7 @@ public class CreateProduct(ILogger<CreateProduct> logger, IMediator sender)
         [FromBody] CreateProductCommand command,
         CancellationToken cancellationToken)
     {
-        logger.LogInformation("C# HTTP trigger function processed a request.");
+        logger.LogInformation("{FunctionName} was called", nameof(CreateProduct));
 
         var product = await sender.Send(command, cancellationToken);
 

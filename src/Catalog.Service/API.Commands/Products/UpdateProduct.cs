@@ -11,7 +11,7 @@ public class UpdateProduct(ILogger<UpdateProduct> logger, IMediator sender)
         int productId,
         CancellationToken cancellationToken)
     {
-        logger.LogInformation("C# HTTP trigger function processed a request.");
+        logger.LogInformation("{FunctionName} was called", nameof(UpdateProduct));
 
         command = command with
         {

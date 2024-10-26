@@ -10,7 +10,7 @@ public class DeleteProduct(ILogger<DeleteProduct> logger, IMediator sender)
         int productId,
         CancellationToken cancellationToken)
     {
-        logger.LogInformation("C# HTTP trigger function processed a request.");
+        logger.LogInformation("{FunctionName} was called", nameof(DeleteProduct));
 
         var command = new DeleteProductCommand(productId);
         await sender.Send(command, cancellationToken);

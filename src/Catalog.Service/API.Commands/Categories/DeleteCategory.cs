@@ -10,7 +10,7 @@ public class DeleteCategory(ILogger<UpdateCategory> logger, IMediator sender)
         int categoryId,
         CancellationToken cancellationToken)
     {
-        logger.LogInformation("C# HTTP trigger function processed a request.");
+        logger.LogInformation("{FunctionName} was called", nameof(DeleteCategory));
 
         var command = new DeleteCategoryCommand(categoryId);
         await sender.Send(command, cancellationToken);

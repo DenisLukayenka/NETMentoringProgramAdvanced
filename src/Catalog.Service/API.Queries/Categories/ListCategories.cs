@@ -9,7 +9,7 @@ public class ListCategories(ILogger<ListCategories> logger, IMediator sender)
         [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "categories")] HttpRequest req,
         CancellationToken cancellationToken)
     {
-        logger.LogInformation("C# HTTP trigger function processed a request.");
+        logger.LogInformation("{FunctionName} was called", nameof(ListCategories));
 
         var categories = await sender.Send(new ListCategoriesQuery(), cancellationToken);
 

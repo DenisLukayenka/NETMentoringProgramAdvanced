@@ -10,7 +10,7 @@ public class CreateCategory(ILogger<CreateCategory> logger, IMediator sender)
         [FromBody] CreateCategoryCommand command,
         CancellationToken cancellationToken)
     {
-        logger.LogInformation("C# HTTP trigger function processed a request.");
+        logger.LogInformation("{FunctionName} was called", nameof(CreateCategory));
 
         var category = await sender.Send(command, cancellationToken);
 

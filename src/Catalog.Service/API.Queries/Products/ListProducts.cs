@@ -10,7 +10,7 @@ public class ListProducts(ILogger<ListProducts> logger, IMediator sender)
         int? categoryId,
         CancellationToken cancellationToken)
     {
-        logger.LogInformation("C# HTTP trigger function processed a request.");
+        logger.LogInformation("{FunctionName} was called", nameof(ListProducts));
 
         var currentPage = GetQueryParam(req, nameof(ListProductsQuery.CurrentPage));
         var pageSize = GetQueryParam(req, nameof(ListProductsQuery.PageSize));
