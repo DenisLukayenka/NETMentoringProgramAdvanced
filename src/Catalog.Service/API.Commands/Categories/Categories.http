@@ -8,8 +8,7 @@ Content-Type: application/json
 
 {
   "name": "Test category",
-  "image": null,
-  "parentCategoryId": 2
+  "image": null
 }
 
 ###

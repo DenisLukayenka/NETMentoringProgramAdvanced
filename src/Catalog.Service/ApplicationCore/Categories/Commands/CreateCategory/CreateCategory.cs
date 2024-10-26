@@ -20,7 +20,7 @@ public class CreateCategoryCommandHandler(ICategoryRepository repository) : IReq
         {
             Name = request.Name,
             Image = request.Image,
-            ParentCategoryId = parentCategory!.Id
+            ParentCategoryId = parentCategory?.Id
         };
 
         entity = await repository.Add(entity, cancellationToken);
