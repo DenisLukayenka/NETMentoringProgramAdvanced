@@ -28,7 +28,7 @@ internal class CartItemService(
 
         if (currentCart is null)
         {
-            logger.LogWarning("Cart with id: {CartId} was not found. Initializing empty cart.", cartId);
+            logger.LogInformation("Cart with id: {CartId} was not found. Initializing empty cart.", cartId);
             currentCart = InitEmptyCart(cartId, cartItem);
         }
         else

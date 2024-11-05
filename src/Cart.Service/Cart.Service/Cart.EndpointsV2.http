@@ -1,0 +1,7 @@
+@Cart.Service_HostAddress = http://localhost:56045/api/v2.0
+@TestUserId = 6650c3bd-9a19-420a-9caf-11828ca61c03
+@ItemId = 12345
+
+GET {{Cart.Service_HostAddress}}/carts/{{TestUserId}}
+Accept: application/json
+

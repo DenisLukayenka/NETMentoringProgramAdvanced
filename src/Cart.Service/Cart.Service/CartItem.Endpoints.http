@@ -1,0 +1,22 @@
+@Cart.Service_HostAddress = http://localhost:56045/api/v1.0
+@TestUserId = 6650c3bd-9a19-420a-9caf-11828ca61c03
+@ItemId = 12345
+
+###
+
+POST {{Cart.Service_HostAddress}}/carts/{{TestUserId}}/items
+Accept: application/json
+Content-Type: application/json
+
+{
+  "itemId": {{ItemId}},
+  "name": "cart item",
+  "price": 10.01,
+  "quantity": 1,
+  "imageUrl": "http://google.com",
+  "imageAlt": "some alt text"
+}
+
+###
+
+DELETE {{Cart.Service_HostAddress}}/carts/{{TestUserId}}/items/{{ItemId}}
