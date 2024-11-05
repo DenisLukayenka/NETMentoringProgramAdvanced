@@ -1,5 +1,4 @@
 ﻿using Cart.Service.BusinessLogic.Services.Abstractions;
-using Microsoft.AspNetCore.Mvc;
 
 namespace Cart.Service.Endpoints;
 
@@ -9,33 +8,30 @@ public static class CartEndpointsV2
 
     public static WebApplication RegisterCartEndpointsV2(this WebApplication app)
     {
-        var versionTwo = new Asp.Versioning.ApiVersion(2, 0);
-        var versionSet = app
-            .NewApiVersionSet()
-            .HasApiVersion(new Asp.Versioning.ApiVersion(1, 0))
-            .HasApiVersion(versionTwo)
-            .Build();
+        var endpointsVersion = new Asp.Versioning.ApiVersion(2, 0);
+        var versionSet = app.NewApiVersionSet().Build();
 
-        var cartApi = app.MapGroup("/api/v{version:apiVersion}");
+        var cartApi = app
+            .MapGroup("/api/v{version:apiVersion}")
+            .WithApiVersionSet(versionSet)
+            .MapToApiVersion(endpointsVersion);
 
         cartApi
             .MapGet("/carts/{cartId}", GetCartItems)
             .WithTags(CartEndpointsPrefix)
             .WithName($"{CartEndpointsPrefix}_{nameof(GetCartItems)}")
-            .Produces<Models.Cart[]>(StatusCodes.Status200OK)
-            .WithApiVersionSet(versionSet)
-            .MapToApiVersion(versionTwo);
+            .Produces<Models.Cart[]>(StatusCodes.Status200OK);
 
         return app;
     }
 
-    private static async Task<IResult> GetCartItems(
+    private static async Task<Ok<Models.CartItem[]>> GetCartItems(
         [FromRoute] string cartId,
         [FromServices] ICartService cartService,
         CancellationToken cancellationToken)
     {
         var cart = await cartService.Get(cartId, cancellationToken);
 
-        return Results.Ok(cart?.Items ?? []);
+        return TypedResults.Ok(cart?.Items ?? []);
     }
 }

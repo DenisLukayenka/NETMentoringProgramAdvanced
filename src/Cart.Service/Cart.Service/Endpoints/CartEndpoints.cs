@@ -1,5 +1,4 @@
 ﻿using Cart.Service.BusinessLogic.Services.Abstractions;
-using Microsoft.AspNetCore.Mvc;
 
 namespace Cart.Service.Endpoints;
 
@@ -9,35 +8,32 @@ public static class CartEndpoints
 
     public static WebApplication RegisterCartEndpoints(this WebApplication app)
     {
-        var versionOne = new Asp.Versioning.ApiVersion(1, 0);
-        var versionSet = app
-            .NewApiVersionSet()
-            .HasApiVersion(versionOne)
-            .HasApiVersion(new Asp.Versioning.ApiVersion(2, 0))
-            .Build();
+        var endpointVersion = new Asp.Versioning.ApiVersion(1, 0);
+        var versionSet = app.NewApiVersionSet().Build();
 
-        var cartApi = app.MapGroup("/api/v{version:apiVersion}");
+        var cartApi = app
+            .MapGroup("/api/v{version:apiVersion}")
+            .WithApiVersionSet(versionSet);
 
         cartApi
             .MapGet("/carts/{cartId}", GetCart)
             .WithTags(CartEndpointsPrefix)
             .WithName($"{CartEndpointsPrefix}_{nameof(GetCart)}")
             .Produces<Models.Cart[]>(StatusCodes.Status200OK)
-            .WithApiVersionSet(versionSet)
-            .MapToApiVersion(versionOne);
+            .HasApiVersion(endpointVersion)
+            .MapToApiVersion(endpointVersion);
 
         cartApi
             .MapDelete("/carts/{cartId}", ClearCart)
             .WithTags(CartEndpointsPrefix)
             .WithName($"{CartEndpointsPrefix}_{nameof(ClearCart)}")
             .Produces(StatusCodes.Status204NoContent)
-            .WithApiVersionSet(versionSet)
             .IsApiVersionNeutral();
 
         return app;
     }
 
-    private static async Task<IResult> GetCart(
+    private static async Task<Results<Ok<Models.Cart>, NotFound>> GetCart(
         [FromRoute] string cartId,
         [FromServices] ICartService cartService,
         CancellationToken cancellationToken)
@@ -45,18 +41,18 @@ public static class CartEndpoints
         var cart = await cartService.Get(cartId, cancellationToken);
 
         if (cart is null)
-            return Results.NotFound();
+            return TypedResults.NotFound();
 
-        return Results.Ok(cart);
+        return TypedResults.Ok(cart);
     }
 
-    private static async Task<IResult> ClearCart(
+    private static async Task<NoContent> ClearCart(
         [FromRoute] string cartId,
         [FromServices] ICartItemService cartService,
         CancellationToken cancellationToken)
     {
         await cartService.Clear(cartId, cancellationToken);
 
-        return Results.NoContent();
+        return TypedResults.NoContent();
     }
 }
