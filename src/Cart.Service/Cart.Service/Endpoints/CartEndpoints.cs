@@ -1,4 +1,6 @@
 ﻿using Cart.Service.BusinessLogic.Services.Abstractions;
+using Cart.Service.Mappings;
+using Cart.Service.ViewModels;
 
 namespace Cart.Service.Endpoints;
 
@@ -33,7 +35,7 @@ public static class CartEndpoints
         return app;
     }
 
-    private static async Task<Results<Ok<Models.Cart>, NotFound>> GetCart(
+    private static async Task<Results<Ok<ModelResponse<Models.Cart>>, NotFound>> GetCart(
         [FromRoute] string cartId,
         [FromServices] ICartService cartService,
         CancellationToken cancellationToken)
@@ -43,7 +45,9 @@ public static class CartEndpoints
         if (cart is null)
             return TypedResults.NotFound();
 
-        return TypedResults.Ok(cart);
+        var response = cart.MapToResponse();
+
+        return TypedResults.Ok(response);
     }
 
     private static async Task<NoContent> ClearCart(

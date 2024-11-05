@@ -31,7 +31,8 @@ public static class CartEndpointsV2
         CancellationToken cancellationToken)
     {
         var cart = await cartService.Get(cartId, cancellationToken);
+        var cartItems = cart?.Items ?? [];
 
-        return TypedResults.Ok(cart?.Items ?? []);
+        return TypedResults.Ok(cartItems);
     }
 }
