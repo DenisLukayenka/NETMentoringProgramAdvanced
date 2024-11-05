@@ -2,6 +2,7 @@
 using Cart.Service.DataAccess;
 using Cart.Service.Platform;
 using Cart.Service.Platform.Serialization;
+using Cart.Service.Platform.Versioning;
 
 namespace Cart.Service;
 

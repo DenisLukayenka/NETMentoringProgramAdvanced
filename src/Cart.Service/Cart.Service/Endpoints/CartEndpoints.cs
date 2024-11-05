@@ -10,11 +10,11 @@ public static class CartEndpoints
     public static WebApplication RegisterCartEndpoints(this WebApplication app)
     {
         var versionOne = new Asp.Versioning.ApiVersion(1, 0);
-        var currentVersion = new Asp.Versioning.ApiVersion(Program.CurrentVersion.Major, Program.CurrentVersion.Minor);
+        var versionTwo = new Asp.Versioning.ApiVersion(2, 0);
         var versionSet = app
             .NewApiVersionSet()
             .HasApiVersion(versionOne)
-            .HasApiVersion(currentVersion)
+            .HasApiVersion(versionTwo)
             .Build();
 
         var cartApi = app.MapGroup("/api/v{version:apiVersion}");
@@ -33,7 +33,7 @@ public static class CartEndpoints
             .WithName($"{CartEndpointsPrefix}_{nameof(GetCartItems)}")
             .Produces<Models.Cart[]>(StatusCodes.Status200OK)
             .WithApiVersionSet(versionSet)
-            .MapToApiVersion(currentVersion);
+            .MapToApiVersion(versionTwo);
 
         cartApi
             .MapDelete("/carts/{cartId}", ClearCart)

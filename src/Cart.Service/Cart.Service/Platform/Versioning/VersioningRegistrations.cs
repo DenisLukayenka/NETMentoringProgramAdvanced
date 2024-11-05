@@ -1,6 +1,6 @@
 ﻿using Asp.Versioning;
 
-namespace Cart.Service.Platform;
+namespace Cart.Service.Platform.Versioning;
 
 internal static class VersioningRegistrations
 {
@@ -8,7 +8,7 @@ internal static class VersioningRegistrations
     {
         services.AddApiVersioning(options =>
         {
-            options.DefaultApiVersion = new ApiVersion(Program.CurrentVersion.Major, Program.CurrentVersion.Minor);
+            options.DefaultApiVersion = VersionConstants.DefaultApiVersion;
             options.ReportApiVersions = true;
             options.AssumeDefaultVersionWhenUnspecified = true;
             options.ApiVersionReader = new UrlSegmentApiVersionReader();
