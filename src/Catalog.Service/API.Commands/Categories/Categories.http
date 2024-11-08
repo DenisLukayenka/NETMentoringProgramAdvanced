@@ -1,0 +1,26 @@
+# For more info on HTTP files go to https://aka.ms/vs/httpfile
+@function_url = http://localhost:7048/api
+
+###
+# @name CreateCategory
+POST {{function_url}}/categories
+Content-Type: application/json
+
+{
+  "name": "Test category",
+  "image": null
+}
+
+###
+# @name UpdateCategory
+PUT {{function_url}}/categories/2
+Content-Type: application/json
+
+{
+  "name": "Updated category",
+  "image": "http://localhost/image.png"
+}
+
+###
+# @name DeleteCategory
+DELETE {{function_url}}/categories/1

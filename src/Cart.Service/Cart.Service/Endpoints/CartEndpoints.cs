@@ -1,5 +1,6 @@
 ﻿using Cart.Service.BusinessLogic.Services.Abstractions;
-using Microsoft.AspNetCore.Mvc;
+using Cart.Service.Mappings;
+using Cart.Service.ViewModels;
 
 namespace Cart.Service.Endpoints;
 
@@ -9,74 +10,53 @@ public static class CartEndpoints
 
     public static WebApplication RegisterCartEndpoints(this WebApplication app)
     {
-        var cartApi = app.MapGroup("/api");
+        var endpointVersion = new Asp.Versioning.ApiVersion(1, 0);
+        var versionSet = app.NewApiVersionSet().Build();
+
+        var cartApi = app
+            .MapGroup("/api/v{version:apiVersion}")
+            .WithApiVersionSet(versionSet);
 
         cartApi
-            .MapGet("cart/{cartId}/items", ListCartItems)
+            .MapGet("/carts/{cartId}", GetCart)
             .WithTags(CartEndpointsPrefix)
-            .WithName($"{CartEndpointsPrefix}_{nameof(ListCartItems)}")
-            .Produces<Models.Cart[]>(StatusCodes.Status200OK);
+            .WithName($"{CartEndpointsPrefix}_{nameof(GetCart)}")
+            .Produces<Models.Cart[]>(StatusCodes.Status200OK)
+            .HasApiVersion(endpointVersion)
+            .MapToApiVersion(endpointVersion);
 
         cartApi
-            .MapPost("cart/{cartId}/item", AddCartItem)
+            .MapDelete("/carts/{cartId}", ClearCart)
             .WithTags(CartEndpointsPrefix)
-            .WithName($"{CartEndpointsPrefix}_{nameof(AddCartItem)}")
-            .Produces(StatusCodes.Status204NoContent);
-
-        cartApi
-            .MapDelete("cart/{cartId}/item/{itemId:int}", RemoveCartItem)
-            .WithTags(CartEndpointsPrefix)
-            .WithName($"{CartEndpointsPrefix}_{nameof(RemoveCartItem)}")
-            .Produces(StatusCodes.Status204NoContent);
-
-        cartApi
-            .MapDelete("cart/{cartId}/items/clear", ClearCartItems)
-            .WithTags(CartEndpointsPrefix)
-            .WithName($"{CartEndpointsPrefix}_{nameof(ClearCartItems)}")
-            .Produces(StatusCodes.Status204NoContent);
+            .WithName($"{CartEndpointsPrefix}_{nameof(ClearCart)}")
+            .Produces(StatusCodes.Status204NoContent)
+            .IsApiVersionNeutral();
 
         return app;
     }
 
-    private static async Task<IResult> ListCartItems(
+    private static async Task<Results<Ok<ModelResponse<Models.Cart>>, NotFound>> GetCart(
         [FromRoute] string cartId,
-        [FromServices] ICartItemService cartService,
+        [FromServices] ICartService cartService,
         CancellationToken cancellationToken)
     {
-        var carts = await cartService.List(cartId, cancellationToken);
+        var cart = await cartService.Get(cartId, cancellationToken);
 
-        return Results.Ok(carts);
+        if (cart is null)
+            return TypedResults.NotFound();
+
+        var response = cart.MapToResponse();
+
+        return TypedResults.Ok(response);
     }
 
-    private static async Task<IResult> AddCartItem(
-        [FromRoute] string cartId,
-        [FromBody] Models.CartItem item,
-        [FromServices] ICartItemService cartService,
-        CancellationToken cancellationToken)
-    {
-        await cartService.Add(cartId, item, cancellationToken);
-
-        return Results.NoContent();
-    }
-
-    private static async Task<IResult> RemoveCartItem(
-        [FromRoute] string cartId,
-        [FromRoute] int itemId,
-        [FromServices] ICartItemService cartService,
-        CancellationToken cancellationToken)
-    {
-        await cartService.Remove(cartId, itemId, cancellationToken);
-
-        return Results.NoContent();
-    }
-
-    private static async Task<IResult> ClearCartItems(
+    private static async Task<NoContent> ClearCart(
         [FromRoute] string cartId,
         [FromServices] ICartItemService cartService,
         CancellationToken cancellationToken)
     {
         await cartService.Clear(cartId, cancellationToken);
 
-        return Results.NoContent();
+        return TypedResults.NoContent();
     }
 }

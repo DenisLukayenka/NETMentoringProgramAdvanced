@@ -2,6 +2,7 @@
 using Cart.Service.DataAccess;
 using Cart.Service.Platform;
 using Cart.Service.Platform.Serialization;
+using Cart.Service.Platform.Versioning;
 
 namespace Cart.Service;
 
@@ -10,8 +11,8 @@ public static class ProgramServices
     public static WebApplicationBuilder RegisterAppServices(this WebApplicationBuilder builder)
     {
         builder.Services.AddAppSerialization();
-        builder.Services.AddAppOpenApi(builder.Environment);
         builder.Services.AddAppProblemDetails();
+        builder.Services.AddAppVersioning();
 
         builder.Services
             .ConfigureBusinessLogicServices(builder.Configuration)
