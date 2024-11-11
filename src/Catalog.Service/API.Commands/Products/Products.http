@@ -10,21 +10,21 @@ Content-Type: application/json
   "name": "Test product",
   "description": "Test description",
   "image": null,
-  "categoryId": 2,
+  "categoryId": 3,
   "price": 5,
   "amount": 2
 }
 
 ###
 # @name UpdateProduct
-PUT {{function_url}}/products/2
+PUT {{function_url}}/products/1
 Content-Type: application/json
 
 {
   "name": "New product",
   "description": "New description",
   "image": "http://localhost/image.png",
-  "categoryId": 2,
+  "categoryId": 3,
   "price": 10,
   "amount": 1
 }
