@@ -1,4 +1,5 @@
 ﻿using Cart.Service.Endpoints;
+using Cart.Service.Platform.Swagger;
 
 namespace Cart.Service;
 
@@ -9,6 +10,8 @@ public static class ProgramPipelines
         app.RegisterCartEndpoints();
         app.RegisterCartEndpointsV2();
         app.RegisterCartItemsEndpoints();
+
+        app.UseAppSwagger();
 
         return app;
     }
