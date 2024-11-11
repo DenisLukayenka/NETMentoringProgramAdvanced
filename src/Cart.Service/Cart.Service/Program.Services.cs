@@ -13,6 +13,7 @@ public static class ProgramServices
         builder.Services.AddAppSerialization();
         builder.Services.AddAppProblemDetails();
         builder.Services.AddAppVersioning();
+        builder.Services.AddEndpointsApiExplorer();
 
         builder.Services
             .ConfigureBusinessLogicServices(builder.Configuration)
