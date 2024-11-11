@@ -1,4 +1,5 @@
 ﻿using Domain.Entities;
+using Domain.Events;
 using Infrastructure.Abstractions;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
@@ -15,6 +16,7 @@ internal class ApplicationDbContext : DbContext, IApplicationDbContext
 
     public DbSet<Category> Categories => Set<Category>();
     public DbSet<Product> Products => Set<Product>();
+    public DbSet<BaseEvent> Events => Set<BaseEvent>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
