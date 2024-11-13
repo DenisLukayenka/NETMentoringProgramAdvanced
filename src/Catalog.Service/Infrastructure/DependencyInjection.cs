@@ -33,7 +33,8 @@ public static class DependencyInjection
             .AddScoped<IApplicationDbContext, ApplicationDbContext>()
             .AddScoped<ISaveChangesInterceptor, PopulateEventsInterceptor>()
             .AddScoped<ICategoryRepository, CategoryRepository>()
-            .AddScoped<IProductRepository, ProductRepository>();
+            .AddScoped<IProductRepository, ProductRepository>()
+            .AddScoped<IOutboxEventsRepository, OutboxEventsRepository>();
 
         return services;
     }
