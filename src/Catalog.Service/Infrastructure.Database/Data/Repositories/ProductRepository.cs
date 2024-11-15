@@ -1,9 +1,9 @@
 ﻿using ApplicationCore.Common.Interfaces;
 using Domain.Entities;
-using Infrastructure.Abstractions;
+using Infrastructure.Database.Abstractions;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Data.Repositories;
+namespace Infrastructure.Database.Data.Repositories;
 
 internal class ProductRepository(IApplicationDbContext context) : IProductRepository
 {

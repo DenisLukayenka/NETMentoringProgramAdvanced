@@ -1,10 +1,10 @@
-﻿using Domain.Entities;
+﻿using System.Reflection;
+using Domain.Entities;
 using Domain.Events;
-using Infrastructure.Abstractions;
+using Infrastructure.Database.Abstractions;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection;
 
-namespace Infrastructure.Data;
+namespace Infrastructure.Database.Data;
 
 internal class ApplicationDbContext : DbContext, IApplicationDbContext
 {

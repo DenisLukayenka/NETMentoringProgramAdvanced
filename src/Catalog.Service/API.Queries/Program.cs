@@ -1,6 +1,6 @@
 using ApplicationCore;
-using Infrastructure;
-using Infrastructure.Options;
+using Infrastructure.Database;
+using Infrastructure.Database.Options;
 using Microsoft.Extensions.Configuration;
 
 var host = new HostBuilder()

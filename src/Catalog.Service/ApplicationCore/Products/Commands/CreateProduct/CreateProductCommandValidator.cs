@@ -26,11 +26,11 @@ internal class CreateProductCommandValidator : AbstractValidator<CreateProductCo
             .GreaterThan(0);
     }
 
-    private static bool MustBeValidUrl(string value)
+    private static bool MustBeValidUrl(string? value)
     {
         try
         {
-            var url = new Uri(value);
+            var url = new Uri(value!);
 
             return true;
         }

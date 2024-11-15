@@ -1,4 +1,4 @@
-﻿namespace Infrastructure.Options;
+﻿namespace Infrastructure.Database.Options;
 
 public class SqlDatabaseOptions
 {

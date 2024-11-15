@@ -2,7 +2,7 @@
 using Domain.Events;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Abstractions;
+namespace Infrastructure.Database.Abstractions;
 
 internal interface IApplicationDbContext
 {

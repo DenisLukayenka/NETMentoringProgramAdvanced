@@ -1,16 +1,16 @@
 ﻿using ApplicationCore.Common.Interfaces;
-using Infrastructure.Abstractions;
-using Infrastructure.Data;
-using Infrastructure.Data.Interceptors;
-using Infrastructure.Data.Repositories;
-using Infrastructure.Options;
+using Infrastructure.Database.Abstractions;
+using Infrastructure.Database.Data;
+using Infrastructure.Database.Data.Interceptors;
+using Infrastructure.Database.Data.Repositories;
+using Infrastructure.Database.Options;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 
-namespace Infrastructure;
+namespace Infrastructure.Database;
 
 public static class DependencyInjection
 {

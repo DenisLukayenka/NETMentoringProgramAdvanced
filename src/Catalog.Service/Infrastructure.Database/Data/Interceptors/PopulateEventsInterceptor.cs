@@ -1,10 +1,10 @@
-﻿using Domain.Entities;
+﻿using System.Text.Json;
+using Domain.Entities;
 using Domain.Events;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
-using System.Text.Json;
 
-namespace Infrastructure.Data.Interceptors;
+namespace Infrastructure.Database.Data.Interceptors;
 
 public class PopulateEventsInterceptor : SaveChangesInterceptor
 {
