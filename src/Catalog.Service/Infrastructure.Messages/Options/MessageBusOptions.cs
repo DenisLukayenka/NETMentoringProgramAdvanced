@@ -1,4 +1,4 @@
-﻿namespace Infrastructure.Database.Options;
+﻿namespace Infrastructure.Messages.Options;
 
 public class MessageBusOptions
 {

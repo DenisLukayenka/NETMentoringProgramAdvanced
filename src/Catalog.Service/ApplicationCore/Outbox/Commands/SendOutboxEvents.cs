@@ -4,15 +4,16 @@ namespace ApplicationCore.Outbox.Commands;
 
 public record SendOutboxEventsCommand() : IRequest;
 
-public class SendOutboxEventsHandler(IOutboxEventsRepository repository) : IRequestHandler<SendOutboxEventsCommand>
+public class SendOutboxEventsHandler(IOutboxEventsRepository repository, IMessageSender messageSender) : IRequestHandler<SendOutboxEventsCommand>
 {
+    // The method does not guarantee one message per one db record
     public async Task Handle(SendOutboxEventsCommand request, CancellationToken cancellationToken)
     {
         var entity = await GetNextUnprocessedEvent(cancellationToken);
 
         while (entity != null)
         {
-            // TODO: Send message to Azure Message Queue
+            await messageSender.SendOutboxEvent(entity, cancellationToken);
 
             await MarkEventAsProcessed(entity, cancellationToken);
             entity = await GetNextUnprocessedEvent(cancellationToken);
