@@ -37,7 +37,11 @@ public static class Registrations
                     clientOptions: new CosmosClientOptions
                     {
                         ConnectionMode = ConnectionMode.Direct,
-                        IdleTcpConnectionTimeout = TimeSpan.FromMinutes(60)
+                        IdleTcpConnectionTimeout = TimeSpan.FromMinutes(60),
+                        UseSystemTextJsonSerializerWithOptions = new System.Text.Json.JsonSerializerOptions()
+                        {
+                            TypeInfoResolver = AppJsonSerializerContext.Default
+                        }
                     }
                 );
 
