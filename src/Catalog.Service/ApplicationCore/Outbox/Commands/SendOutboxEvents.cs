@@ -1,4 +1,5 @@
-﻿using Domain.Events;
+﻿using ApplicationCore.Outbox.Mappings;
+using Domain.Events;
 
 namespace ApplicationCore.Outbox.Commands;
 
@@ -13,7 +14,8 @@ public class SendOutboxEventsHandler(IOutboxEventsRepository repository, IMessag
 
         while (entity != null)
         {
-            await messageSender.SendOutboxEvent(entity, cancellationToken);
+            var message = entity.Map();
+            await messageSender.SendOutboxEvent(message, cancellationToken);
 
             await MarkEventAsProcessed(entity, cancellationToken);
             entity = await GetNextUnprocessedEvent(cancellationToken);

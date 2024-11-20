@@ -1,5 +1,4 @@
-﻿using System.Text.Json;
-using Domain.Entities;
+﻿using Domain.Entities;
 using Domain.Events;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
@@ -37,7 +36,7 @@ public class PopulateEventsInterceptor : SaveChangesInterceptor
             .ChangeTracker
             .Entries<Product>()
             .Where(x => x.State == EntityState.Modified)
-            .Select(x => new ProductUpdatedEvent(JsonSerializer.Serialize(x.Entity)))
+            .Select(x => new ProductUpdatedEvent(x.Entity.Id, x.Entity.Name, x.Entity.Price))
             .ToList();
 
         await context.AddRangeAsync(deletedProductEvents, cancellationToken);

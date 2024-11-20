@@ -4,10 +4,15 @@ public class ProductUpdatedEvent : BaseEvent
 {
     public ProductUpdatedEvent() { }
 
-    public ProductUpdatedEvent(string payload)
+    public ProductUpdatedEvent(int productId, string? name = null, decimal? price = null)
     {
-        Payload = payload;
+        ProductId = productId;
+        Name = name;
+        Price = price;
     }
 
-    public string Payload { get; set; }
+    public int ProductId { get; set; }
+
+    public string? Name { get; set; }
+    public decimal? Price { get; set; }
 }

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Database.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241111184325_AddEventsTable")]
-    partial class AddEventsTable
+    [Migration("20241120174621_Init")]
+    partial class Init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -106,7 +106,7 @@ namespace Infrastructure.Database.Migrations
                     b.Property<bool>("Processed")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime>("ProcessedDate")
+                    b.Property<DateTime?>("ProcessedDate")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
@@ -122,7 +122,7 @@ namespace Infrastructure.Database.Migrations
                 {
                     b.HasBaseType("Domain.Events.BaseEvent");
 
-                    b.Property<int>("ResourceId")
+                    b.Property<int>("ProductId")
                         .HasColumnType("int");
 
                     b.HasDiscriminator().HasValue("ProductDeletedEvent");
@@ -132,9 +132,20 @@ namespace Infrastructure.Database.Migrations
                 {
                     b.HasBaseType("Domain.Events.BaseEvent");
 
-                    b.Property<string>("Payload")
-                        .IsRequired()
+                    b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal?>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.ToTable("Events", t =>
+                        {
+                            t.Property("ProductId")
+                                .HasColumnName("ProductUpdatedEvent_ProductId");
+                        });
 
                     b.HasDiscriminator().HasValue("ProductUpdatedEvent");
                 });

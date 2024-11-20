@@ -119,7 +119,7 @@ namespace Infrastructure.Database.Migrations
                 {
                     b.HasBaseType("Domain.Events.BaseEvent");
 
-                    b.Property<int>("ResourceId")
+                    b.Property<int>("ProductId")
                         .HasColumnType("int");
 
                     b.HasDiscriminator().HasValue("ProductDeletedEvent");
@@ -129,9 +129,20 @@ namespace Infrastructure.Database.Migrations
                 {
                     b.HasBaseType("Domain.Events.BaseEvent");
 
-                    b.Property<string>("Payload")
-                        .IsRequired()
+                    b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal?>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.ToTable("Events", t =>
+                        {
+                            t.Property("ProductId")
+                                .HasColumnName("ProductUpdatedEvent_ProductId");
+                        });
 
                     b.HasDiscriminator().HasValue("ProductUpdatedEvent");
                 });

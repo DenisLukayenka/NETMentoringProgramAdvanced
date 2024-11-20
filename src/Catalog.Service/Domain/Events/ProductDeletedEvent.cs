@@ -8,8 +8,8 @@ public class ProductDeletedEvent : BaseEvent
 
     public ProductDeletedEvent(int id)
     {
-        ResourceId = id;
+        ProductId = id;
     }
 
-    public int ResourceId { get; set; }
+    public int ProductId { get; set; }
 }

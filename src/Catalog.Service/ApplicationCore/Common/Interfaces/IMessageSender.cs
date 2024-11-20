@@ -1,8 +1,8 @@
-﻿using Domain.Events;
+﻿using Lunis.SharedLibs.Catalog.OutboxEvents;
 
 namespace ApplicationCore.Common.Interfaces;
 
 public interface IMessageSender
 {
-    Task SendOutboxEvent(BaseEvent outboxEvent, CancellationToken cancellationToken);
+    Task SendOutboxEvent(BaseMessage message, CancellationToken cancellationToken);
 }

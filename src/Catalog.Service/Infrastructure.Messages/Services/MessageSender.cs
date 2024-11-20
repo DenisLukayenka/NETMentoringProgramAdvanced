@@ -1,23 +1,20 @@
-﻿using ApplicationCore.Common.Interfaces;
+﻿using System.Text.Json;
+using ApplicationCore.Common.Interfaces;
 using Azure.Messaging.ServiceBus;
-using Domain.Events;
+using Lunis.SharedLibs.Catalog.OutboxEvents;
 
 namespace Infrastructure.Messages.Services;
 
 internal class MessageSender(ServiceBusClient busClient) : IMessageSender
 {
-    private static Dictionary<string, string> _eventQueueMap = new()
-    {
-        { nameof(ProductDeletedEvent), nameof(ProductDeletedEvent)},
-        { nameof(ProductUpdatedEvent), nameof(ProductUpdatedEvent)},
-    };
+    private const string CatalogQueueName = "Catalog.Service.OutboxEvents";
 
-    public async Task SendOutboxEvent(BaseEvent outboxEvent, CancellationToken cancellationToken)
+    public async Task SendOutboxEvent(BaseMessage message, CancellationToken cancellationToken)
     {
-        var queueName = _eventQueueMap[outboxEvent.Discriminator];
-        var sender = busClient.CreateSender(queueName);
+        var sender = busClient.CreateSender(CatalogQueueName);
+        var payload = JsonSerializer.Serialize(message);
 
-        var busMessage = new ServiceBusMessage(outboxEvent.Discriminator);
+        var busMessage = new ServiceBusMessage(payload);
 
         await sender.SendMessagesAsync([busMessage], cancellationToken);
     }
