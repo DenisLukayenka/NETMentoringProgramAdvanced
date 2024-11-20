@@ -4,7 +4,7 @@ public class ProductUpdatedEvent : BaseEvent
 {
     public ProductUpdatedEvent() { }
 
-    public ProductUpdatedEvent(int productId, string? name = null, decimal? price = null)
+    public ProductUpdatedEvent(int productId, string name, decimal price)
     {
         ProductId = productId;
         Name = name;
@@ -13,6 +13,6 @@ public class ProductUpdatedEvent : BaseEvent
 
     public int ProductId { get; set; }
 
-    public string? Name { get; set; }
-    public decimal? Price { get; set; }
+    public string Name { get; set; }
+    public decimal Price { get; set; }
 }

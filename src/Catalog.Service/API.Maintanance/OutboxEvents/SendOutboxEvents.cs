@@ -9,7 +9,7 @@ public class SendOutboxEvents(ILogger<SendOutboxEvents> logger, IMediator sender
     {
         logger.LogInformation("{FunctionName} was called", nameof(SendOutboxEvents));
 
-        var command = new SendOutboxEventsCommand();
+        var command = new SendOutboxMessagesCommand();
         await sender.Send(command);
 
         if (myTimer.ScheduleStatus is not null)

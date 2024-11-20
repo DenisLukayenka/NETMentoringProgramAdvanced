@@ -39,7 +39,10 @@ public class PopulateEventsInterceptor : SaveChangesInterceptor
             .Select(x => new ProductUpdatedEvent(x.Entity.Id, x.Entity.Name, x.Entity.Price))
             .ToList();
 
-        await context.AddRangeAsync(deletedProductEvents, cancellationToken);
-        await context.AddRangeAsync(updatedProductEvents, cancellationToken);
+        if (deletedProductEvents.Count > 0)
+            await context.AddRangeAsync(deletedProductEvents, cancellationToken);
+
+        if (updatedProductEvents.Count > 0)
+            await context.AddRangeAsync(updatedProductEvents, cancellationToken);
     }
 }

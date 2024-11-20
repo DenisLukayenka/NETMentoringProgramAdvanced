@@ -1,21 +1,22 @@
 ﻿using ApplicationCore.Outbox.Mappings;
 using Domain.Events;
+using Lunis.SharedLibs.Catalog.OutboxMessages;
 
 namespace ApplicationCore.Outbox.Commands;
 
-public record SendOutboxEventsCommand() : IRequest;
+public record SendOutboxMessagesCommand() : IRequest;
 
-public class SendOutboxEventsHandler(IOutboxEventsRepository repository, IMessageSender messageSender) : IRequestHandler<SendOutboxEventsCommand>
+public class SendOutboxMessagesHandler(IOutboxEventsRepository repository, IMessageSender messageSender) : IRequestHandler<SendOutboxMessagesCommand>
 {
     // The method does not guarantee one message per one db record
-    public async Task Handle(SendOutboxEventsCommand request, CancellationToken cancellationToken)
+    public async Task Handle(SendOutboxMessagesCommand request, CancellationToken cancellationToken)
     {
         var entity = await GetNextUnprocessedEvent(cancellationToken);
 
         while (entity != null)
         {
             var message = entity.Map();
-            await messageSender.SendOutboxEvent(message, cancellationToken);
+            await messageSender.SendMessage(Constants.ProductsQueueName, message, cancellationToken);
 
             await MarkEventAsProcessed(entity, cancellationToken);
             entity = await GetNextUnprocessedEvent(cancellationToken);

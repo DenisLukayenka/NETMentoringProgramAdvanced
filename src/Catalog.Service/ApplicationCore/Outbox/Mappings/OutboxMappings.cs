@@ -1,5 +1,5 @@
 ﻿using Domain.Events;
-using OutboxEvents = Lunis.SharedLibs.Catalog.OutboxEvents;
+using OutboxEvents = Lunis.SharedLibs.Catalog.OutboxMessages;
 
 namespace ApplicationCore.Outbox.Mappings;
 
@@ -16,7 +16,7 @@ internal static class OutboxMappings
         throw new InvalidCastException("Unsupported Outbox event object received.");
     }
 
-    public static OutboxEvents.ProductUpdatedEvent Map(this ProductUpdatedEvent outboxEvent)
+    public static OutboxEvents.ProductUpdatedMessage Map(this ProductUpdatedEvent outboxEvent)
         => new()
         {
             Date = outboxEvent.CreatedDate,
@@ -25,7 +25,7 @@ internal static class OutboxMappings
             Price = outboxEvent.Price
         };
 
-    public static OutboxEvents.ProductDeletedEvent Map(this ProductDeletedEvent outboxEvent)
+    public static OutboxEvents.ProductDeletedMessage Map(this ProductDeletedEvent outboxEvent)
         => new()
         {
             Date = outboxEvent.CreatedDate,
