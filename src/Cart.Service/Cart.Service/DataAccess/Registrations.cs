@@ -47,7 +47,7 @@ public static class Registrations
 
                 return client;
             })
-            .AddScoped<ICartRepository, CartRepository>();
+            .AddSingleton<ICartRepository, CartRepository>();
 
         return services;
     }
