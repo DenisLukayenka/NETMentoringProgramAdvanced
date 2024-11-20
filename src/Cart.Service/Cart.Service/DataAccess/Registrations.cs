@@ -15,7 +15,7 @@ namespace Cart.Service.DataAccess;
 
 public static class Registrations
 {
-    private const string DbName = "mentoring-shop";
+    public const string DbName = "mentoring-shop";
 
     public static IServiceCollection ConfigureDataAccessServices(this IServiceCollection services, IConfiguration configuration)
     {
@@ -45,20 +45,9 @@ public static class Registrations
                     }
                 );
 
-                var databaseResponse = client.CreateDatabaseIfNotExistsAsync(DbName, cancellationToken: default).GetAwaiter().GetResult();
-                CartRepository.InitRepository(databaseResponse.Database);
-
                 return client;
             })
-            .AddScoped<ICartRepository, CartRepository>(sp =>
-            {
-                var cosmosClient = sp.GetRequiredService<CosmosClient>();
-                var container = cosmosClient
-                    .GetDatabase(DbName)
-                    .GetContainer(CartRepository.ContainerName);
-
-                return new CartRepository(container);
-            });
+            .AddScoped<ICartRepository, CartRepository>();
 
         return services;
     }

@@ -2,12 +2,12 @@ using ApplicationCore.Outbox.Commands;
 
 namespace API.Maintanance.OutboxEvents;
 
-public class SendOutboxEvents(ILogger<SendOutboxEvents> logger, IMediator sender)
+public class SendOutboxMessages(ILogger<SendOutboxMessages> logger, IMediator sender)
 {
-    [Function("SendOutboxEvents")]
-    public async Task<IActionResult> Run([TimerTrigger("0 */5 * * * *")] TimerInfo myTimer)
+    [Function("SendOutboxMessages")]
+    public async Task<IActionResult> Run([TimerTrigger("0 */2 * * * *")] TimerInfo myTimer)
     {
-        logger.LogInformation("{FunctionName} was called", nameof(SendOutboxEvents));
+        logger.LogInformation("{FunctionName} was called", nameof(SendOutboxMessages));
 
         var command = new SendOutboxMessagesCommand();
         await sender.Send(command);
