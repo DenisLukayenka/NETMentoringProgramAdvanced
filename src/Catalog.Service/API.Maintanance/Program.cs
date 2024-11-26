@@ -13,10 +13,14 @@ var host = new HostBuilder()
         services.AddApplicationInsightsTelemetryWorkerService();
         services.ConfigureFunctionsApplicationInsights();
 
-        services.ConfigureInfrastructureServices(
-            context.Configuration, configuration => services.Configure<SqlDatabaseOptions>(configuration.Bind));
-        services.ConfigureInfrastructureMessageBusServices(
-            () => services.Configure<MessageBusOptions>(context.Configuration.Bind));
+        var messageBusOptions = new MessageBusOptions();
+        context.Configuration.Bind(messageBusOptions);
+
+        var sqlOptions = new SqlDatabaseOptions();
+        context.Configuration.Bind(sqlOptions);
+
+        services.ConfigureInfrastructureServices(sqlOptions);
+        services.ConfigureInfrastructureMessageBusServices(messageBusOptions);
 
         services.ConfigureAppServices();
     })
