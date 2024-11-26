@@ -12,14 +12,9 @@ on:
 env:
   AZURE_FUNCTIONAPP_PACKAGE_PATH: 'src/Cart.Service/' # set this to the path to your web app project, defaults to the repository root
   DOTNET_VERSION: '8' # set this to the dotnet version to use
-  APP_LOCATION: '/src/Cart.Service/'
 
 jobs:
   build-and-deploy:
-    defaults:
-      run:
-        working-directory: src/Cart.Service
-
     runs-on: ubuntu-latest
     permissions:
       id-token: write #This is required for requesting the JWT
