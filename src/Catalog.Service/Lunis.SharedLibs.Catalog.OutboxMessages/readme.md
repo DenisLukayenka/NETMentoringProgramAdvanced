@@ -1,0 +1,1 @@
+﻿Shared package for message bus events from Catalog service.

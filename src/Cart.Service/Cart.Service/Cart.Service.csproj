@@ -12,11 +12,17 @@
     <EnableConfigurationBindingGenerator>true</EnableConfigurationBindingGenerator>
     <EnableRequestDelegateGenerator>true</EnableRequestDelegateGenerator>
     <AssemblyVersion>2.1</AssemblyVersion>
+    <UserSecretsId>fe7beade-4b9f-4041-834d-702a209e8081</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="8.1.0" />
+    <PackageReference Include="Azure.Identity" Version="1.13.1" />
+    <PackageReference Include="Azure.Messaging.ServiceBus" Version="7.18.2" />
     <PackageReference Include="FluentValidation" Version="11.10.0" />
+    <PackageReference Include="Lunis.SharedLibs.Catalog.OutboxMessages" Version="1.0.1" />
+    <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.45.2" />
+    <PackageReference Include="Microsoft.Extensions.Azure" Version="1.8.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="8.0.2" />
     <PackageReference Include="StackExchange.Redis" Version="2.8.16" />
     <PackageReference Include="StackExchange.Redis.Extensions.System.Text.Json" Version="10.2.0" />

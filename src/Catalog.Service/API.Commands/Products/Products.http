@@ -7,28 +7,28 @@ POST {{function_url}}/products
 Content-Type: application/json
 
 {
-  "name": "Test product",
-  "description": "Test description",
+  "name": "Test product 2",
+  "description": "Test description 2",
   "image": null,
-  "categoryId": 2,
+  "categoryId": 1,
   "price": 5,
-  "amount": 2
+  "amount": 1
 }
 
 ###
 # @name UpdateProduct
-PUT {{function_url}}/products/2
+PUT {{function_url}}/products/1
 Content-Type: application/json
 
 {
   "name": "New product",
   "description": "New description",
   "image": "http://localhost/image.png",
-  "categoryId": 2,
+  "categoryId": 1,
   "price": 10,
   "amount": 1
 }
 
 ###
 # @name DeleteProduct
-DELETE {{function_url}}/products/1
+DELETE {{function_url}}/products/2

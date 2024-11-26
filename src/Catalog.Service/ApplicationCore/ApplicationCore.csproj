@@ -22,5 +22,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj" />
+    <ProjectReference Include="..\Lunis.SharedLibs.Catalog.OutboxMessages\Lunis.SharedLibs.Catalog.OutboxMessages.csproj" />
   </ItemGroup>
 </Project>

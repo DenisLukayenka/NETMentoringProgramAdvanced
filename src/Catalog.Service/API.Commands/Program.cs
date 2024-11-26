@@ -1,6 +1,6 @@
 using ApplicationCore;
-using Infrastructure;
-using Infrastructure.Options;
+using Infrastructure.Database;
+using Infrastructure.Database.Options;
 using Microsoft.Extensions.Configuration;
 
 var host = new HostBuilder()
@@ -10,8 +10,11 @@ var host = new HostBuilder()
         services.AddApplicationInsightsTelemetryWorkerService();
         services.ConfigureFunctionsApplicationInsights();
 
+        var sqlOptions = new SqlDatabaseOptions();
+        context.Configuration.Bind(sqlOptions);
+
         services.ConfigureAppServices();
-        services.ConfigureInfrastructureServices(context.Configuration, configuration => services.Configure<SqlDatabaseOptions>(configuration.Bind));
+        services.ConfigureInfrastructureServices(sqlOptions);
     })
     .Build();
 

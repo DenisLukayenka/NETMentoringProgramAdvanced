@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>Denis.Lukayenka</authors>
+    <owners>Denis.Lukayenka</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Shared package for message bus outbox events from Catalog service.</description>
+    <copyright>$copyright$</copyright>
+    <releaseNotes>$releaseNotes$</releaseNotes>
+  </metadata>
+</package>
