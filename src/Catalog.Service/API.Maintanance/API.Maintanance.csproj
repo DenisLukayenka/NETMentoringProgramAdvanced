@@ -6,7 +6,6 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <EnableConfigurationBindingGenerator>true</EnableConfigurationBindingGenerator>
-    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <PublishReadyToRun>true</PublishReadyToRun>
     <PublishReadyToRunEmitSymbols>true</PublishReadyToRunEmitSymbols>
     <UserSecretsId>b0f1f327-f54b-4e7f-bac5-c071a4bd31ad</UserSecretsId>
