@@ -14,7 +14,7 @@ internal class OutboxMessageListener(
     private const int NotFoundMessageDelayMilliseconds = 10_000;
     private readonly ServiceBusReceiver receiver = busClient.CreateReceiver(Constants.ProductsQueueName);
 
-    private static JsonSerializerOptions _serializationOptions = new JsonSerializerOptions()
+    private static JsonSerializerOptions _serializationOptions = new()
     {
         TypeInfoResolver = AppJsonSerializerContext.Default
     };

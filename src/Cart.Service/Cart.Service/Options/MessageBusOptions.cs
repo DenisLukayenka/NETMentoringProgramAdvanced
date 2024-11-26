@@ -4,5 +4,5 @@ public class MessageBusOptions
 {
     public const string Position = "MessageBus";
 
-    public required string ConnectionString { get; set; }
+    public string ConnectionString { get; set; }
 }
