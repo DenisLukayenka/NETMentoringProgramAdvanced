@@ -22,11 +22,8 @@ public static class Registrations
         services.Configure<RedisOptions>(configuration.GetSection(RedisOptions.Position));
         services.Configure<CosmosDbOptions>(configuration.GetSection(CosmosDbOptions.Position));
 
-        // Not important for now
-        //services.RegisterRedisCache();
-
         services
-            .AddSingleton<CosmosClient>(sp =>
+            .AddSingleton(sp =>
             {
                 var cosmosDbOptions = sp.GetRequiredService<IOptions<CosmosDbOptions>>().Value;
 
@@ -40,10 +37,9 @@ public static class Registrations
                         IdleTcpConnectionTimeout = TimeSpan.FromMinutes(60),
                         UseSystemTextJsonSerializerWithOptions = new System.Text.Json.JsonSerializerOptions()
                         {
-                            TypeInfoResolver = AppJsonSerializerContext.Default
-                        }
-                    }
-                );
+                            TypeInfoResolver = AppJsonSerializerContext.Default,
+                        },
+                    });
 
                 return client;
             })
@@ -52,7 +48,9 @@ public static class Registrations
         return services;
     }
 
+#pragma warning disable IDE0051 // Remove unused private members
     private static IServiceCollection RegisterRedisCache(this IServiceCollection services)
+#pragma warning restore IDE0051 // Remove unused private members
     {
         services
             .AddSingleton<IRedisConnectionPoolManager>(sp =>
@@ -73,7 +71,7 @@ public static class Registrations
                 var connectionManager = sp.GetRequiredService<IRedisConnectionPoolManager>();
                 var serializer = new SystemTextJsonSerializer(new System.Text.Json.JsonSerializerOptions()
                 {
-                    TypeInfoResolver = AppJsonSerializerContext.Default
+                    TypeInfoResolver = AppJsonSerializerContext.Default,
                 });
 
                 var database = new RedisDatabase(
@@ -83,7 +81,7 @@ public static class Registrations
                     {
                         Mode = ServerEnumerationStrategy.ModeOptions.Single,
                         TargetRole = ServerEnumerationStrategy.TargetRoleOptions.Any,
-                        UnreachableServerAction = ServerEnumerationStrategy.UnreachableServerActionOptions.Throw
+                        UnreachableServerAction = ServerEnumerationStrategy.UnreachableServerActionOptions.Throw,
                     },
                     dbNumber: redisOptions.DbNumber,
                     maxvalueLength: redisOptions.MaxValueLength,

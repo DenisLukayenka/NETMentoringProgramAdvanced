@@ -2,7 +2,9 @@
 
 internal class ModelAction
 {
-    public string Rel { get; set; }
-    public string Uri { get; set; }
-    public string Method { get; set; }
+    public required string Rel { get; set; }
+
+    public required string Uri { get; set; }
+
+    public required string Method { get; set; }
 }
