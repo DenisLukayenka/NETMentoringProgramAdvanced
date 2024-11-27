@@ -14,6 +14,7 @@ internal static class VersioningRegistrations
                 options.AssumeDefaultVersionWhenUnspecified = true;
                 options.ApiVersionReader = new UrlSegmentApiVersionReader();
             })
+
             // ugly, we need reference on Asp.Versioning.Mvc
             // But seems there is no workaround for versioned OpenAPI specs and Swagger
             // https://github.com/dotnet/aspnet-api-versioning/issues/830#issuecomment-1329373598

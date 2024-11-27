@@ -16,5 +16,4 @@ namespace Cart.Service.Platform.Serialization;
 [JsonSerializable(typeof(ProductDeletedMessage))]
 internal partial class AppJsonSerializerContext : JsonSerializerContext
 {
-
 }

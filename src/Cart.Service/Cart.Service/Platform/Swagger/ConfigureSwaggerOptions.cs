@@ -82,5 +82,4 @@ public class ConfigureSwaggerOptions(IApiVersionDescriptionProvider provider) : 
 
         return info;
     }
-
 }
