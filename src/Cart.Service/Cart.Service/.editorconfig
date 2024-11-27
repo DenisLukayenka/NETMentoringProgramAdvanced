@@ -44,6 +44,8 @@ dotnet_diagnostic.IDE0290.severity = suggestion
 # IDE0028: Simplify collection initialization
 dotnet_diagnostic.IDE0028.severity = suggestion
 
+dotnet_diagnostic.ca1812.severity = none
+
 #### Core EditorConfig Options ####
 
 # Indentation and spacing
@@ -346,6 +348,8 @@ dotnet_diagnostic.CA1062.severity = suggestion
 
 # CA1819: Properties should not return arrays
 dotnet_diagnostic.CA1819.severity = silent
+
+dotnet_diagnostic.ca1724.severity = silent
 
 [*.{cs,vb}]
 dotnet_style_coalesce_expression = true:suggestion
