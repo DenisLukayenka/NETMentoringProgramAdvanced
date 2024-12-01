@@ -6,10 +6,15 @@ namespace Cart.Service.BusinessLogic.Services;
 
 public class OutboxMessageHandler(ICartRepository repository) : IOutboxMessageHandler
 {
-    public async Task Handle(BaseMessage? message, CancellationToken cancellationToken)
+    public Task Handle(BaseMessage? message, CancellationToken cancellationToken)
     {
         ArgumentNullException.ThrowIfNull(message, nameof(message));
 
+        return HandleAsync(message, cancellationToken);
+    }
+
+    private async Task HandleAsync(BaseMessage message, CancellationToken cancellationToken)
+    {
         switch (message)
         {
             case ProductDeletedMessage deleteMessage:

@@ -28,7 +28,7 @@ internal class CartItemService(
 
         if (currentCart is null)
         {
-            logger.LogInformation("Cart with id: {CartId} was not found. Initializing empty cart.", cartId);
+            logger.LogInformation("Cart with cartItemId: {CartId} was not found. Initializing empty cart.", cartId);
             currentCart = InitEmptyCart(cartId, cartItem);
         }
         else
@@ -65,7 +65,7 @@ internal class CartItemService(
 
     #endregion
 
-    public async Task Remove(string cartId, int id, CancellationToken cancellationToken)
+    public async Task Remove(string cartId, int cartItemId, CancellationToken cancellationToken)
     {
         logger.LogInformation("{MethodName} method was called", nameof(Remove));
 
@@ -73,7 +73,7 @@ internal class CartItemService(
         if (currentCart is null)
             return;
 
-        var cartItem = currentCart.Items.FirstOrDefault(x => x.ItemId == id);
+        var cartItem = currentCart.Items.FirstOrDefault(x => x.ItemId == cartItemId);
         if (cartItem is null)
             return;
 
@@ -81,7 +81,7 @@ internal class CartItemService(
 
         if (cartItem.Quantity <= 0)
         {
-            currentCart.Items = currentCart.Items.Where(x => x.ItemId != id).ToArray();
+            currentCart.Items = currentCart.Items.Where(x => x.ItemId != cartItemId).ToArray();
         }
 
         await repository.Upsert(cartId, currentCart, cancellationToken);
