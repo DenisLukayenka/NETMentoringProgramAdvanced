@@ -17,12 +17,12 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/API.Queries/Categories/ListCategories.cs",
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/API.Commands/Products/DeleteProduct.cs",
                 "region": {
-                  "startLine": 14,
-                  "startColumn": 32,
-                  "endLine": 14,
-                  "endColumn": 89
+                  "startLine": 16,
+                  "startColumn": 15,
+                  "endLine": 16,
+                  "endColumn": 54
                 }
               }
             }
@@ -38,12 +38,75 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/API.Queries/Products/ListProducts.cs",
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/API.Commands/Categories/CreateCategory.cs",
                 "region": {
-                  "startLine": 18,
+                  "startLine": 15,
                   "startColumn": 30,
-                  "endLine": 18,
-                  "endColumn": 118
+                  "endLine": 15,
+                  "endColumn": 69
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA2007",
+          "level": "note",
+          "message": "Consider calling ConfigureAwait on the awaited task",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/API.Commands/Categories/DeleteCategory.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 15,
+                  "endLine": 16,
+                  "endColumn": 54
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA2007",
+          "level": "note",
+          "message": "Consider calling ConfigureAwait on the awaited task",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/API.Commands/Categories/UpdateCategory.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 15,
+                  "endLine": 21,
+                  "endColumn": 54
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA2007",
+          "level": "note",
+          "message": "Consider calling ConfigureAwait on the awaited task",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/API.Commands/Products/UpdateProduct.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 15,
+                  "endLine": 21,
+                  "endColumn": 54
                 }
               }
             }
@@ -55,16 +118,58 @@
         {
           "ruleId": "CA1062",
           "level": "note",
-          "message": "In externally visible method 'Task<IActionResult> ListProducts.Run(HttpRequest req, int? categoryId, CancellationToken cancellationToken)', validate parameter 'req' is non-null before using it. If appropriate, throw an 'ArgumentNullException' when the argument is 'null'.",
+          "message": "In externally visible method 'Task<IActionResult> UpdateCategory.Run(HttpRequest req, UpdateCategoryCommand command, int categoryId, CancellationToken cancellationToken)', validate parameter 'command' is non-null before using it. If appropriate, throw an 'ArgumentNullException' when the argument is 'null'.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/API.Queries/Products/ListProducts.cs",
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/API.Commands/Categories/UpdateCategory.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 19,
+                  "endLine": 16,
+                  "endColumn": 26
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1062",
+          "level": "note",
+          "message": "In externally visible method 'Task<IActionResult> UpdateProduct.Run(HttpRequest req, UpdateProductCommand command, int productId, CancellationToken cancellationToken)', validate parameter 'command' is non-null before using it. If appropriate, throw an 'ArgumentNullException' when the argument is 'null'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/API.Commands/Products/UpdateProduct.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 19,
+                  "endLine": 16,
+                  "endColumn": 26
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA2007",
+          "level": "note",
+          "message": "Consider calling ConfigureAwait on the awaited task",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/API.Commands/Products/CreateProduct.cs",
                 "region": {
                   "startLine": 15,
-                  "startColumn": 41,
+                  "startColumn": 29,
                   "endLine": 15,
-                  "endColumn": 44
+                  "endColumn": 68
                 }
               }
             }

@@ -1031,7 +1031,8 @@ SelectMany 
 )"" 
 ;"" 
 }## 
-}$$ ð
+}$$ £
+
  /mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/ApplicationCore/Common/Exceptions/EntityNotFoundException.cs
 	namespace 	
 ApplicationCore
@@ -1041,54 +1042,67 @@ SelectMany 
 .  !
 
 Exceptions! +
-;+ ,
-public 
-class #
-EntityNotFoundException $
-:% &
-	Exception' 0
-{ 
-public 
+;+ ,
+[ 
+Serializable 
+] 
+public 
+class #
+EntityNotFoundException $
+:% &
+	Exception' 0
+{ 
+public 
 #
-EntityNotFoundException "
-(" #
-)# $
-: 	
-this
+EntityNotFoundException "
+(" #
+)# $
+: 	
+this
  
-( 
-$str &
-)& '
-{ 
-} 
-public
-
- 
+( 
+$str &
+)& '
+{ 
+}		 
+public 
 #
-EntityNotFoundException
-
- "
-(
-
-" #
-string
-
-# )
-message
-
-* 1
-)
-
-1 2
-: 	
-base
+EntityNotFoundException "
+(" #
+string# )
+message* 1
+)1 2
+: 	
+base
  
-( 
-message 
-) 
-{ 
-} 
-} ¯	
+( 
+message 
+) 
+{ 
+} 
+public 
+#
+EntityNotFoundException "
+(" #
+string# )
+?) *
+message+ 2
+,2 3
+	Exception4 =
+?= >
+innerException? M
+)M N
+: 	
+base
+ 
+( 
+message 
+, 
+innerException &
+)& '
+{ 
+} 
+} ¯	
 ™/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/ApplicationCore/Common/Extensions/StringExtensions.cs
 	namespace 	
 ApplicationCore

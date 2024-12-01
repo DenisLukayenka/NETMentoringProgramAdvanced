@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ProjectInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
-  <ProjectName>Domain</ProjectName>
+  <ProjectName>Lunis.SharedLibs.Catalog.OutboxMessages</ProjectName>
   <ProjectLanguage>C#</ProjectLanguage>
   <ProjectType>Product</ProjectType>
-  <ProjectGuid>71828c3d-4412-45c6-ac8d-f2ecb39834a4</ProjectGuid>
-  <FullPath>/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Domain/Domain.csproj</FullPath>
+  <ProjectGuid>165c58c3-c1ba-4df1-b66a-c3729a113626</ProjectGuid>
+  <FullPath>/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Lunis.SharedLibs.Catalog.OutboxMessages/Lunis.SharedLibs.Catalog.OutboxMessages.csproj</FullPath>
   <IsExcluded>false</IsExcluded>
   <AnalysisResults>
     <AnalysisResult Id="FilesToAnalyze" Location="/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/.sonarqube/conf/0/FilesToAnalyze.txt" />

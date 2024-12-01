@@ -4,9 +4,11 @@
   <ProjectLanguage>C#</ProjectLanguage>
   <ProjectType>Product</ProjectType>
   <ProjectGuid>00000000-0000-0000-0000-000000000000</ProjectGuid>
-  <FullPath>/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/API.Queries/obj/Debug/net8.0/WorkerExtensions/WorkerExtensions.csproj</FullPath>
+  <FullPath>/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/API.Commands/obj/Debug/net8.0/WorkerExtensions/WorkerExtensions.csproj</FullPath>
   <IsExcluded>true</IsExcluded>
-  <AnalysisResults />
+  <AnalysisResults>
+    <AnalysisResult Id="FilesToAnalyze" Location="/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/.sonarqube/conf/8/FilesToAnalyze.txt" />
+  </AnalysisResults>
   <AnalysisSettings />
   <Configuration>Release</Configuration>
   <Platform>AnyCPU</Platform>

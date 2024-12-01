@@ -19,9 +19,9 @@
               "resultFile": {
                 "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Infrastructure.Database/Data/Repositories/ProductRepository.cs",
                 "region": {
-                  "startLine": 21,
+                  "startLine": 13,
                   "startColumn": 15,
-                  "endLine": 21,
+                  "endLine": 13,
                   "endColumn": 58
                 }
               }
@@ -40,9 +40,9 @@
               "resultFile": {
                 "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Infrastructure.Database/Data/Repositories/ProductRepository.cs",
                 "region": {
-                  "startLine": 13,
+                  "startLine": 21,
                   "startColumn": 15,
-                  "endLine": 13,
+                  "endLine": 21,
                   "endColumn": 58
                 }
               }
@@ -55,37 +55,16 @@
         {
           "ruleId": "CA1062",
           "level": "note",
-          "message": "In externally visible method 'void ProductConfiguration.Configure(EntityTypeBuilder<Product> builder)', validate parameter 'builder' is non-null before using it. If appropriate, throw an 'ArgumentNullException' when the argument is 'null'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Infrastructure.Database/Data/Configurations/ProductConfiguration.cs",
-                "region": {
-                  "startLine": 11,
-                  "startColumn": 9,
-                  "endLine": 11,
-                  "endColumn": 16
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CA1062",
-          "level": "note",
-          "message": "In externally visible method 'ValueTask<InterceptionResult<int>> PopulateEventsInterceptor.SavingChangesAsync(DbContextEventData eventData, InterceptionResult<int> result, CancellationToken cancellationToken = default(CancellationToken))', validate parameter 'eventData' is non-null before using it. If appropriate, throw an 'ArgumentNullException' when the argument is 'null'.",
+          "message": "In externally visible method 'InterceptionResult<int> PopulateEventsInterceptor.SavingChanges(DbContextEventData eventData, InterceptionResult<int> result)', validate parameter 'eventData' is non-null before using it. If appropriate, throw an 'ArgumentNullException' when the argument is 'null'.",
           "locations": [
             {
               "resultFile": {
                 "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Infrastructure.Database/Data/Interceptors/PopulateEventsInterceptor.cs",
                 "region": {
-                  "startLine": 19,
-                  "startColumn": 35,
-                  "endLine": 19,
-                  "endColumn": 44
+                  "startLine": 12,
+                  "startColumn": 29,
+                  "endLine": 12,
+                  "endColumn": 38
                 }
               }
             }
@@ -139,16 +118,37 @@
         {
           "ruleId": "CA1062",
           "level": "note",
-          "message": "In externally visible method 'InterceptionResult<int> PopulateEventsInterceptor.SavingChanges(DbContextEventData eventData, InterceptionResult<int> result)', validate parameter 'eventData' is non-null before using it. If appropriate, throw an 'ArgumentNullException' when the argument is 'null'.",
+          "message": "In externally visible method 'void CategoryConfiguration.Configure(EntityTypeBuilder<Category> builder)', validate parameter 'builder' is non-null before using it. If appropriate, throw an 'ArgumentNullException' when the argument is 'null'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Infrastructure.Database/Data/Configurations/CategoryConfiguration.cs",
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 9,
+                  "endLine": 11,
+                  "endColumn": 16
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1062",
+          "level": "note",
+          "message": "In externally visible method 'ValueTask<InterceptionResult<int>> PopulateEventsInterceptor.SavingChangesAsync(DbContextEventData eventData, InterceptionResult<int> result, CancellationToken cancellationToken = default(CancellationToken))', validate parameter 'eventData' is non-null before using it. If appropriate, throw an 'ArgumentNullException' when the argument is 'null'.",
           "locations": [
             {
               "resultFile": {
                 "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Infrastructure.Database/Data/Interceptors/PopulateEventsInterceptor.cs",
                 "region": {
-                  "startLine": 12,
-                  "startColumn": 29,
-                  "endLine": 12,
-                  "endColumn": 38
+                  "startLine": 19,
+                  "startColumn": 35,
+                  "endLine": 19,
+                  "endColumn": 44
                 }
               }
             }
@@ -166,9 +166,72 @@
               "resultFile": {
                 "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Infrastructure.Database/Data/Repositories/ProductRepository.cs",
                 "region": {
-                  "startLine": 62,
+                  "startLine": 52,
+                  "startColumn": 30,
+                  "endLine": 54,
+                  "endColumn": 45
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1062",
+          "level": "note",
+          "message": "In externally visible method 'void ProductConfiguration.Configure(EntityTypeBuilder<Product> builder)', validate parameter 'builder' is non-null before using it. If appropriate, throw an 'ArgumentNullException' when the argument is 'null'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Infrastructure.Database/Data/Configurations/ProductConfiguration.cs",
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 9,
+                  "endLine": 11,
+                  "endColumn": 16
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1125",
+          "level": "warning",
+          "message": "Remove the unnecessary Boolean literal(s).",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Infrastructure.Database/Data/Repositories/OutboxEventsRepository.cs",
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 54,
+                  "endLine": 15,
+                  "endColumn": 59
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA2007",
+          "level": "note",
+          "message": "Consider calling ConfigureAwait on the awaited task",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Infrastructure.Database/Data/Repositories/CategoryRepository.cs",
+                "region": {
+                  "startLine": 13,
                   "startColumn": 15,
-                  "endLine": 62,
+                  "endLine": 13,
                   "endColumn": 58
                 }
               }
@@ -206,75 +269,12 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Infrastructure.Database/Data/Repositories/CategoryRepository.cs",
-                "region": {
-                  "startLine": 13,
-                  "startColumn": 15,
-                  "endLine": 13,
-                  "endColumn": 58
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1125",
-          "level": "warning",
-          "message": "Remove the unnecessary Boolean literal(s).",
-          "locations": [
-            {
-              "resultFile": {
                 "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Infrastructure.Database/Data/Repositories/OutboxEventsRepository.cs",
                 "region": {
-                  "startLine": 15,
-                  "startColumn": 54,
+                  "startLine": 12,
+                  "startColumn": 28,
                   "endLine": 15,
-                  "endColumn": 59
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CA1062",
-          "level": "note",
-          "message": "In externally visible method 'void CategoryConfiguration.Configure(EntityTypeBuilder<Category> builder)', validate parameter 'builder' is non-null before using it. If appropriate, throw an 'ArgumentNullException' when the argument is 'null'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Infrastructure.Database/Data/Configurations/CategoryConfiguration.cs",
-                "region": {
-                  "startLine": 11,
-                  "startColumn": 9,
-                  "endLine": 11,
-                  "endColumn": 16
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CA2007",
-          "level": "note",
-          "message": "Consider calling ConfigureAwait on the awaited task",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Infrastructure.Database/Data/Repositories/ProductRepository.cs",
-                "region": {
-                  "startLine": 52,
-                  "startColumn": 30,
-                  "endLine": 54,
-                  "endColumn": 45
+                  "endColumn": 79
                 }
               }
             }
@@ -334,27 +334,6 @@
               "resultFile": {
                 "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Infrastructure.Database/Data/Repositories/CategoryRepository.cs",
                 "region": {
-                  "startLine": 53,
-                  "startColumn": 15,
-                  "endLine": 53,
-                  "endColumn": 58
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CA2007",
-          "level": "note",
-          "message": "Consider calling ConfigureAwait on the awaited task",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Infrastructure.Database/Data/Repositories/CategoryRepository.cs",
-                "region": {
                   "startLine": 43,
                   "startColumn": 30,
                   "endLine": 45,
@@ -374,12 +353,33 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Infrastructure.Database/Data/Repositories/OutboxEventsRepository.cs",
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Infrastructure.Database/Data/Repositories/ProductRepository.cs",
                 "region": {
-                  "startLine": 12,
-                  "startColumn": 28,
-                  "endLine": 15,
-                  "endColumn": 79
+                  "startLine": 62,
+                  "startColumn": 15,
+                  "endLine": 62,
+                  "endColumn": 58
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA2007",
+          "level": "note",
+          "message": "Consider calling ConfigureAwait on the awaited task",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Infrastructure.Database/Data/Repositories/CategoryRepository.cs",
+                "region": {
+                  "startLine": 53,
+                  "startColumn": 15,
+                  "endLine": 53,
+                  "endColumn": 58
                 }
               }
             }
@@ -475,16 +475,16 @@
         {
           "ruleId": "CA1852",
           "level": "note",
-          "message": "Type 'ApplicationDbContext' can be sealed because it has no subtypes in its containing assembly and is not externally visible",
+          "message": "Type 'ProductRepository' can be sealed because it has no subtypes in its containing assembly and is not externally visible",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Infrastructure.Database/Data/ApplicationDbContext.cs",
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Infrastructure.Database/Data/Repositories/ProductRepository.cs",
                 "region": {
-                  "startLine": 9,
+                  "startLine": 8,
                   "startColumn": 16,
-                  "endLine": 9,
-                  "endColumn": 36
+                  "endLine": 8,
+                  "endColumn": 33
                 }
               }
             }
@@ -496,16 +496,16 @@
         {
           "ruleId": "CA1852",
           "level": "note",
-          "message": "Type 'ProductRepository' can be sealed because it has no subtypes in its containing assembly and is not externally visible",
+          "message": "Type 'ApplicationDbContext' can be sealed because it has no subtypes in its containing assembly and is not externally visible",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Infrastructure.Database/Data/Repositories/ProductRepository.cs",
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Infrastructure.Database/Data/ApplicationDbContext.cs",
                 "region": {
-                  "startLine": 8,
+                  "startLine": 9,
                   "startColumn": 16,
-                  "endLine": 8,
-                  "endColumn": 33
+                  "endLine": 9,
+                  "endColumn": 36
                 }
               }
             }

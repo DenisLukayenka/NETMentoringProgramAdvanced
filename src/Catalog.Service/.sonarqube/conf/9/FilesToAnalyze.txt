@@ -1,1 +1,1 @@
-﻿/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/API.Commands/obj/Debug/net8.0/WorkerExtensions/obj/Release/net6.0/WorkerExtensions.AssemblyInfo.cs
+﻿/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/API.Queries/obj/Debug/net8.0/WorkerExtensions/obj/Release/net6.0/WorkerExtensions.AssemblyInfo.cs

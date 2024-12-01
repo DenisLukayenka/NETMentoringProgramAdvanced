@@ -1,84 +1,37 @@
-¶
-/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/API.Commands/Categories/CreateCategory.cs
- $ 2B P
-4 : 
-F L #
+Ÿ
+Œ/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/API.Queries/Categories/ListCategories.cs
+ $ 2B P
+4 : 
+F L %
 
 % (
 
-		^ a
+		] `
 
 
-) 0) 0
- +2 C
- " *¬
-/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/API.Commands/Categories/DeleteCategory.cs
- B P
-4 : 
-F L 
+ +F W
+ " ,
+/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/API.Queries/GlobalUsings.csó
+ˆ/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/API.Queries/Products/ListProducts.cs
+ " .B N
+0 6 
+B H #
 
-% (
-
-		q t
+% (
+		m p( +% (
 
 
- 0 :
- +# 4
-  !Ê
-/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/API.Commands/Categories/UpdateCategory.cs
- $ 2B P
-4 : 
-F L 
-
-% (
-
-		n q(
-
-
-) 0   !
-  #
- +# 4ƒ
-€/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/API.Commands/GlobalUsings.cs³
-Š/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/API.Commands/Products/CreateProduct.cs
- # 0B O
-2 8 
-D J "
-
-% (
-
-		\ _
-
-
-( /( /
- +1 B
- " )³
-Š/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/API.Commands/Products/DeleteProduct.cs
- # 0B O
-2 8 
-D J 
-
-% (
-
-		n q
-
-
- / 8
- +# 4
-  !Ç
-Š/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/API.Commands/Products/UpdateProduct.cs
- # 0B O
-2 8 
-D J 
-
-% (
-
-		k n(
-
-
-( /   !
-  !
- +# 4û
-{/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/API.Commands/Program.cs
+ ? I
+ +c t
+ K V
+ X `
+ " *
+ % ' $
+2 5 
+> A# &
+   
+< G ú
+z/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/API.Queries/Program.cs
   
   2
 ! )

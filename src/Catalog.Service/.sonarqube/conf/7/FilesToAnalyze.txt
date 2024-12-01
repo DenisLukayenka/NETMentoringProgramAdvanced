@@ -14,4 +14,3 @@
 /mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/API.Maintanance/obj/Debug/net8.0/functions.metadata
 /mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/API.Maintanance/obj/Debug/net8.0/worker.config.json
 /mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/API.Maintanance/obj/Debug/net8.0/extensions.json
-/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/API.Maintanance/obj/Debug/net8.0/apphost

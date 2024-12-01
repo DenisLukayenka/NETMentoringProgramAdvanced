@@ -14,9 +14,8 @@
 §/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/ApplicationCore/Categories/Queries/ListCategories/ListCategories.cs 8r	
 ‚Ó
 š/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/ApplicationCore/Common/Behaviors/ValidationBehavior.cs 8r
- "#$x‚"·
- /mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/ApplicationCore/Common/Exceptions/EntityNotFoundException.cs 8r
-Á
+ "#$x‚"¼
+ /mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/ApplicationCore/Common/Exceptions/EntityNotFoundException.cs 8r	Á
 ™/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/ApplicationCore/Common/Extensions/StringExtensions.cs 8r
 x‚­
 œ/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/ApplicationCore/Common/Interfaces/ICategoryRepository.csr
