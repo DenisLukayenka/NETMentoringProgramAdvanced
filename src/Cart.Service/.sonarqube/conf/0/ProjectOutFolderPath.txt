@@ -1,0 +1,1 @@
+/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/.sonarqube/out/0
