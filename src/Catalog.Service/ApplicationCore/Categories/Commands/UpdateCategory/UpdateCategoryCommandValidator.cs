@@ -12,22 +12,8 @@ internal class UpdateCategoryCommandValidator : AbstractValidator<UpdateCategory
             .MaximumLength(50);
 
         RuleFor(x => x.Image)
-            .Must(MustBeValidUrl)
+            .Must(value => value.IsValidUrl())
             .When(x => !string.IsNullOrEmpty(x.Image))
             .WithMessage("'{PropertyName}' is not valid url.");
-    }
-
-    private static bool MustBeValidUrl(string value)
-    {
-        try
-        {
-            var url = new Uri(value);
-
-            return true;
-        }
-        catch
-        {
-            return false;
-        }
     }
 }

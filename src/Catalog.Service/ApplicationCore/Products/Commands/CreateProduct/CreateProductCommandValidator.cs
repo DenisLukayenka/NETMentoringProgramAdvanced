@@ -12,7 +12,7 @@ internal class CreateProductCommandValidator : AbstractValidator<CreateProductCo
             .MaximumLength(50);
 
         RuleFor(x => x.Image)
-            .Must(MustBeValidUrl)
+            .Must(value => value.IsValidUrl())
             .When(x => !string.IsNullOrEmpty(x.Image))
             .WithMessage("'{PropertyName}' is not valid url.");
 
@@ -24,19 +24,5 @@ internal class CreateProductCommandValidator : AbstractValidator<CreateProductCo
 
         RuleFor(x => x.Amount)
             .GreaterThan(0);
-    }
-
-    private static bool MustBeValidUrl(string? value)
-    {
-        try
-        {
-            var url = new Uri(value!);
-
-            return true;
-        }
-        catch
-        {
-            return false;
-        }
     }
 }
