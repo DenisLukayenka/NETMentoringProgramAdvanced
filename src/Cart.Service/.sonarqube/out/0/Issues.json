@@ -11,27 +11,6 @@
       },
       "results": [
         {
-          "ruleId": "S1144",
-          "level": "warning",
-          "message": "Remove the unused private method 'RegisterRedisCache'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/DataAccess/Registrations.cs",
-                "region": {
-                  "startLine": 52,
-                  "startColumn": 5,
-                  "endLine": 94,
-                  "endColumn": 6
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
           "ruleId": "CA1056",
           "level": "note",
           "message": "Change the type of property 'CartItem.ImageUrl' from 'string' to 'System.Uri'",
@@ -65,40 +44,6 @@
                   "startColumn": 52,
                   "endLine": 11,
                   "endColumn": 67
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S4457",
-          "level": "warning",
-          "message": "Split this method into two, one handling parameters check and the other handling the asynchronous code.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/BusinessLogic/Services/OutboxMessageHandler.cs",
-                "region": {
-                  "startLine": 9,
-                  "startColumn": 23,
-                  "endLine": 9,
-                  "endColumn": 29
-                }
-              }
-            }
-          ],
-          "relatedLocations": [
-            {
-              "physicalLocation": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/BusinessLogic/Services/OutboxMessageHandler.cs",
-                "region": {
-                  "startLine": 11,
-                  "startColumn": 9,
-                  "endLine": 11,
-                  "endColumn": 68
                 }
               }
             }
@@ -156,48 +101,6 @@
           }
         },
         {
-          "ruleId": "CA2007",
-          "level": "note",
-          "message": "Consider calling ConfigureAwait on the awaited task",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/BusinessLogic/Services/OutboxMessageHandler.cs",
-                "region": {
-                  "startLine": 16,
-                  "startColumn": 23,
-                  "endLine": 16,
-                  "endColumn": 86
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CA2007",
-          "level": "note",
-          "message": "Consider calling ConfigureAwait on the awaited task",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/BusinessLogic/Services/OutboxMessageHandler.cs",
-                "region": {
-                  "startLine": 19,
-                  "startColumn": 23,
-                  "endLine": 19,
-                  "endColumn": 126
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
           "ruleId": "IL2026",
           "level": "warning",
           "message": "Using member 'System.BinaryData.ToObjectFromJson<T>(JsonSerializerOptions)' which has 'RequiresUnreferencedCodeAttribute' can break functionality when trimming application code. JSON serialization and deserialization might require types that cannot be statically analyzed.",
@@ -222,6 +125,48 @@
           }
         },
         {
+          "ruleId": "CA2007",
+          "level": "note",
+          "message": "Consider calling ConfigureAwait on the awaited task",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/BusinessLogic/Services/OutboxMessageHandler.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 23,
+                  "endLine": 21,
+                  "endColumn": 86
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA2007",
+          "level": "note",
+          "message": "Consider calling ConfigureAwait on the awaited task",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/BusinessLogic/Services/OutboxMessageHandler.cs",
+                "region": {
+                  "startLine": 24,
+                  "startColumn": 23,
+                  "endLine": 24,
+                  "endColumn": 126
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
           "ruleId": "CA1031",
           "level": "note",
           "message": "Modify 'ExecuteAsync' to catch a more specific allowed exception type, or rethrow the exception",
@@ -234,6 +179,27 @@
                   "startColumn": 13,
                   "endLine": 53,
                   "endColumn": 18
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA2007",
+          "level": "note",
+          "message": "Consider calling ConfigureAwait on the awaited task",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/DataAccess/Repositories/CartRepository.cs",
+                "region": {
+                  "startLine": 36,
+                  "startColumn": 30,
+                  "endLine": 36,
+                  "endColumn": 138
                 }
               }
             }
@@ -348,27 +314,6 @@
           }
         },
         {
-          "ruleId": "CA2007",
-          "level": "note",
-          "message": "Consider calling ConfigureAwait on the awaited task",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/DataAccess/Repositories/CartRepository.cs",
-                "region": {
-                  "startLine": 36,
-                  "startColumn": 30,
-                  "endLine": 36,
-                  "endColumn": 138
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
           "ruleId": "CA1062",
           "level": "note",
           "message": "In externally visible method 'WebApplicationBuilder ProgramServices.RegisterAppServices(WebApplicationBuilder builder)', validate parameter 'builder' is non-null before using it. If appropriate, throw an 'ArgumentNullException' when the argument is 'null'.",
@@ -381,6 +326,69 @@
                   "startColumn": 9,
                   "endLine": 17,
                   "endColumn": 16
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3267",
+          "level": "warning",
+          "message": "Loop should be simplified by calling Select(document => document.GroupName))",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Platform/Swagger/SwaggerRegistrations.cs",
+                "region": {
+                  "startLine": 23,
+                  "startColumn": 38,
+                  "endLine": 23,
+                  "endColumn": 58
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA2007",
+          "level": "note",
+          "message": "Consider calling ConfigureAwait on the awaited task",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Endpoints/CartItemEndpoints.cs",
+                "region": {
+                  "startLine": 50,
+                  "startColumn": 15,
+                  "endLine": 50,
+                  "endColumn": 68
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA2007",
+          "level": "note",
+          "message": "Consider calling ConfigureAwait on the awaited task",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Endpoints/CartItemEndpoints.cs",
+                "region": {
+                  "startLine": 39,
+                  "startColumn": 15,
+                  "endLine": 39,
+                  "endColumn": 63
                 }
               }
             }
@@ -486,59 +494,17 @@
           }
         },
         {
-          "ruleId": "S3267",
-          "level": "warning",
-          "message": "Loop should be simplified by calling Select(document => document.GroupName))",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Platform/Swagger/SwaggerRegistrations.cs",
-                "region": {
-                  "startLine": 23,
-                  "startColumn": 38,
-                  "endLine": 23,
-                  "endColumn": 58
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
           "ruleId": "CA2007",
           "level": "note",
           "message": "Consider calling ConfigureAwait on the awaited task",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Endpoints/CartItemEndpoints.cs",
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Endpoints/CartEndpoints.cs",
                 "region": {
-                  "startLine": 39,
-                  "startColumn": 15,
-                  "endLine": 39,
-                  "endColumn": 63
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CA2007",
-          "level": "note",
-          "message": "Consider calling ConfigureAwait on the awaited task",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Endpoints/CartItemEndpoints.cs",
-                "region": {
-                  "startLine": 50,
-                  "startColumn": 15,
-                  "endLine": 50,
+                  "startLine": 43,
+                  "startColumn": 26,
+                  "endLine": 43,
                   "endColumn": 68
                 }
               }
@@ -555,312 +521,12 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/BusinessLogic/Services/OutboxMessageHandler.cs",
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Endpoints/CartEndpoints.cs",
                 "region": {
-                  "startLine": 28,
-                  "startColumn": 26,
-                  "endLine": 28,
-                  "endColumn": 92
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CA2007",
-          "level": "note",
-          "message": "Consider calling ConfigureAwait on the awaited task",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/BusinessLogic/Services/OutboxMessageHandler.cs",
-                "region": {
-                  "startLine": 36,
-                  "startColumn": 19,
-                  "endLine": 36,
-                  "endColumn": 70
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CA2007",
-          "level": "note",
-          "message": "Consider calling ConfigureAwait on the awaited task",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/BusinessLogic/Services/OutboxMessageHandler.cs",
-                "region": {
-                  "startLine": 38,
-                  "startColumn": 26,
-                  "endLine": 38,
-                  "endColumn": 92
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CA2007",
-          "level": "note",
-          "message": "Consider calling ConfigureAwait on the awaited task",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/BusinessLogic/Services/CartItemService.cs",
-                "region": {
-                  "startLine": 16,
-                  "startColumn": 26,
-                  "endLine": 16,
-                  "endColumn": 67
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CA2007",
-          "level": "note",
-          "message": "Consider calling ConfigureAwait on the awaited task",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Endpoints/CartEndpointsV2.cs",
-                "region": {
-                  "startLine": 33,
-                  "startColumn": 26,
-                  "endLine": 33,
-                  "endColumn": 68
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "IL3050",
-          "level": "warning",
-          "message": "Using member 'Microsoft.AspNetCore.Builder.EndpointRouteBuilderExtensions.MapGet(IEndpointRouteBuilder, String, Delegate)' which has 'RequiresDynamicCodeAttribute' can break functionality when AOT compiling. This API may perform reflection on the supplied delegate and its parameters. These types may require generated code and aren't compatible with native AOT applications.",
-          "suppressionStates": [
-            "suppressedInSource"
-          ],
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Endpoints/CartEndpointsV2.cs",
-                "region": {
-                  "startLine": 19,
-                  "startColumn": 9,
-                  "endLine": 20,
-                  "endColumn": 53
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "IL2026",
-          "level": "warning",
-          "message": "Using member 'Microsoft.AspNetCore.Builder.EndpointRouteBuilderExtensions.MapGet(IEndpointRouteBuilder, String, Delegate)' which has 'RequiresUnreferencedCodeAttribute' can break functionality when trimming application code. This API may perform reflection on the supplied delegate and its parameters. These types may be trimmed if not directly referenced.",
-          "suppressionStates": [
-            "suppressedInSource"
-          ],
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Endpoints/CartEndpointsV2.cs",
-                "region": {
-                  "startLine": 19,
-                  "startColumn": 9,
-                  "endLine": 20,
-                  "endColumn": 53
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CA2007",
-          "level": "note",
-          "message": "Consider calling ConfigureAwait on the awaited task",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/BusinessLogic/Services/OutboxMessageHandler.cs",
-                "region": {
-                  "startLine": 44,
-                  "startColumn": 26,
-                  "endLine": 44,
-                  "endColumn": 110
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CA2007",
-          "level": "note",
-          "message": "Consider calling ConfigureAwait on the awaited task",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/BusinessLogic/Services/OutboxMessageHandler.cs",
-                "region": {
-                  "startLine": 50,
-                  "startColumn": 19,
-                  "endLine": 50,
-                  "endColumn": 70
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CA2007",
-          "level": "note",
-          "message": "Consider calling ConfigureAwait on the awaited task",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/BusinessLogic/Services/OutboxMessageHandler.cs",
-                "region": {
-                  "startLine": 52,
-                  "startColumn": 26,
-                  "endLine": 52,
-                  "endColumn": 110
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S3236",
-          "level": "warning",
-          "message": "Remove this argument from the method call; it hides the caller information.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Platform/Swagger/SwaggerDefaultValues.cs",
-                "region": {
-                  "startLine": 18,
-                  "startColumn": 52,
-                  "endLine": 18,
-                  "endColumn": 67
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S3236",
-          "level": "warning",
-          "message": "Remove this argument from the method call; it hides the caller information.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Platform/Swagger/SwaggerDefaultValues.cs",
-                "region": {
-                  "startLine": 19,
-                  "startColumn": 54,
-                  "endLine": 19,
-                  "endColumn": 71
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CA2007",
-          "level": "note",
-          "message": "Consider calling ConfigureAwait on the awaited task",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/BusinessLogic/Services/CartService.cs",
-                "region": {
-                  "startLine": 14,
-                  "startColumn": 26,
-                  "endLine": 14,
-                  "endColumn": 67
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CA2007",
-          "level": "note",
-          "message": "Consider calling ConfigureAwait on the awaited task",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/BusinessLogic/Services/CartItemService.cs",
-                "region": {
-                  "startLine": 27,
-                  "startColumn": 33,
-                  "endLine": 27,
-                  "endColumn": 74
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CA2007",
-          "level": "note",
-          "message": "Consider calling ConfigureAwait on the awaited task",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/BusinessLogic/Services/CartItemService.cs",
-                "region": {
-                  "startLine": 39,
+                  "startLine": 58,
                   "startColumn": 15,
-                  "endLine": 39,
-                  "endColumn": 72
+                  "endLine": 58,
+                  "endColumn": 59
                 }
               }
             }
@@ -972,12 +638,507 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Endpoints/CartEndpoints.cs",
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/BusinessLogic/Services/OutboxMessageHandler.cs",
+                "region": {
+                  "startLine": 33,
+                  "startColumn": 26,
+                  "endLine": 33,
+                  "endColumn": 92
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA2007",
+          "level": "note",
+          "message": "Consider calling ConfigureAwait on the awaited task",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/BusinessLogic/Services/OutboxMessageHandler.cs",
+                "region": {
+                  "startLine": 41,
+                  "startColumn": 19,
+                  "endLine": 41,
+                  "endColumn": 70
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA2007",
+          "level": "note",
+          "message": "Consider calling ConfigureAwait on the awaited task",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/BusinessLogic/Services/OutboxMessageHandler.cs",
                 "region": {
                   "startLine": 43,
                   "startColumn": 26,
                   "endLine": 43,
+                  "endColumn": 92
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA2007",
+          "level": "note",
+          "message": "Consider calling ConfigureAwait on the awaited task",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/BusinessLogic/Services/CartItemService.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 26,
+                  "endLine": 16,
+                  "endColumn": 67
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA2007",
+          "level": "note",
+          "message": "Consider calling ConfigureAwait on the awaited task",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/BusinessLogic/Services/OutboxMessageHandler.cs",
+                "region": {
+                  "startLine": 49,
+                  "startColumn": 26,
+                  "endLine": 49,
+                  "endColumn": 110
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA2007",
+          "level": "note",
+          "message": "Consider calling ConfigureAwait on the awaited task",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/BusinessLogic/Services/OutboxMessageHandler.cs",
+                "region": {
+                  "startLine": 55,
+                  "startColumn": 19,
+                  "endLine": 55,
+                  "endColumn": 70
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA2007",
+          "level": "note",
+          "message": "Consider calling ConfigureAwait on the awaited task",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/BusinessLogic/Services/OutboxMessageHandler.cs",
+                "region": {
+                  "startLine": 57,
+                  "startColumn": 26,
+                  "endLine": 57,
+                  "endColumn": 110
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA2007",
+          "level": "note",
+          "message": "Consider calling ConfigureAwait on the awaited task",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Endpoints/CartEndpointsV2.cs",
+                "region": {
+                  "startLine": 33,
+                  "startColumn": 26,
+                  "endLine": 33,
                   "endColumn": 68
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "IL3050",
+          "level": "warning",
+          "message": "Using member 'Microsoft.AspNetCore.Builder.EndpointRouteBuilderExtensions.MapGet(IEndpointRouteBuilder, String, Delegate)' which has 'RequiresDynamicCodeAttribute' can break functionality when AOT compiling. This API may perform reflection on the supplied delegate and its parameters. These types may require generated code and aren't compatible with native AOT applications.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Endpoints/CartEndpointsV2.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 9,
+                  "endLine": 20,
+                  "endColumn": 53
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "IL2026",
+          "level": "warning",
+          "message": "Using member 'Microsoft.AspNetCore.Builder.EndpointRouteBuilderExtensions.MapGet(IEndpointRouteBuilder, String, Delegate)' which has 'RequiresUnreferencedCodeAttribute' can break functionality when trimming application code. This API may perform reflection on the supplied delegate and its parameters. These types may be trimmed if not directly referenced.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Endpoints/CartEndpointsV2.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 9,
+                  "endLine": 20,
+                  "endColumn": 53
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA2007",
+          "level": "note",
+          "message": "Consider calling ConfigureAwait on the awaited task",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/BusinessLogic/Services/CartService.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 26,
+                  "endLine": 14,
+                  "endColumn": 67
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA2007",
+          "level": "note",
+          "message": "Consider calling ConfigureAwait on the awaited task",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/BusinessLogic/Services/CartItemService.cs",
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 33,
+                  "endLine": 27,
+                  "endColumn": 74
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA2007",
+          "level": "note",
+          "message": "Consider calling ConfigureAwait on the awaited task",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/BusinessLogic/Services/CartItemService.cs",
+                "region": {
+                  "startLine": 39,
+                  "startColumn": 15,
+                  "endLine": 39,
+                  "endColumn": 72
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA2007",
+          "level": "note",
+          "message": "Consider calling ConfigureAwait on the awaited task",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/DataAccess/Repositories/CartRepository.cs",
+                "region": {
+                  "startLine": 80,
+                  "startColumn": 15,
+                  "endLine": 83,
+                  "endColumn": 50
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA2007",
+          "level": "note",
+          "message": "Consider calling ConfigureAwait on the awaited task",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/BusinessLogic/Services/CartItemService.cs",
+                "region": {
+                  "startLine": 93,
+                  "startColumn": 15,
+                  "endLine": 93,
+                  "endColumn": 59
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "IL3050",
+          "level": "warning",
+          "message": "Using member 'Microsoft.Extensions.DependencyInjection.OptionsConfigurationServiceCollectionExtensions.Configure<TOptions>(IServiceCollection, IConfiguration)' which has 'RequiresDynamicCodeAttribute' can break functionality when AOT compiling. Binding strongly typed objects to configuration values may require generating dynamic code at runtime.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/DataAccess/Registrations.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 9,
+                  "endLine": 17,
+                  "endColumn": 96
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "IL2026",
+          "level": "warning",
+          "message": "Using member 'Microsoft.Extensions.DependencyInjection.OptionsConfigurationServiceCollectionExtensions.Configure<TOptions>(IServiceCollection, IConfiguration)' which has 'RequiresUnreferencedCodeAttribute' can break functionality when trimming application code. TOptions's dependent types may have their members trimmed. Ensure all required members are preserved.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/DataAccess/Registrations.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 9,
+                  "endLine": 17,
+                  "endColumn": 96
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1062",
+          "level": "note",
+          "message": "In externally visible method 'IServiceCollection Registrations.ConfigureDataAccessServices(IServiceCollection services, IConfiguration configuration)', validate parameter 'configuration' is non-null before using it. If appropriate, throw an 'ArgumentNullException' when the argument is 'null'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/DataAccess/Registrations.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 45,
+                  "endLine": 17,
+                  "endColumn": 58
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'credential'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/DataAccess/Registrations.cs",
+                "region": {
+                  "startLine": 24,
+                  "startColumn": 21,
+                  "endLine": 24,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA2007",
+          "level": "note",
+          "message": "Consider calling ConfigureAwait on the awaited task",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/DataAccess/Repositories/CartRepository.cs",
+                "region": {
+                  "startLine": 86,
+                  "startColumn": 91,
+                  "endLine": 86,
+                  "endColumn": 201
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3236",
+          "level": "warning",
+          "message": "Remove this argument from the method call; it hides the caller information.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Platform/Swagger/SwaggerDefaultValues.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 52,
+                  "endLine": 18,
+                  "endColumn": 67
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3236",
+          "level": "warning",
+          "message": "Remove this argument from the method call; it hides the caller information.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Platform/Swagger/SwaggerDefaultValues.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 54,
+                  "endLine": 19,
+                  "endColumn": 71
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA2007",
+          "level": "note",
+          "message": "Consider calling ConfigureAwait on the awaited task",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/BusinessLogic/Services/CartItemService.cs",
+                "region": {
+                  "startLine": 72,
+                  "startColumn": 33,
+                  "endLine": 72,
+                  "endColumn": 74
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA2007",
+          "level": "note",
+          "message": "Consider calling ConfigureAwait on the awaited task",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/BusinessLogic/Services/CartItemService.cs",
+                "region": {
+                  "startLine": 87,
+                  "startColumn": 15,
+                  "endLine": 87,
+                  "endColumn": 72
                 }
               }
             }
@@ -1008,18 +1169,18 @@
           }
         },
         {
-          "ruleId": "CA2007",
-          "level": "note",
-          "message": "Consider calling ConfigureAwait on the awaited task",
+          "ruleId": "S1075",
+          "level": "warning",
+          "message": "Refactor your code not to use hardcoded absolute paths or URIs.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Endpoints/CartEndpoints.cs",
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Platform/Swagger/ConfigureSwaggerOptions.cs",
                 "region": {
-                  "startLine": 58,
-                  "startColumn": 15,
-                  "endLine": 58,
-                  "endColumn": 59
+                  "startLine": 55,
+                  "startColumn": 74,
+                  "endLine": 55,
+                  "endColumn": 111
                 }
               }
             }
@@ -1077,467 +1238,6 @@
           }
         },
         {
-          "ruleId": "IL3050",
-          "level": "warning",
-          "message": "Using member 'Microsoft.Extensions.DependencyInjection.OptionsConfigurationServiceCollectionExtensions.Configure<TOptions>(IServiceCollection, IConfiguration)' which has 'RequiresDynamicCodeAttribute' can break functionality when AOT compiling. Binding strongly typed objects to configuration values may require generating dynamic code at runtime.",
-          "suppressionStates": [
-            "suppressedInSource"
-          ],
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/DataAccess/Registrations.cs",
-                "region": {
-                  "startLine": 22,
-                  "startColumn": 9,
-                  "endLine": 22,
-                  "endColumn": 90
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "IL3050",
-          "level": "warning",
-          "message": "Using member 'Microsoft.Extensions.DependencyInjection.OptionsConfigurationServiceCollectionExtensions.Configure<TOptions>(IServiceCollection, IConfiguration)' which has 'RequiresDynamicCodeAttribute' can break functionality when AOT compiling. Binding strongly typed objects to configuration values may require generating dynamic code at runtime.",
-          "suppressionStates": [
-            "suppressedInSource"
-          ],
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/DataAccess/Registrations.cs",
-                "region": {
-                  "startLine": 23,
-                  "startColumn": 9,
-                  "endLine": 23,
-                  "endColumn": 96
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "IL2026",
-          "level": "warning",
-          "message": "Using member 'Microsoft.Extensions.DependencyInjection.OptionsConfigurationServiceCollectionExtensions.Configure<TOptions>(IServiceCollection, IConfiguration)' which has 'RequiresUnreferencedCodeAttribute' can break functionality when trimming application code. TOptions's dependent types may have their members trimmed. Ensure all required members are preserved.",
-          "suppressionStates": [
-            "suppressedInSource"
-          ],
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/DataAccess/Registrations.cs",
-                "region": {
-                  "startLine": 22,
-                  "startColumn": 9,
-                  "endLine": 22,
-                  "endColumn": 90
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "IL2026",
-          "level": "warning",
-          "message": "Using member 'Microsoft.Extensions.DependencyInjection.OptionsConfigurationServiceCollectionExtensions.Configure<TOptions>(IServiceCollection, IConfiguration)' which has 'RequiresUnreferencedCodeAttribute' can break functionality when trimming application code. TOptions's dependent types may have their members trimmed. Ensure all required members are preserved.",
-          "suppressionStates": [
-            "suppressedInSource"
-          ],
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/DataAccess/Registrations.cs",
-                "region": {
-                  "startLine": 23,
-                  "startColumn": 9,
-                  "endLine": 23,
-                  "endColumn": 96
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CA2007",
-          "level": "note",
-          "message": "Consider calling ConfigureAwait on the awaited task",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/DataAccess/Repositories/CartRepository.cs",
-                "region": {
-                  "startLine": 80,
-                  "startColumn": 15,
-                  "endLine": 83,
-                  "endColumn": 50
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CA1062",
-          "level": "note",
-          "message": "In externally visible method 'IServiceCollection Registrations.ConfigureDataAccessServices(IServiceCollection services, IConfiguration configuration)', validate parameter 'configuration' is non-null before using it. If appropriate, throw an 'ArgumentNullException' when the argument is 'null'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/DataAccess/Registrations.cs",
-                "region": {
-                  "startLine": 22,
-                  "startColumn": 42,
-                  "endLine": 22,
-                  "endColumn": 55
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1481",
-          "level": "warning",
-          "message": "Remove the unused local variable 'credential'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/DataAccess/Registrations.cs",
-                "region": {
-                  "startLine": 30,
-                  "startColumn": 21,
-                  "endLine": 30,
-                  "endColumn": 31
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CA2007",
-          "level": "note",
-          "message": "Consider calling ConfigureAwait on the awaited task",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/DataAccess/Repositories/CartRepository.cs",
-                "region": {
-                  "startLine": 86,
-                  "startColumn": 91,
-                  "endLine": 86,
-                  "endColumn": 201
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CA2007",
-          "level": "note",
-          "message": "Consider calling ConfigureAwait on the awaited task",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/BusinessLogic/Services/CartItemService.cs",
-                "region": {
-                  "startLine": 93,
-                  "startColumn": 15,
-                  "endLine": 93,
-                  "endColumn": 59
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S927",
-          "level": "warning",
-          "message": "Rename parameter 'id' to 'cartItemId' to match the interface declaration.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/BusinessLogic/Services/CartItemService.cs",
-                "region": {
-                  "startLine": 68,
-                  "startColumn": 49,
-                  "endLine": 68,
-                  "endColumn": 51
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CA2007",
-          "level": "note",
-          "message": "Consider calling ConfigureAwait on the awaited task",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/BusinessLogic/Services/CartItemService.cs",
-                "region": {
-                  "startLine": 72,
-                  "startColumn": 33,
-                  "endLine": 72,
-                  "endColumn": 74
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CA2007",
-          "level": "note",
-          "message": "Consider calling ConfigureAwait on the awaited task",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/BusinessLogic/Services/CartItemService.cs",
-                "region": {
-                  "startLine": 87,
-                  "startColumn": 15,
-                  "endLine": 87,
-                  "endColumn": 72
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S3776",
-          "level": "warning",
-          "message": "Refactor this method to reduce its Cognitive Complexity from 24 to the 15 allowed.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Platform/Swagger/ConfigureSwaggerOptions.cs",
-                "region": {
-                  "startLine": 26,
-                  "startColumn": 32,
-                  "endLine": 26,
-                  "endColumn": 55
-                }
-              }
-            }
-          ],
-          "relatedLocations": [
-            {
-              "physicalLocation": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Platform/Swagger/ConfigureSwaggerOptions.cs",
-                "region": {
-                  "startLine": 37,
-                  "startColumn": 9,
-                  "endLine": 37,
-                  "endColumn": 11
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Platform/Swagger/ConfigureSwaggerOptions.cs",
-                "region": {
-                  "startLine": 42,
-                  "startColumn": 9,
-                  "endLine": 42,
-                  "endColumn": 11
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Platform/Swagger/ConfigureSwaggerOptions.cs",
-                "region": {
-                  "startLine": 44,
-                  "startColumn": 13,
-                  "endLine": 44,
-                  "endColumn": 15
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Platform/Swagger/ConfigureSwaggerOptions.cs",
-                "region": {
-                  "startLine": 50,
-                  "startColumn": 17,
-                  "endLine": 50,
-                  "endColumn": 20
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Platform/Swagger/ConfigureSwaggerOptions.cs",
-                "region": {
-                  "startLine": 54,
-                  "startColumn": 21,
-                  "endLine": 54,
-                  "endColumn": 23
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Platform/Swagger/ConfigureSwaggerOptions.cs",
-                "region": {
-                  "startLine": 56,
-                  "startColumn": 25,
-                  "endLine": 56,
-                  "endColumn": 27
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Platform/Swagger/ConfigureSwaggerOptions.cs",
-                "region": {
-                  "startLine": 67,
-                  "startColumn": 29,
-                  "endLine": 67,
-                  "endColumn": 30
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Platform/Swagger/ConfigureSwaggerOptions.cs",
-                "region": {
-                  "startLine": 73,
-                  "startColumn": 17,
-                  "endLine": 73,
-                  "endColumn": 19
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1,
-            "customProperties": {
-              "0": "+1",
-              "1": "+1",
-              "2": "+2 (incl 1 for nesting)",
-              "3": "+3 (incl 2 for nesting)",
-              "4": "+4 (incl 3 for nesting)",
-              "5": "+5 (incl 4 for nesting)",
-              "6": "+5 (incl 4 for nesting)",
-              "7": "+3 (incl 2 for nesting)"
-            }
-          }
-        },
-        {
-          "ruleId": "S1066",
-          "level": "warning",
-          "message": "Merge this if statement with the enclosing one.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Platform/Swagger/ConfigureSwaggerOptions.cs",
-                "region": {
-                  "startLine": 44,
-                  "startColumn": 13,
-                  "endLine": 44,
-                  "endColumn": 15
-                }
-              }
-            }
-          ],
-          "relatedLocations": [
-            {
-              "physicalLocation": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Platform/Swagger/ConfigureSwaggerOptions.cs",
-                "region": {
-                  "startLine": 42,
-                  "startColumn": 9,
-                  "endLine": 42,
-                  "endColumn": 11
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1075",
-          "level": "warning",
-          "message": "Refactor your code not to use hardcoded absolute paths or URIs.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Platform/Swagger/ConfigureSwaggerOptions.cs",
-                "region": {
-                  "startLine": 34,
-                  "startColumn": 74,
-                  "endLine": 34,
-                  "endColumn": 111
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CA1852",
-          "level": "note",
-          "message": "Type 'CartRepository' can be sealed because it has no subtypes in its containing assembly and is not externally visible",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/DataAccess/Repositories/CartRepository.cs",
-                "region": {
-                  "startLine": 7,
-                  "startColumn": 16,
-                  "endLine": 7,
-                  "endColumn": 30
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
           "ruleId": "CA1852",
           "level": "note",
           "message": "Type 'AppJsonSerializerContext' can be sealed because it has no subtypes in its containing assembly and is not externally visible",
@@ -1546,9 +1246,9 @@
               "resultFile": {
                 "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Platform/Serialization/AppJsonSerializerContext.cs",
                 "region": {
-                  "startLine": 17,
+                  "startLine": 15,
                   "startColumn": 24,
-                  "endLine": 17,
+                  "endLine": 15,
                   "endColumn": 48
                 }
               }
@@ -1558,17 +1258,6 @@
             {
               "physicalLocation": {
                 "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/obj/Debug/net8.0/System.Text.Json.SourceGeneration/System.Text.Json.SourceGeneration.JsonSourceGenerator/AppJsonSerializerContext.Decimal.g.cs",
-                "region": {
-                  "startLine": 11,
-                  "startColumn": 28,
-                  "endLine": 11,
-                  "endColumn": 52
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/obj/Debug/net8.0/System.Text.Json.SourceGeneration/System.Text.Json.SourceGeneration.JsonSourceGenerator/AppJsonSerializerContext.RedisOptions.g.cs",
                 "region": {
                   "startLine": 11,
                   "startColumn": 28,
@@ -1722,17 +1411,6 @@
             },
             {
               "physicalLocation": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/obj/Debug/net8.0/System.Text.Json.SourceGeneration/System.Text.Json.SourceGeneration.JsonSourceGenerator/AppJsonSerializerContext.UInt32.g.cs",
-                "region": {
-                  "startLine": 11,
-                  "startColumn": 28,
-                  "endLine": 11,
-                  "endColumn": 52
-                }
-              }
-            },
-            {
-              "physicalLocation": {
                 "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/obj/Debug/net8.0/System.Text.Json.SourceGeneration/System.Text.Json.SourceGeneration.JsonSourceGenerator/AppJsonSerializerContext.g.cs",
                 "region": {
                   "startLine": 12,
@@ -1772,16 +1450,16 @@
         {
           "ruleId": "CA1852",
           "level": "note",
-          "message": "Type 'ModelResponse' can be sealed because it has no subtypes in its containing assembly and is not externally visible",
+          "message": "Type 'CartRepository' can be sealed because it has no subtypes in its containing assembly and is not externally visible",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/ViewModels/ModelResponse.cs",
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/DataAccess/Repositories/CartRepository.cs",
                 "region": {
-                  "startLine": 3,
+                  "startLine": 7,
                   "startColumn": 16,
-                  "endLine": 3,
-                  "endColumn": 29
+                  "endLine": 7,
+                  "endColumn": 30
                 }
               }
             }
@@ -1854,9 +1532,30 @@
           }
         },
         {
+          "ruleId": "CA1852",
+          "level": "note",
+          "message": "Type 'ModelResponse' can be sealed because it has no subtypes in its containing assembly and is not externally visible",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/ViewModels/ModelResponse.cs",
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 16,
+                  "endLine": 3,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
           "ruleId": "AD0001",
           "level": "warning",
-          "message": "Analyzer 'StyleCop.Analyzers.DocumentationRules.SA1625ElementDocumentationMustNotBeCopiedAndPasted' threw an exception of type 'System.Globalization.CultureNotFoundException' with message 'Only the invariant culture is supported in globalization-invariant mode. See https://aka.ms/GlobalizationInvariantMode for more information. (Parameter 'name')\u000aen-US is an invalid culture identifier.'.\u000d\u000aException occurred with following context:\u000d\u000aCompilation: Cart.Service\u000aSyntaxTree: /mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Platform/Swagger/ConfigureSwaggerOptions.cs\u000aSyntaxNode: public class ConfigureSwaggerOptions ... [ClassDeclarationSyntax]@[533..2944) (15,0)-(84,1)\u000a\u000aSystem.Globalization.CultureNotFoundException: Only the invariant culture is supported in globalization-invariant mode. See https://aka.ms/GlobalizationInvariantMode for more information. (Parameter 'name')\u000aen-US is an invalid culture identifier.\u000a   at StyleCop.Analyzers.DocumentationRules.SA1625ElementDocumentationMustNotBeCopiedAndPasted.HandleXmlElement(SyntaxNodeAnalysisContext context, StyleCopSettings settings, Boolean needsComment, IEnumerable`1 syntaxList, Location[] diagnosticLocations)\u000a   at StyleCop.Analyzers.DocumentationRules.ElementDocumentationBase.HandleDeclaration(SyntaxNodeAnalysisContext context, StyleCopSettings settings, Boolean needsComment, SyntaxNode node, Location[] locations)\u000a   at StyleCop.Analyzers.DocumentationRules.ElementDocumentationBase.HandleBaseTypeDeclaration(SyntaxNodeAnalysisContext context, StyleCopSettings settings)\u000a   at StyleCop.Analyzers.AnalyzerExtensions.<>c__DisplayClass3_0`1.<RegisterSyntaxNodeAction>b__0(SyntaxNodeAnalysisContext c)\u000a   at Microsoft.CodeAnalysis.Diagnostics.AnalyzerExecutor.<>c__52`1.<ExecuteSyntaxNodeAction>b__52_0(ValueTuple`2 data)\u000a   at Microsoft.CodeAnalysis.Diagnostics.AnalyzerExecutor.ExecuteAndCatchIfThrows_NoLock[TArg](DiagnosticAnalyzer analyzer, Action`1 analyze, TArg argument, Nullable`1 info, CancellationToken cancellationToken)\u000a-----\u000a\u000aSuppress the following diagnostics to disable this analyzer: SA1625",
+          "message": "Analyzer 'StyleCop.Analyzers.DocumentationRules.SA1625ElementDocumentationMustNotBeCopiedAndPasted' threw an exception of type 'System.Globalization.CultureNotFoundException' with message 'Only the invariant culture is supported in globalization-invariant mode. See https://aka.ms/GlobalizationInvariantMode for more information. (Parameter 'name')\u000aen-US is an invalid culture identifier.'.\u000d\u000aException occurred with following context:\u000d\u000aCompilation: Cart.Service\u000aSyntaxTree: /mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Platform/Swagger/ConfigureSwaggerOptions.cs\u000aSyntaxNode: public class ConfigureSwaggerOptions ... [ClassDeclarationSyntax]@[556..3027) (16,0)-(94,1)\u000a\u000aSystem.Globalization.CultureNotFoundException: Only the invariant culture is supported in globalization-invariant mode. See https://aka.ms/GlobalizationInvariantMode for more information. (Parameter 'name')\u000aen-US is an invalid culture identifier.\u000a   at StyleCop.Analyzers.DocumentationRules.SA1625ElementDocumentationMustNotBeCopiedAndPasted.HandleXmlElement(SyntaxNodeAnalysisContext context, StyleCopSettings settings, Boolean needsComment, IEnumerable`1 syntaxList, Location[] diagnosticLocations)\u000a   at StyleCop.Analyzers.DocumentationRules.ElementDocumentationBase.HandleDeclaration(SyntaxNodeAnalysisContext context, StyleCopSettings settings, Boolean needsComment, SyntaxNode node, Location[] locations)\u000a   at StyleCop.Analyzers.DocumentationRules.ElementDocumentationBase.HandleBaseTypeDeclaration(SyntaxNodeAnalysisContext context, StyleCopSettings settings)\u000a   at StyleCop.Analyzers.AnalyzerExtensions.<>c__DisplayClass3_0`1.<RegisterSyntaxNodeAction>b__0(SyntaxNodeAnalysisContext c)\u000a   at Microsoft.CodeAnalysis.Diagnostics.AnalyzerExecutor.<>c__52`1.<ExecuteSyntaxNodeAction>b__52_0(ValueTuple`2 data)\u000a   at Microsoft.CodeAnalysis.Diagnostics.AnalyzerExecutor.ExecuteAndCatchIfThrows_NoLock[TArg](DiagnosticAnalyzer analyzer, Action`1 analyze, TArg argument, Nullable`1 info, CancellationToken cancellationToken)\u000a-----\u000a\u000aSuppress the following diagnostics to disable this analyzer: SA1625",
           "properties": {
             "warningLevel": 1
           }
@@ -1991,23 +1690,6 @@
             "isEnabledByDefault": true
           }
         },
-        "S1066": {
-          "id": "S1066",
-          "shortDescription": "Collapsible \"if\" statements should be merged",
-          "fullDescription": "Merging collapsible if statements increases the code’s readability.",
-          "defaultLevel": "warning",
-          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1066",
-          "properties": {
-            "category": "Major Code Smell",
-            "isEnabledByDefault": true,
-            "tags": [
-              "C#",
-              "MainSourceScope",
-              "TestSourceScope",
-              "SonarWay"
-            ]
-          }
-        },
         "S1075": {
           "id": "S1075",
           "shortDescription": "URIs should not be hardcoded",
@@ -2021,24 +1703,6 @@
               "C#",
               "MainSourceScope",
               "SonarWay"
-            ]
-          }
-        },
-        "S1144": {
-          "id": "S1144",
-          "shortDescription": "Unused private types or members should be removed",
-          "fullDescription": "private or internal types or private members that are never executed or referenced are dead code: unnecessary, inoperative code that should be removed. Cleaning out dead code decreases the size of the maintained codebase, making it easier to understand the program and preventing bugs from being introduced.",
-          "defaultLevel": "note",
-          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1144",
-          "properties": {
-            "category": "Major Code Smell",
-            "isEnabledByDefault": true,
-            "tags": [
-              "C#",
-              "MainSourceScope",
-              "TestSourceScope",
-              "SonarWay",
-              "Unnecessary"
             ]
           }
         },
@@ -2088,57 +1752,6 @@
             "tags": [
               "C#",
               "MainSourceScope",
-              "SonarWay"
-            ]
-          }
-        },
-        "S3776": {
-          "id": "S3776",
-          "shortDescription": "Cognitive Complexity of methods should not be too high",
-          "fullDescription": "Cognitive Complexity is a measure of how hard the control flow of a method is to understand. Methods with high Cognitive Complexity will be difficult to maintain.",
-          "defaultLevel": "warning",
-          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-3776",
-          "properties": {
-            "category": "Critical Code Smell",
-            "isEnabledByDefault": false,
-            "tags": [
-              "C#",
-              "MainSourceScope",
-              "TestSourceScope",
-              "SonarWay"
-            ]
-          }
-        },
-        "S4457": {
-          "id": "S4457",
-          "shortDescription": "Parameter validation in \"async\"/\"await\" methods should be wrapped",
-          "fullDescription": "Because of the way async/await methods are rewritten by the compiler, any exceptions thrown during the parameters check will happen only when the task is observed. That could happen far away from the source of the buggy code or never happen for fire-and-forget tasks.",
-          "defaultLevel": "warning",
-          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-4457",
-          "properties": {
-            "category": "Major Code Smell",
-            "isEnabledByDefault": true,
-            "tags": [
-              "C#",
-              "MainSourceScope",
-              "TestSourceScope",
-              "SonarWay"
-            ]
-          }
-        },
-        "S927": {
-          "id": "S927",
-          "shortDescription": "Parameter names should match base declaration and other partial definitions",
-          "fullDescription": "The name of a parameter in an externally visible. This rule raises an issue when method override does not match the name of the parameter in the base declaration of the method, or the name of the parameter in the interface declaration of the method or the name of any other partial definition.",
-          "defaultLevel": "warning",
-          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-927",
-          "properties": {
-            "category": "Critical Code Smell",
-            "isEnabledByDefault": true,
-            "tags": [
-              "C#",
-              "MainSourceScope",
-              "TestSourceScope",
               "SonarWay"
             ]
           }

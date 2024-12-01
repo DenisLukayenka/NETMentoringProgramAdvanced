@@ -2,5 +2,5 @@ projectKey=Cart.Service
 serverUrl=http://localhost:9001
 serverVersion=9.9.7.96285
 dashboardUrl=http://localhost:9001/dashboard?id=Cart.Service
-ceTaskId=AZOCFew8Tsgk368YiZHg
-ceTaskUrl=http://localhost:9001/api/ce/task?id=AZOCFew8Tsgk368YiZHg
+ceTaskId=AZOCJvfsTsgk368YiZHh
+ceTaskUrl=http://localhost:9001/api/ce/task?id=AZOCJvfsTsgk368YiZHh

@@ -94,7 +94,7 @@
   
 
  2
-! '/ 5d j  ( .''  &(
+! '/ 5l r  ( .''  &(
 9 A+ 3  0 8$$' /
 U f7 H''5 F2
      $$ %''( 3
@@ -110,8 +110,8 @@
 
 DD 
 DD$ *HH/ 5WW  &
-DD0 2LLI KTTI K
-DDF WHH7 HWW5 F<
+DD0 :LLI STTI S
+DDN _HH7 HWW5 F<
 HH II LL "TT TT  +WW( 3(
 LL MM PP RR 
 LL8 9LL= >
@@ -134,30 +134,33 @@
 
 
 I Z0 A
-  ç
+  œ
 ú/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/BusinessLogic/Services/OutboxMessageHandler.cs
 
  !F
-2 < #$$ && #,, #22 44 #
+2 <!! #)) ++ #11 #77 99 #
 
-		 2
-		* 1* 1: A R Y
-		E VC Tk |
-' 4* 7(
-' 4( 5A NU b
- ( '(
-- 34 :  = C&&4 :(
-< @< @!!  &&< @(
-J OB G"" "&&B G(
-c tI Z$$3 D&&I Z<
-     $$$ ($$- 1&& 
-   !! "" 
-  , -  1 2
-** * )(
-**/ 5,,4 :00; A444 :(
-**I Z,,[ l223 D44[ lF
-,, .. 00 00 22$ (22- 144 
-00* +00/ 0Ç
+		 (
+		$ +* 1: A "
+		? P$ 5
+ " 
+/ 6 R Y
+J [C Tk |
+' 4* 7(
+' 4( 5A NU b
+ ( '(
+- 3!!4 :%%= C++4 :(
+< @!!< @&&  ++< @(
+J O!!B G'' "++B G(
+c t!!I Z))3 D++I Z<
+!! ## %% ))$ ())- 1++ 
+%% && '' 
+%%, -%%1 2
+// * )(
+/// 5114 :55; A994 :(
+//I Z11[ l773 D99[ lF
+11 33 55 55 77$ (77- 199 
+55* +55/ 0Ç
 õ/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/BusinessLogic/Validators/CartItemValidator.cs
 
  
@@ -175,54 +178,24 @@
 
  #
 
- (€
-ê/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/DataAccess/Options/RedisOptions.cs
-
-  
-
-  
-
-
-
- #
-
- 
-
- 
-
- ™
+ (™
 õ/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/DataAccess/Options/ValidateCosmosDbOptions.cs
 
- ,ß
-ò/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/DataAccess/Options/ValidateRedisOptions.cs
-
- )Ï
+ ,»
 â/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/DataAccess/Registrations.cs
 
- !
+ !
 
- 
+ 
 
-% @2
-Y a   00 
-r ) 6, 9
- & (
- #  % 4!!, ;
+% @(
+Y a  ** 
+r , 9
+ & (
+ #% 4, ;
 
- 
- ,, 
-
-44& 8
-44Q Y77 ]] 
-887 9::# %
-::  ==' 3>> +
-;; !AAG T
-AA %BB (
-DD* ,FF# %GG( *
-FF  VV *WW$ 0
-GG %NN+ <
-HH OO  *
-MM ZZ Ë
+ 
+ && Ë
 •/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/DataAccess/Repositories/Abstractions/ICartRepository.cs
 
   
@@ -411,29 +384,35 @@
 5 H0 CØ
 †/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Platform/Serialization/AppJsonSerializerContext.cs
 
- /Û
+ /Û
 ¢/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Platform/Serialization/SerializationRegistrations.cs
 
  .
 
 % 8
 Q Y  
-* 1		 ˆ
+* 1		 ˙
 ô/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Platform/Swagger/ConfigureSwaggerOptions.cs
 
- $
-D L$ ,
+ $
+D L$ ,
 
- 
-, 3 
- 66 M(
-M X   !%% ** x
- '' .. ::  >> ?? @@ AA EE KK PP QQ 
- QQ SS (
-**, 2,, 22$ *44 %(
-00 88 %;; $II (
-22 22  !228 944, -<
-44 66 ??$ (BB8 <CC "DD "£
+ 
+, 3 
+ 66 M(
+M X$ /   %% 2
+ "" '' ** ++ 
+ ++ -- 
+%%, 2%%6 <''  &
+00 / #
+00F Q55 !
+22 :: 
+== %'' Z
+==4 8?? KK OO PP QQ RR VV \\ 
+==G MCC "EE (
+AA II LL ZZ (
+CC CC CC0 1EE$ %<
+EE GG PP  SS0 4TT UU £
 ñ/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Platform/Swagger/SwaggerDefaultValues.cs
 
  !

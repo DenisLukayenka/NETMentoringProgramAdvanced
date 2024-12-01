@@ -497,7 +497,7 @@ cartItemId		# -
 cancellationToken8 I
 )I J
 ;J K
-} âA
+} úA
 —/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/BusinessLogic/Services/CartItemService.cs
 	namespace 	
 Cart
@@ -674,11 +674,11 @@ repository  *
 . 
 LogInformation !
 (! "
-$str" b
-,b c
-cartIdd j
-)j k
-;k l
+$str" j
+,j k
+cartIdl r
+)r s
+;s t
 currentCart   
 =   
 InitEmptyCart   '
@@ -834,12 +834,13 @@ repository'' 
 stringDD #
 cartIdDD$ *
 ,DD* +
-intDD, /
-idDD0 2
-,DD2 3
-CancellationTokenDD4 E
-cancellationTokenDDF W
-)DDW X
+intDD, /
+
+cartItemIdDD0 :
+,DD: ;
+CancellationTokenDD< M
+cancellationTokenDDN _
+)DD_ `
 {EE 
 loggerFF 
 .FF 
@@ -890,10 +891,11 @@ repositoryHH  *
 xLL= >
 .LL> ?
 ItemIdLL? E
-==LLF H
-idLLI K
-)LLK L
-;LLL M
+==LLF H
+
+cartItemIdLLI S
+)LLS T
+;LLT U
 ifMM 
 
 (MM 
@@ -934,14 +936,15 @@ repositoryHH  *
 xTT= >
 .TT> ?
 ItemIdTT? E
-!=TTF H
-idTTI K
-)TTK L
-.TTL M
-ToArrayTTM T
-(TTT U
-)TTU V
-;TTV W
+!=TTF H
+
+cartItemIdTTI S
+)TTS T
+.TTT U
+ToArrayTTU \
+(TT\ ]
+)TT] ^
+;TT^ _
 }UU 	
 awaitWW 
 
@@ -1106,7 +1109,7 @@ repository #
 cart 
 ; 
 } 
-} ú.
+} Ž2
 œ/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/BusinessLogic/Services/OutboxMessageHandler.cs
 	namespace 	
 Cart
@@ -1130,18 +1133,17 @@ repository2 <
 IOutboxMessageHandler@ U
 { 
 public		 
-
-async		 
-Task		 
-Handle		 
-(		 
-BaseMessage		 (
-?		( )
-message		* 1
-,		1 2
-CancellationToken		3 D
-cancellationToken		E V
-)		V W
+
+Task		 
+Handle		 
+(		 
+BaseMessage		 "
+?		" #
+message		$ +
+,		+ ,
+CancellationToken		- >
+cancellationToken		? P
+)		P Q
 {
 
  !
@@ -1157,284 +1159,305 @@ repository2 <
 )A B
 )B C
 ;C D
-switch 
-( 
-message 
-) 
-{ 	
-case !
-ProductDeletedMessage &
-deleteMessage' 4
-:4 5
-await 
-DeleteItemFromCarts )
-() *
-deleteMessage* 7
-.7 8
-	ProductId8 A
-,A B
-cancellationTokenC T
-)T U
-;U V
-break 
-; 
-case !
-ProductUpdatedMessage &
-updateMessage' 4
-:4 5
-await 
-UpdateItemInCarts '
-(' (
-updateMessage( 5
-.5 6
-	ProductId6 ?
-,? @
-updateMessageA N
-.N O
-NameO S
-,S T
-updateMessageU b
-.b c
-Pricec h
-!h i
-,i j
-cancellationTokenk |
-)| }
-;} ~
-break 
-; 
-default 
-: 
-throw 
-new  
-InvalidCastException .
-(. /
-$"/ 1
-$str1 Q
-{Q R
-messageR Y
-.Y Z
-GetTypeZ a
-(a b
-)b c
-.c d
-Named h
-}h i
-"i j
-)j k
-;k l
-} 	
-} 
-private 
-async 
-Task 
-UpdateItemInCarts (
-(( )
-int) ,
-itemId- 3
-,3 4
-string5 ;
-name< @
-,@ A
-decimalB I
-priceJ O
-,O P
-CancellationTokenQ b
-cancellationTokenc t
-)t u
-{ 
-var 
-cart 
-= 
-await 
+return 
+HandleAsync 
+( 
+message "
+," #
+cancellationToken$ 5
+)5 6
+;6 7
+} 
+private 
+async 
+Task 
+HandleAsync "
+(" #
+BaseMessage# .
+message/ 6
+,6 7
+CancellationToken8 I
+cancellationTokenJ [
+)[ \
+{ 
+switch 
+( 
+message 
+) 
+{ 	
+case !
+ProductDeletedMessage &
+deleteMessage' 4
+:4 5
+await 
+DeleteItemFromCarts )
+() *
+deleteMessage* 7
+.7 8
+	ProductId8 A
+,A B
+cancellationTokenC T
+)T U
+;U V
+break 
+; 
+case !
+ProductUpdatedMessage &
+updateMessage' 4
+:4 5
+await 
+UpdateItemInCarts '
+(' (
+updateMessage( 5
+.5 6
+	ProductId6 ?
+,? @
+updateMessageA N
+.N O
+NameO S
+,S T
+updateMessageU b
+.b c
+Pricec h
+!h i
+,i j
+cancellationTokenk |
+)| }
+;} ~
+break 
+; 
+default 
+: 
+throw 
+new  
+InvalidCastException .
+(. /
+$"/ 1
+$str1 Q
+{Q R
+messageR Y
+.Y Z
+GetTypeZ a
+(a b
+)b c
+.c d
+Named h
+}h i
+"i j
+)j k
+;k l
+} 	
+} 
+private 
+async 
+Task 
+UpdateItemInCarts (
+(( )
+int) ,
+itemId- 3
+,3 4
+string5 ;
+name< @
+,@ A
+decimalB I
+priceJ O
+,O P
+CancellationTokenQ b
+cancellationTokenc t
+)t u
+{   
+var!! 
+cart!! 
+=!! 
+await!! 
 
-repository #
-.# $
-GetNextOutdated$ 3
-(3 4
-itemId4 :
-,: ;
-name< @
-,@ A
-priceB G
-,G H
-cancellationTokenI Z
-)Z [
-;[ \
-while 
-( 
-cart 
-!= 
-null 
-) 
-{ 	
-var   
-cartItem   
-=   
-cart   
-.    
-Items    %
-.  % &
-First  & +
-(  + ,
-x  , -
-=>  . 0
-x  1 2
-.  2 3
-ItemId  3 9
-==  : <
-itemId  = C
-)  C D
-;  D E
-cartItem!! 
-.!! 
-Name!! 
-=!! 
-name!!  
-;!!  !
-cartItem"" 
-."" 
-Price"" 
-="" 
-price"" "
-;""" #
-await$$ 
+repository!! #
+.!!# $
+GetNextOutdated!!$ 3
+(!!3 4
+itemId!!4 :
+,!!: ;
+name!!< @
+,!!@ A
+price!!B G
+,!!G H
+cancellationToken!!I Z
+)!!Z [
+;!![ \
+while## 
+(## 
+cart## 
+!=## 
+null## 
+)## 
+{$$ 	
+var%% 
+cartItem%% 
+=%% 
+cart%% 
+.%%  
+Items%%  %
+.%%% &
+First%%& +
+(%%+ ,
+x%%, -
+=>%%. 0
+x%%1 2
+.%%2 3
+ItemId%%3 9
+==%%: <
+itemId%%= C
+)%%C D
+;%%D E
+cartItem&& 
+.&& 
+Name&& 
+=&& 
+name&&  
+;&&  !
+cartItem'' 
+.'' 
+Price'' 
+='' 
+price'' "
+;''" #
+await)) 
 
-repository$$ 
-.$$ 
-Upsert$$ #
-($$# $
-cart$$$ (
-.$$( )
-Id$$) +
-,$$+ ,
-cart$$- 1
-,$$1 2
-cancellationToken$$3 D
-)$$D E
-;$$E F
-cart&& 
-=&& 
-await&& 
+repository)) 
+.)) 
+Upsert)) #
+())# $
+cart))$ (
+.))( )
+Id))) +
+,))+ ,
+cart))- 1
+,))1 2
+cancellationToken))3 D
+)))D E
+;))E F
+cart++ 
+=++ 
+await++ 
 
-repository&& #
-.&&# $
-GetNextOutdated&&$ 3
-(&&3 4
-itemId&&4 :
-,&&: ;
-name&&< @
-,&&@ A
-price&&B G
-,&&G H
-cancellationToken&&I Z
-)&&Z [
-;&&[ \
-}'' 	
-}(( 
-private** 
-async** 
-Task** 
-DeleteItemFromCarts** *
-(*** +
-int**+ .
-itemId**/ 5
-,**5 6
-CancellationToken**7 H
-cancellationToken**I Z
-)**Z [
-{++ 
-var,, 
-cart,, 
-=,, 
-await,, 
+repository++ #
+.++# $
+GetNextOutdated++$ 3
+(++3 4
+itemId++4 :
+,++: ;
+name++< @
+,++@ A
+price++B G
+,++G H
+cancellationToken++I Z
+)++Z [
+;++[ \
+},, 	
+}-- 
+private// 
+async// 
+Task// 
+DeleteItemFromCarts// *
+(//* +
+int//+ .
+itemId/// 5
+,//5 6
+CancellationToken//7 H
+cancellationToken//I Z
+)//Z [
+{00 
+var11 
+cart11 
+=11 
+await11 
 
-repository,, #
-.,,# $
-GetNextOutdated,,$ 3
-(,,3 4
-itemId,,4 :
-,,,: ;
-newName,,< C
-:,,C D
-null,,E I
-,,,I J
-newPrice,,K S
-:,,S T
-null,,U Y
-,,,Y Z
-cancellationToken,,[ l
-),,l m
-;,,m n
-while.. 
-(.. 
-cart.. 
-!=.. 
-null.. 
-).. 
-{// 	
-cart00 
-.00 
-Items00 
-=00 
-cart00 
-.00 
-Items00 #
-.00# $
-Where00$ )
-(00) *
-x00* +
-=>00, .
-x00/ 0
-.000 1
-ItemId001 7
-!=008 :
-itemId00; A
-)00A B
-.00B C
-ToArray00C J
-(00J K
-)00K L
-;00L M
-await22 
+repository11 #
+.11# $
+GetNextOutdated11$ 3
+(113 4
+itemId114 :
+,11: ;
+newName11< C
+:11C D
+null11E I
+,11I J
+newPrice11K S
+:11S T
+null11U Y
+,11Y Z
+cancellationToken11[ l
+)11l m
+;11m n
+while33 
+(33 
+cart33 
+!=33 
+null33 
+)33 
+{44 	
+cart55 
+.55 
+Items55 
+=55 
+cart55 
+.55 
+Items55 #
+.55# $
+Where55$ )
+(55) *
+x55* +
+=>55, .
+x55/ 0
+.550 1
+ItemId551 7
+!=558 :
+itemId55; A
+)55A B
+.55B C
+ToArray55C J
+(55J K
+)55K L
+;55L M
+await77 
 
-repository22 
-.22 
-Upsert22 #
-(22# $
-cart22$ (
-.22( )
-Id22) +
-,22+ ,
-cart22- 1
-,221 2
-cancellationToken223 D
-)22D E
-;22E F
-cart44 
-=44 
-await44 
+repository77 
+.77 
+Upsert77 #
+(77# $
+cart77$ (
+.77( )
+Id77) +
+,77+ ,
+cart77- 1
+,771 2
+cancellationToken773 D
+)77D E
+;77E F
+cart99 
+=99 
+await99 
 
-repository44 #
-.44# $
-GetNextOutdated44$ 3
-(443 4
-itemId444 :
-,44: ;
-newName44< C
-:44C D
-null44E I
-,44I J
-newPrice44K S
-:44S T
-null44U Y
-,44Y Z
-cancellationToken44[ l
-)44l m
-;44m n
-}55 	
-}66 
-}77 Þ
+repository99 #
+.99# $
+GetNextOutdated99$ 3
+(993 4
+itemId994 :
+,99: ;
+newName99< C
+:99C D
+null99E I
+,99I J
+newPrice99K S
+:99S T
+null99U Y
+,99Y Z
+cancellationToken99[ l
+)99l m
+;99m n
+}:: 	
+};; 
+}<< Þ
 ›/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/BusinessLogic/Validators/CartItemValidator.cs
 	namespace 	
 Cart
@@ -1607,108 +1630,7 @@ DataAccess !
 set0 3
 ;3 4
 }5 6
-} “
-/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/DataAccess/Options/RedisOptions.cs
-	namespace 	
-Cart
- 
-. 
-Service 
-. 
-
-DataAccess !
-.! "
-Options" )
-;) *
-public 
-sealed 
-class 
-RedisOptions  
-{ 
-public 
-
-const 
-string 
-Position  
-=! "
-$str# *
-;* +
-[		 
-Required		 
-]		 
-public
-
- 
-
-string
-
- 
-?
-
- 
-ConnectionString
-
- #
-{
-
-$ %
-get
-
-& )
-;
-
-) *
-set
-
-+ .
-;
-
-. /
-}
-
-0 1
-public 
-
-int 
-DbNumber 
-{ 
-get 
-; 
-set "
-;" #
-}$ %
-=& '
-$num( )
-;) *
-public 
-
-uint 
-MaxValueLength 
-{  
-get! $
-;$ %
-set& )
-;) *
-}+ ,
-=- .
-int/ 2
-.2 3
-MaxValue3 ;
-;; <
-public 
-
-int 
-PoolSize 
-{ 
-get 
-; 
-set "
-;" #
-}$ %
-=& '
-$num( )
-;) *
-} ·
+} ·
 ›/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/DataAccess/Options/ValidateCosmosDbOptions.cs
 	namespace 	
 Cart
@@ -1731,444 +1653,177 @@ DataAccess !
 CosmosDbOptions@ O
 >O P
 { 
-}		 ®
-˜/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/DataAccess/Options/ValidateRedisOptions.cs
-	namespace 	
-Cart
- 
-. 
-Service 
-. 
-Options 
-; 
-[ 
-OptionsValidator 
-] 
-public 
-partial 
-class  
-ValidateRedisOptions )
-:* +
-IValidateOptions, <
-<< =
-RedisOptions= I
->I J
-{ 
-}		 ¿>
+}		 û
 ‰/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/DataAccess/Registrations.cs
-	namespace 	
-Cart
+	namespace		 	
+Cart		
  
-. 
-Service 
-. 
+.		 
+Service		 
+.		 
 
-DataAccess !
-;! "
-public 
-static 
-class 
-Registrations !
-{ 
-public 
+DataAccess		 !
+;		! "
+public 
+static 
+class 
+Registrations !
+{ 
+public 
 
-const 
-string 
-DbName 
-=  
-$str! 1
-;1 2
-public 
+const 
+string 
+DbName 
+=  
+$str! 1
+;1 2
+public 
 
-static 
-IServiceCollection $'
-ConfigureDataAccessServices% @
-(@ A
-thisA E
-IServiceCollectionF X
-servicesY a
-,a b
-IConfigurationc q
-configurationr 
-)	 €
-{ 
-services 
-. 
-	Configure 
-< 
-RedisOptions '
->' (
-(( )
-configuration) 6
-.6 7
+static 
+IServiceCollection $'
+ConfigureDataAccessServices% @
+(@ A
+thisA E
+IServiceCollectionF X
+servicesY a
+,a b
+IConfigurationc q
+configurationr 
+)	 €
+{ 
+services 
+. 
+	Configure 
+< 
+CosmosDbOptions *
+>* +
+(+ ,
+configuration, 9
+.9 :
 
-GetSection7 A
-(A B
-RedisOptionsB N
-.N O
-PositionO W
+GetSection: D
+(D E
+CosmosDbOptionsE T
+.T U
+PositionU ]
+)] ^
+)^ _
+;_ `
+services 
+. 
+AddSingleton 
+( 
+sp 
+=> 
+{ 
+var 
+cosmosDbOptions #
+=$ %
+sp& (
+.( )
+GetRequiredService) ;
+<; <
+IOptions< D
+<D E
+CosmosDbOptionsE T
+>T U
+>U V
+(V W
 )W X
-)X Y
-;Y Z
-services 
-. 
-	Configure 
-< 
-CosmosDbOptions *
->* +
-(+ ,
-configuration, 9
-.9 :
+.X Y
+ValueY ^
+;^ _
+var 
 
-GetSection: D
-(D E
-CosmosDbOptionsE T
-.T U
-PositionU ]
-)] ^
-)^ _
-;_ `
-services 
-. 
-AddSingleton 
-( 
-sp 
-=> 
-{ 
-var 
-cosmosDbOptions #
-=$ %
-sp& (
-.( )
-GetRequiredService) ;
-<; <
-IOptions< D
-<D E
-CosmosDbOptionsE T
->T U
->U V
-(V W
-)W X
-.X Y
-ValueY ^
-;^ _
-var 
-
-credential 
-=  
-new! $"
-DefaultAzureCredential% ;
-(; <
-)< =
-;= >
-var 
-client 
-= 
-new  
-CosmosClient! -
-(- .
-accountEndpoint   #
-:  # $
-cosmosDbOptions  % 4
-.  4 5
-Endpoint  5 =
-,  = >"
-authKeyOrResourceToken!! *
-:!!* +
-cosmosDbOptions!!, ;
-.!!; <
-ResourceToken!!< I
-,!!I J
-clientOptions"" !
-:""! "
-new""# &
-CosmosClientOptions""' :
-{## 
-ConnectionMode$$ &
-=$$' (
-ConnectionMode$$) 7
-.$$7 8
-Direct$$8 >
-,$$> ?$
-IdleTcpConnectionTimeout%% 0
-=%%1 2
-TimeSpan%%3 ;
-.%%; <
-FromMinutes%%< G
-(%%G H
-$num%%H J
-)%%J K
-,%%K L2
-&UseSystemTextJsonSerializerWithOptions&& >
-=&&? @
-new&&A D
-System&&E K
-.&&K L
-Text&&L P
-.&&P Q
-Json&&Q U
-.&&U V!
-JsonSerializerOptions&&V k
-(&&k l
-)&&l m
-{'' 
-TypeInfoResolver(( ,
-=((- .$
-AppJsonSerializerContext((/ G
-.((G H
-Default((H O
-,((O P
-})) 
-,)) 
-}** 
-)** 
-;** 
-return,, 
-client,, 
-;,, 
-}-- 
-)-- 
-... 
-AddSingleton.. 
-<.. 
-ICartRepository.. )
-,..) *
-CartRepository..+ 9
->..9 :
-(..: ;
-)..; <
-;..< =
-return00 
-services00 
-;00 
-}11 
-private44 
-static44 
-IServiceCollection44 %
-RegisterRedisCache44& 8
-(448 9
-this449 =
-IServiceCollection44> P
-services44Q Y
-)44Y Z
-{66 
-services77 
-.88 
-AddSingleton88 
-<88 '
-IRedisConnectionPoolManager88 5
->885 6
-(886 7
-sp887 9
-=>88: <
-{99 
-var:: 
-redisOptions::  
-=::! "
-sp::# %
-.::% &
-GetRequiredService::& 8
-<::8 9
-IOptions::9 A
-<::A B
-RedisOptions::B N
->::N O
->::O P
-(::P Q
-)::Q R
-.::R S
-Value::S X
-;::X Y
-var;; 
-configuration;; !
-=;;" #
-new;;$ '
-RedisConfiguration;;( :
-(;;: ;
-);;; <
-{<< 
-ConnectionString== $
-===% &
-redisOptions==' 3
-.==3 4
-ConnectionString==4 D
-,==D E
-PoolSize>> 
-=>> 
-redisOptions>> +
-.>>+ ,
-PoolSize>>, 4
-,>>4 5
-}?? 
-;?? 
-varAA 
-connectionManagerAA %
-=AA& '
-newAA( +&
-RedisConnectionPoolManagerAA, F
-(AAF G
-configurationAAG T
-)AAT U
-;AAU V
-returnBB 
-connectionManagerBB (
-;BB( )
-}CC 
-)CC 
-.DD 
-AddSingletonDD 
-<DD 
-IRedisDatabaseDD (
->DD( )
-(DD) *
-spDD* ,
-=>DD- /
-{EE 
-varFF 
-redisOptionsFF  
-=FF! "
-spFF# %
-.FF% &
-GetRequiredServiceFF& 8
-<FF8 9
-IOptionsFF9 A
-<FFA B
-RedisOptionsFFB N
->FFN O
->FFO P
-(FFP Q
-)FFQ R
-.FFR S
-ValueFFS X
-;FFX Y
-varGG 
-connectionManagerGG %
-=GG& '
-spGG( *
-.GG* +
-GetRequiredServiceGG+ =
-<GG= >'
-IRedisConnectionPoolManagerGG> Y
->GGY Z
-(GGZ [
-)GG[ \
-;GG\ ]
-varHH 
-
-serializerHH 
-=HH  
-newHH! $$
-SystemTextJsonSerializerHH% =
-(HH= >
-newHH> A
-SystemHHB H
-.HHH I
-TextHHI M
-.HHM N
-JsonHHN R
-.HHR S!
-JsonSerializerOptionsHHS h
-(HHh i
-)HHi j
-{II 
-TypeInfoResolverJJ $
-=JJ% &$
-AppJsonSerializerContextJJ' ?
-.JJ? @
-DefaultJJ@ G
-,JJG H
-}KK 
-)KK 
-;KK 
-varMM 
-databaseMM 
-=MM 
-newMM "
-RedisDatabaseMM# 0
-(MM0 1!
-connectionPoolManagerNN )
-:NN) *
-connectionManagerNN+ <
-,NN< =
-
-serializerOO 
-:OO 
-
-serializerOO  *
-,OO* +%
-serverEnumerationStrategyPP -
-:PP- .
-newPP/ 2%
-ServerEnumerationStrategyPP3 L
-(PPL M
-)PPM N
-{QQ 
-ModeRR 
-=RR %
-ServerEnumerationStrategyRR 8
-.RR8 9
-ModeOptionsRR9 D
-.RRD E
-SingleRRE K
-,RRK L
-
-TargetRoleSS "
-=SS# $%
-ServerEnumerationStrategySS% >
-.SS> ?
-TargetRoleOptionsSS? P
-.SSP Q
-AnySSQ T
-,SST U#
-UnreachableServerActionTT /
-=TT0 1%
-ServerEnumerationStrategyTT2 K
-.TTK L*
-UnreachableServerActionOptionsTTL j
-.TTj k
-ThrowTTk p
-,TTp q
-}UU 
-,UU 
-dbNumberVV 
-:VV 
-redisOptionsVV *
-.VV* +
-DbNumberVV+ 3
-,VV3 4
-maxvalueLengthWW "
-:WW" #
-redisOptionsWW$ 0
-.WW0 1
-MaxValueLengthWW1 ?
-,WW? @
-	keyPrefixXX 
-:XX 
-AssemblyXX '
-.XX' (
-GetEntryAssemblyXX( 8
-(XX8 9
-)XX9 :
-!XX: ;
-.XX; <
-GetNameXX< C
-(XXC D
-)XXD E
-.XXE F
-NameXXF J
-)XXJ K
-;XXK L
-returnZZ 
-databaseZZ 
-;ZZ  
-}[[ 
-)[[ 
-;[[ 
-return]] 
-services]] 
-;]] 
-}^^ 
-}__ ¨
+credential 
+=  
+new! $"
+DefaultAzureCredential% ;
+(; <
+)< =
+;= >
+var 
+client 
+= 
+new  
+CosmosClient! -
+(- .
+accountEndpoint #
+:# $
+cosmosDbOptions% 4
+.4 5
+Endpoint5 =
+,= >"
+authKeyOrResourceToken *
+:* +
+cosmosDbOptions, ;
+.; <
+ResourceToken< I
+,I J
+clientOptions !
+:! "
+new# &
+CosmosClientOptions' :
+{ 
+ConnectionMode &
+=' (
+ConnectionMode) 7
+.7 8
+Direct8 >
+,> ?$
+IdleTcpConnectionTimeout 0
+=1 2
+TimeSpan3 ;
+.; <
+FromMinutes< G
+(G H
+$numH J
+)J K
+,K L2
+&UseSystemTextJsonSerializerWithOptions   >
+=  ? @
+new  A D
+System  E K
+.  K L
+Text  L P
+.  P Q
+Json  Q U
+.  U V!
+JsonSerializerOptions  V k
+(  k l
+)  l m
+{!! 
+TypeInfoResolver"" ,
+=""- .$
+AppJsonSerializerContext""/ G
+.""G H
+Default""H O
+,""O P
+}## 
+,## 
+}$$ 
+)$$ 
+;$$ 
+return&& 
+client&& 
+;&& 
+}'' 
+)'' 
+.(( 
+AddSingleton(( 
+<(( 
+ICartRepository(( )
+,(() *
+CartRepository((+ 9
+>((9 :
+(((: ;
+)((; <
+;((< =
+return** 
+services** 
+;** 
+}++ 
+},, ¨
 ¥/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/DataAccess/Repositories/Abstractions/ICartRepository.cs
 	namespace 	
 Cart
@@ -3913,18 +3568,29 @@ StatusCode- 7
 services 
 ; 
 } 
-} Ó
+} ¯
  /mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Platform/Serialization/AppJsonSerializerContext.cs
-	namespace 	
-Cart
+	namespace 	
+Cart
  
-. 
-Service 
-. 
-Platform 
-.  
-Serialization  -
-;- .
+. 
+Service 
+. 
+Platform 
+.  
+Serialization  -
+;- .
+[ 
+JsonSerializable 
+( 
+typeof 
+( 
+Models 
+.  
+Cart  $
+)$ %
+)% &
+]& '
 [ 
 JsonSerializable 
 ( 
@@ -3933,22 +3599,22 @@ StatusCode- 7
 Models 
 .  
 Cart  $
-)$ %
-)% &
-]& '
+[$ %
+]% &
+)& '
+)' (
+]( )
 [		 
 JsonSerializable		 
 (		 
 typeof		 
 (		 
 Models		 
-.		  
-Cart		  $
-[		$ %
-]		% &
-)		& '
-)		' (
-]		( )
+.		  
+CartItem		  (
+)		( )
+)		) *
+]		* +
 [
 
  
@@ -3973,86 +3639,70 @@ StatusCode- 7
 CartItem
 
   (
-)
+[
 
 ( )
-)
-
-) *
 ]
 
-* +
+) *
+)
+
+* +
+)
+
++ ,
+]
+
+, -
 [ 
 JsonSerializable 
 ( 
 typeof 
-( 
-Models 
-.  
-CartItem  (
-[( )
-]) *
-)* +
-)+ ,
-], -
+( 
+ModelResponse &
+<& '
+Models' -
+.- .
+Cart. 2
+>2 3
+)3 4
+)4 5
+]5 6
 [ 
 JsonSerializable 
 ( 
 typeof 
-( 
-RedisOptions %
+( 
+BaseMessage $
+)$ %
 )% &
-)& '
-]' (
+]& '
 [ 
 JsonSerializable 
 ( 
 typeof 
-( 
-ModelResponse &
-<& '
-Models' -
-.- .
-Cart. 2
->2 3
-)3 4
-)4 5
-]5 6
+( !
+ProductUpdatedMessage .
+). /
+)/ 0
+]0 1
 [ 
 JsonSerializable 
 ( 
 typeof 
-( 
-BaseMessage $
-)$ %
-)% &
-]& '
-[ 
-JsonSerializable 
-( 
-typeof 
-( !
-ProductUpdatedMessage .
-). /
-)/ 0
-]0 1
-[ 
-JsonSerializable 
-( 
-typeof 
-( !
-ProductDeletedMessage .
-). /
-)/ 0
-]0 1
-internal 
-partial	 
-class $
-AppJsonSerializerContext /
-:0 1!
-JsonSerializerContext2 G
-{ 
-} Ú	
+( !
+ProductDeletedMessage .
+). /
+)/ 0
+]0 1
+internal 
+partial	 
+class $
+AppJsonSerializerContext /
+:0 1!
+JsonSerializerContext2 G
+{ 
+} Ú	
 ¢/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Platform/Serialization/SerializationRegistrations.cs
 	namespace 	
 Cart
@@ -4117,350 +3767,388 @@ StatusCode- 7
 services 
 ; 
 } 
-} ÷.
+} ×4
 ™/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Platform/Swagger/ConfigureSwaggerOptions.cs
-	namespace 	
-Cart
+	namespace		 	
+Cart		
  
-. 
-Service 
-. 
-Platform 
-.  
-Swagger  '
-;' (
-public 
-class #
-ConfigureSwaggerOptions $
-($ %*
-IApiVersionDescriptionProvider% C
-providerD L
-)L M
-:N O
-IConfigureOptionsP a
-<a b
-SwaggerGenOptionsb s
->s t
-{ 
-public 
+.		 
+Service		 
+.		 
+Platform		 
+.		  
+Swagger		  '
+;		' (
+public 
+class #
+ConfigureSwaggerOptions $
+($ %*
+IApiVersionDescriptionProvider% C
+providerD L
+)L M
+:N O
+IConfigureOptionsP a
+<a b
+SwaggerGenOptionsb s
+>s t
+{ 
+public 
 
-void 
-	Configure 
-( 
-SwaggerGenOptions +
-options, 3
-)3 4
-{ 
-foreach 
-( 
-var 
-description  
-in! #
-provider$ ,
-., -"
-ApiVersionDescriptions- C
-)C D
-{ 	
-options 
-. 
+void 
+	Configure 
+( 
+SwaggerGenOptions +
+options, 3
+)3 4
+{ 
+foreach 
+( 
+var 
+description  
+in! #
+provider$ ,
+., -"
+ApiVersionDescriptions- C
+)C D
+{ 	
+options 
+. 
 
-SwaggerDoc 
-( 
-description *
-.* +
-	GroupName+ 4
-,4 5#
-CreateInfoForApiVersion6 M
-(M N
-descriptionN Y
-)Y Z
-)Z [
-;[ \
-} 	
-} 
-private 
-static 
-OpenApiInfo #
-CreateInfoForApiVersion 6
-(6 7!
-ApiVersionDescription7 L
-descriptionM X
-)X Y
-{ 
-var 
-text 
-= 
-new 
-StringBuilder $
-($ %
-$str% @
-)@ A
-;A B
+SwaggerDoc 
+( 
+description *
+.* +
+	GroupName+ 4
+,4 5#
+CreateInfoForApiVersion6 M
+(M N
+descriptionN Y
+)Y Z
+)Z [
+;[ \
+} 	
+} 
+private 
+static 
+OpenApiInfo #
+CreateInfoForApiVersion 6
+(6 7!
+ApiVersionDescription7 L
+descriptionM X
+)X Y
+{ 
 var 
-info 
+text 
 = 
-new 
-OpenApiInfo "
-(" #
-)# $
-{ 	
-Title 
-= 
-$str "
-," #
-Version   
-=   
-description   !
-.  ! "
-
-ApiVersion  " ,
-.  , -
-ToString  - 5
-(  5 6
-)  6 7
-,  7 8
-Contact!! 
-=!! 
-new!! 
-OpenApiContact!! (
-(!!( )
-)!!) *
-{!!+ ,
-Name!!- 1
-=!!2 3
-$str!!4 =
-,!!= >
-Email!!? D
-=!!E F
-$str!!G [
-}!!\ ]
-,!!] ^
-License"" 
-="" 
-new"" 
-OpenApiLicense"" (
-(""( )
-)"") *
-{""+ ,
-Name""- 1
-=""2 3
-$str""4 9
-,""9 :
-Url""; >
-=""? @
-new""A D
-Uri""E H
-(""H I
-$str""I n
-)""n o
-}""p q
-}## 	
-;##	 
-
+new 
+StringBuilder $
+($ %
+$str% @
+)@ A
+;A B
+var 
+info 
+= 
+BuildOpenApiInfo #
+(# $
+description$ /
+)/ 0
+;0 1
+if   
+
+(   
+description   
+.   
+IsDeprecated   $
+)  $ %
+{!! 	
+text"" 
+."" 
+Append"" 
+("" 
+$str"" @
+)""@ A
+;""A B
+}## 	
 if%% 
 
 (%% 
 description%% 
 .%% 
-IsDeprecated%% $
-)%%$ %
-{&& 	
-text'' 
-.'' 
-Append'' 
-('' 
-$str'' @
-)''@ A
-;''A B
-}(( 	
-if** 
-
-(** 
-description** 
-.** 
-SunsetPolicy** $
-is**% '
-{**( )
-}*** +
-policy**, 2
-)**2 3
-{++ 	
-if,, 
-(,, 
-policy,, 
-.,, 
-HasLinks,, 
-),,  
-{-- 
-text.. 
-... 
+SunsetPolicy%% $
+is%%% '
+{%%( )
+}%%* +
+policy%%, 2
+&&%%3 5
+policy%%6 <
+.%%< =
+HasLinks%%= E
+)%%E F
+{&& 	
+FillLinksInfo'' 
+('' 
+text'' 
+,'' 
+policy''  &
+)''& '
+;''' (
+}(( 	
+text** 
+.** 
+Append** 
+(** 
+$str** 5
+)**5 6
+;**6 7
+info++ 
+.++ 
+Description++ 
+=++ 
+text++ 
+.++  
+ToString++  (
+(++( )
+)++) *
+;++* +
+return-- 
+info-- 
+;-- 
+}.. 
+private00 
+static00 
+OpenApiInfo00 
+BuildOpenApiInfo00 /
+(00/ 0!
+ApiVersionDescription000 E
+description00F Q
+)00Q R
+{11 
+var22 
+info22 
+=22 
+new22 
+OpenApiInfo22 "
+(22" #
+)22# $
+{33 	
+Title44 
+=44 
+$str44 "
+,44" #
+Version55 
+=55 
+description55 !
+.55! "
 
-AppendLine.. 
-(..  
-)..  !
-;..! "
-var00 
-rendered00 
-=00 
-false00 $
-;00$ %
-for22 
-(22 
-var22 
-i22 
-=22 
-$num22 
-;22 
-i22  !
-<22" #
-policy22$ *
-.22* +
-Links22+ 0
-.220 1
-Count221 6
-;226 7
-i228 9
-++229 ;
-)22; <
-{33 
-var44 
-link44 
-=44 
-policy44 %
-.44% &
-Links44& +
-[44+ ,
-i44, -
-]44- .
-;44. /
-if66 
-(66 
-link66 
-.66 
-Type66 !
-==66" $
-$str66% 0
-)660 1
-{77 
-if88 
-(88 
-!88 
-rendered88 %
-)88% &
-{99 
-text::  
-.::  !
-Append::! '
-(::' (
-$str::( <
-)::< =
-;::= >
-rendered;; $
-=;;% &
-true;;' +
-;;;+ ,
-}<< 
-text>> 
-.>> 
-Append>> #
-(>># $
-$str>>$ 4
-)>>4 5
-;>>5 6
-text?? 
-.?? 
-Append?? #
-(??# $
-link??$ (
-.??( )
+ApiVersion55" ,
+.55, -
+ToString55- 5
+(555 6
+)556 7
+,557 8
+Contact66 
+=66 
+new66 
+OpenApiContact66 (
+(66( )
+)66) *
+{66+ ,
+Name66- 1
+=662 3
+$str664 =
+,66= >
+Email66? D
+=66E F
+$str66G [
+}66\ ]
+,66] ^
+License77 
+=77 
+new77 
+OpenApiLicense77 (
+(77( )
+)77) *
+{77+ ,
+Name77- 1
+=772 3
+$str774 9
+,779 :
+Url77; >
+=77? @
+new77A D
+Uri77E H
+(77H I
+$str77I n
+)77n o
+}77p q
+}88 	
+;88	 
+
+return:: 
+info:: 
+;:: 
+};; 
+private== 
+static== 
+void== 
+FillLinksInfo== %
+(==% &
+StringBuilder==& 3
+text==4 8
+,==8 9
+SunsetPolicy==: F
+policy==G M
+)==M N
+{>> 
+text?? 
+.?? 
 
-LinkTarget??) 3
-.??3 4
-OriginalString??4 B
-)??B C
-;??C D
-text@@ 
-.@@ 
-Append@@ #
-(@@# $
-$str@@$ )
-)@@) *
-;@@* +
-textAA 
-.AA 
-AppendAA #
-(AA# $
-StringSegmentBB )
-.BB) *
-IsNullOrEmptyBB* 7
-(BB7 8
-linkBB8 <
-.BB< =
-TitleBB= B
-)BBB C
-?CC 
-linkCC "
-.CC" #
-
-LinkTargetCC# -
-.CC- .
-OriginalStringCC. <
-:DD 
-linkDD "
-.DD" #
-TitleDD# (
-.DD( )
-ToStringDD) 1
-(DD1 2
-)DD2 3
-)DD3 4
-;DD4 5
-textEE 
-.EE 
-AppendEE #
-(EE# $
-$strEE$ /
-)EE/ 0
-;EE0 1
-}FF 
-}GG 
+AppendLine?? 
+(?? 
+)?? 
+;?? 
+varAA 
+renderedAA 
+=AA 
+falseAA 
+;AA 
+forCC 
+(CC 
+varCC 
+iCC 
+=CC 
+$numCC 
+;CC 
+iCC 
+<CC 
+policyCC "
+.CC" #
+LinksCC# (
+.CC( )
+CountCC) .
+;CC. /
+iCC0 1
+++CC1 3
+)CC3 4
+{DD 	
+varEE 
+linkEE 
+=EE 
+policyEE 
+.EE 
+LinksEE #
+[EE# $
+iEE$ %
+]EE% &
+;EE& '
+ifGG 
+(GG 
+linkGG 
+.GG 
+TypeGG 
+==GG 
+$strGG (
+)GG( )
+{HH 
 ifII 
-(II 
-renderedII 
-)II 
+(II 
+!II 
+renderedII 
+)II 
 {JJ 
 textKK 
 .KK 
 AppendKK 
 (KK  
-$strKK  '
-)KK' (
-;KK( )
-}LL 
-}MM 
-}NN 	
-textPP 
-.PP 
-AppendPP 
-(PP 
-$strPP 5
-)PP5 6
-;PP6 7
-infoQQ 
-.QQ 
-DescriptionQQ 
-=QQ 
-textQQ 
-.QQ  
-ToStringQQ  (
-(QQ( )
-)QQ) *
-;QQ* +
-returnSS 
-infoSS 
-;SS 
-}TT 
-}UU ¼/
+$strKK  4
+)KK4 5
+;KK5 6
+renderedLL 
+=LL 
+trueLL #
+;LL# $
+}MM 
+textOO 
+.OO 
+AppendOO 
+(OO 
+$strOO ,
+)OO, -
+;OO- .
+textPP 
+.PP 
+AppendPP 
+(PP 
+linkPP  
+.PP  !
+
+LinkTargetPP! +
+.PP+ ,
+OriginalStringPP, :
+)PP: ;
+;PP; <
+textQQ 
+.QQ 
+AppendQQ 
+(QQ 
+$strQQ !
+)QQ! "
+;QQ" #
+textRR 
+.RR 
+AppendRR 
+(RR 
+StringSegmentSS !
+.SS! "
+IsNullOrEmptySS" /
+(SS/ 0
+linkSS0 4
+.SS4 5
+TitleSS5 :
+)SS: ;
+?TT 
+linkTT 
+.TT 
+
+LinkTargetTT %
+.TT% &
+OriginalStringTT& 4
+:UU 
+linkUU 
+.UU 
+TitleUU  
+.UU  !
+ToStringUU! )
+(UU) *
+)UU* +
+)UU+ ,
+;UU, -
+textVV 
+.VV 
+AppendVV 
+(VV 
+$strVV '
+)VV' (
+;VV( )
+}WW 
+}XX 	
+ifZZ 
+
+(ZZ 
+renderedZZ 
+)ZZ 
+{[[ 	
+text\\ 
+.\\ 
+Append\\ 
+(\\ 
+$str\\ 
+)\\  
+;\\  !
+}]] 	
+}^^ 
+}__ ¼/
 –/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Cart.Service/Cart.Service/Platform/Swagger/SwaggerDefaultValues.cs
 	namespace		 	
 Cart		
