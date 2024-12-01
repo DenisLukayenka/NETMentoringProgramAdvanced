@@ -1,0 +1,14 @@
+﻿/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Infrastructure.Database/Abstractions/IApplicationDbContext.cs
+/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Infrastructure.Database/Data/ApplicationDbContext.cs
+/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Infrastructure.Database/Data/Configurations/CategoryConfiguration.cs
+/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Infrastructure.Database/Data/Configurations/EventConfiguration.cs
+/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Infrastructure.Database/Data/Configurations/ProductConfiguration.cs
+/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Infrastructure.Database/Data/Interceptors/PopulateEventsInterceptor.cs
+/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Infrastructure.Database/Data/Repositories/CategoryRepository.cs
+/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Infrastructure.Database/Data/Repositories/OutboxEventsRepository.cs
+/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Infrastructure.Database/Data/Repositories/ProductRepository.cs
+/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Infrastructure.Database/DependencyInjection.cs
+/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Infrastructure.Database/Migrations/20241120174621_Init.cs
+/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Infrastructure.Database/Migrations/20241120174621_Init.Designer.cs
+/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Infrastructure.Database/Migrations/ApplicationDbContextModelSnapshot.cs
+/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Infrastructure.Database/Options/SqlDatabaseOptions.cs

@@ -1,0 +1,3 @@
+﻿/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Infrastructure.Messages/DependencyInjection.cs
+/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Infrastructure.Messages/Options/MessageBusOptions.cs
+/mnt/c/Users/Dzianis_Lukayenka/Documents/Learn_Test/NETMentoringProgramAdvanced/src/Catalog.Service/Infrastructure.Messages/Services/MessageSender.cs
