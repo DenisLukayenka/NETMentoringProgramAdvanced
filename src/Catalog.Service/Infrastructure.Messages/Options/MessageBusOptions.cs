@@ -2,5 +2,5 @@
 
 public class MessageBusOptions
 {
-    public string MessageBusConnectionString { get; set; }
+    public string MessageBusConnectionString { get; set; } = null!;
 }

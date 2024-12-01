@@ -20,7 +20,7 @@ public class PopulateEventsInterceptor : SaveChangesInterceptor
         return await base.SavingChangesAsync(eventData, result, cancellationToken).ConfigureAwait(false);
     }
 
-    public async Task TrackProductsEvents(DbContext? context, CancellationToken cancellationToken = default)
+    public static async Task TrackProductsEvents(DbContext? context, CancellationToken cancellationToken = default)
     {
         if (context is null)
             return;
