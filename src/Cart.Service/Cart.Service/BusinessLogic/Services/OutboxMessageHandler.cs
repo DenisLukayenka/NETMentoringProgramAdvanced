@@ -4,14 +4,17 @@ using Lunis.SharedLibs.Catalog.OutboxMessages;
 
 namespace Cart.Service.BusinessLogic.Services;
 
-public class OutboxMessageHandler(
-    ICartRepository repository,
-    ILogger<OutboxMessageHandler> logger) : IOutboxMessageHandler
+public class OutboxMessageHandler(ICartRepository repository) : IOutboxMessageHandler
 {
-    public async Task Handle(BaseMessage? message, CancellationToken cancellationToken)
+    public Task Handle(BaseMessage? message, CancellationToken cancellationToken)
     {
         ArgumentNullException.ThrowIfNull(message, nameof(message));
 
+        return HandleAsync(message, cancellationToken);
+    }
+
+    private async Task HandleAsync(BaseMessage message, CancellationToken cancellationToken)
+    {
         switch (message)
         {
             case ProductDeletedMessage deleteMessage:
@@ -54,6 +57,4 @@ public class OutboxMessageHandler(
             cart = await repository.GetNextOutdated(itemId, newName: null, newPrice: null, cancellationToken);
         }
     }
-
-
 }

@@ -1,15 +1,14 @@
-namespace Cart.Service
+namespace Cart.Service;
+
+public static class Program
 {
-    public class Program
+    public static void Main(string[] args)
     {
-        public static void Main(string[] args)
-        {
-            WebApplication
-                .CreateSlimBuilder(args)
-                .RegisterAppServices()
-                .Build()
-                .UseAppPipeline()
-                .Run();
-        }
+        WebApplication
+            .CreateSlimBuilder(args)
+            .RegisterAppServices()
+            .Build()
+            .UseAppPipeline()
+            .Run();
     }
 }

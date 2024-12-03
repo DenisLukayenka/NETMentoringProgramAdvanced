@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cart.Service", "Cart.Service\Cart.Service.csproj", "{5AD8D8F1-DF3F-422B-818D-1AF6FE47F89A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cart.Service", "Cart.Service\Cart.Service.csproj", "{5AD8D8F1-DF3F-422B-818D-1AF6FE47F89A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{3C033D6E-8F3D-47D4-B1C6-2917CB7D61A9}"
+	ProjectSection(SolutionItems) = preProject
+		Cart.Service\.editorconfig = Cart.Service\.editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

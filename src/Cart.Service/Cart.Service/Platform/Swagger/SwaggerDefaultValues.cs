@@ -15,6 +15,9 @@ public class SwaggerDefaultValues : IOperationFilter
     [SuppressMessage("AOT", "IL3050:Calling members annotated with 'RequiresDynamicCodeAttribute' may break functionality when AOT compiling.", Justification = "<Pending>")]
     public void Apply(OpenApiOperation operation, OperationFilterContext context)
     {
+        ArgumentNullException.ThrowIfNull(context, nameof(context));
+        ArgumentNullException.ThrowIfNull(operation, nameof(operation));
+
         var apiDescription = context.ApiDescription;
 
         operation.Deprecated |= apiDescription.IsDeprecated();

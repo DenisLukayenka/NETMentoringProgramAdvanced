@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Text.Json;
 using Azure.Messaging.ServiceBus;
 using Cart.Service.BusinessLogic.Services.Abstractions;
 using Cart.Service.Platform.Serialization;
@@ -12,15 +13,16 @@ internal class OutboxMessageListener(
     ILogger<OutboxMessageListener> logger) : BackgroundService
 {
     private const int NotFoundMessageDelayMilliseconds = 10_000;
-    private readonly ServiceBusReceiver receiver = busClient.CreateReceiver(Constants.ProductsQueueName);
-
-    private static JsonSerializerOptions _serializationOptions = new()
+    private static readonly JsonSerializerOptions _serializationOptions = new()
     {
         TypeInfoResolver = AppJsonSerializerContext.Default
     };
 
+    [UnconditionalSuppressMessage("Trimming", "IL2026:Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code", Justification = "<Pending>")]
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
+        await using var receiver = busClient.CreateReceiver(Constants.ProductsQueueName);
+
         while (!stoppingToken.IsCancellationRequested)
         {
             try
@@ -46,7 +48,7 @@ internal class OutboxMessageListener(
 
                 await receiver.CompleteMessageAsync(busMessage, cancellationToken: stoppingToken);
 
-                logger.LogInformation("Message processed successfuly");
+                logger.LogInformation("Message processed successfully");
             }
             catch (Exception ex)
             {

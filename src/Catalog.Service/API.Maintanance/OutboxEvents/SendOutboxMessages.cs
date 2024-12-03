@@ -13,7 +13,7 @@ public class SendOutboxMessages(ILogger<SendOutboxMessages> logger, IMediator se
         await sender.Send(command);
 
         if (myTimer.ScheduleStatus is not null)
-            logger.LogInformation($"Next timer schedule at: {myTimer.ScheduleStatus.Next}");
+            logger.LogInformation("Next timer schedule at: {NextScheduledTime}", myTimer.ScheduleStatus.Next);
 
         return new OkObjectResult(true);
     }

@@ -7,9 +7,10 @@ namespace Cart.Service.DataAccess.Repositories;
 internal class CartRepository : ICartRepository
 {
     internal const string ContainerName = "Carts";
-    internal Container Container => _cosmosClient.GetDatabase(Registrations.DbName).GetContainer(ContainerName);
 
     private readonly CosmosClient _cosmosClient;
+
+    internal Container Container => _cosmosClient.GetDatabase(Registrations.DbName).GetContainer(ContainerName);
 
     public CartRepository(CosmosClient cosmosClient)
     {
@@ -20,7 +21,7 @@ internal class CartRepository : ICartRepository
         databaseResponse
             .Database
             .CreateContainerIfNotExistsAsync(
-                id: CartRepository.ContainerName,
+                id: ContainerName,
                 partitionKeyPath: $"/{nameof(Models.Cart.Id).ToLowerInvariant()}")
             .GetAwaiter()
             .GetResult();
@@ -82,8 +83,5 @@ internal class CartRepository : ICartRepository
             cancellationToken: cancellationToken);
     }
 
-    public async Task Remove(string cartId, CancellationToken cancellationToken)
-    {
-        await Container.DeleteItemAsync<Models.Cart>(cartId, new PartitionKey(cartId), cancellationToken: cancellationToken);
-    }
+    public async Task Remove(string cartId, CancellationToken cancellationToken) => await Container.DeleteItemAsync<Models.Cart>(cartId, new PartitionKey(cartId), cancellationToken: cancellationToken);
 }

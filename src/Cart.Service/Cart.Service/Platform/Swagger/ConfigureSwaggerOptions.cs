@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using Asp.Versioning;
 using Asp.Versioning.ApiExplorer;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Primitives;
@@ -26,55 +27,16 @@ public class ConfigureSwaggerOptions(IApiVersionDescriptionProvider provider) : 
     private static OpenApiInfo CreateInfoForApiVersion(ApiVersionDescription description)
     {
         var text = new StringBuilder("Cart Service application.");
-        var info = new OpenApiInfo()
-        {
-            Title = "Cart.Service",
-            Version = description.ApiVersion.ToString(),
-            Contact = new OpenApiContact() { Name = "Denis L", Email = "dav08649@gmail.com" },
-            License = new OpenApiLicense() { Name = "MIT", Url = new Uri("https://opensource.org/licenses/MIT") }
-        };
+        var info = BuildOpenApiInfo(description);
 
         if (description.IsDeprecated)
         {
             text.Append(" This API version has been deprecated.");
         }
 
-        if (description.SunsetPolicy is { } policy)
+        if (description.SunsetPolicy is { } policy && policy.HasLinks)
         {
-            if (policy.HasLinks)
-            {
-                text.AppendLine();
-
-                var rendered = false;
-
-                for (var i = 0; i < policy.Links.Count; i++)
-                {
-                    var link = policy.Links[i];
-
-                    if (link.Type == "text/html")
-                    {
-                        if (!rendered)
-                        {
-                            text.Append("<h4>Links</h4><ul>");
-                            rendered = true;
-                        }
-
-                        text.Append("<li><a href=\"");
-                        text.Append(link.LinkTarget.OriginalString);
-                        text.Append("\">");
-                        text.Append(
-                            StringSegment.IsNullOrEmpty(link.Title)
-                            ? link.LinkTarget.OriginalString
-                            : link.Title.ToString());
-                        text.Append("</a></li>");
-                    }
-                }
-
-                if (rendered)
-                {
-                    text.Append("</ul>");
-                }
-            }
+            FillLinksInfo(text, policy);
         }
 
         text.Append("<h4>Additional Information</h4>");
@@ -83,4 +45,51 @@ public class ConfigureSwaggerOptions(IApiVersionDescriptionProvider provider) : 
         return info;
     }
 
+    private static OpenApiInfo BuildOpenApiInfo(ApiVersionDescription description)
+    {
+        var info = new OpenApiInfo()
+        {
+            Title = "Cart.Service",
+            Version = description.ApiVersion.ToString(),
+            Contact = new OpenApiContact() { Name = "Denis L", Email = "dav08649@gmail.com" },
+            License = new OpenApiLicense() { Name = "MIT", Url = new Uri("https://opensource.org/licenses/MIT") }
+        };
+
+        return info;
+    }
+
+    private static void FillLinksInfo(StringBuilder text, SunsetPolicy policy)
+    {
+        text.AppendLine();
+
+        var rendered = false;
+
+        for (var i = 0; i < policy.Links.Count; i++)
+        {
+            var link = policy.Links[i];
+
+            if (link.Type == "text/html")
+            {
+                if (!rendered)
+                {
+                    text.Append("<h4>Links</h4><ul>");
+                    rendered = true;
+                }
+
+                text.Append("<li><a href=\"");
+                text.Append(link.LinkTarget.OriginalString);
+                text.Append("\">");
+                text.Append(
+                    StringSegment.IsNullOrEmpty(link.Title)
+                    ? link.LinkTarget.OriginalString
+                    : link.Title.ToString());
+                text.Append("</a></li>");
+            }
+        }
+
+        if (rendered)
+        {
+            text.Append("</ul>");
+        }
+    }
 }

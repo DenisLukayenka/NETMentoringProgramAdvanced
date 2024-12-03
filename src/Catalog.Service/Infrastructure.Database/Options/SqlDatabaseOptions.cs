@@ -2,5 +2,5 @@
 
 public class SqlDatabaseOptions
 {
-    public string SqlDatabaseConnectionString { get; set; }
+    public string SqlDatabaseConnectionString { get; set; } = null!;
 }

@@ -2,7 +2,7 @@
 
 public abstract class BaseEvent : BaseEntity
 {
-    public string Discriminator { get; set; }
+    public string Discriminator { get; set; } = null!;
     public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
 
     public bool Processed { get; set; } = false;

@@ -10,7 +10,8 @@ internal static class CartMapping
         {
             Payload = cart,
             Actions = [
-                new (){
+                new ()
+                {
                     Method = HttpMethods.Delete,
                     Rel = HttpMethods.Delete,
                     Uri = $"/carts/{cart.Id}"
