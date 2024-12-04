@@ -1,0 +1,61 @@
+version: '3.9'
+
+services:
+  catalog_mssql_db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: catalog_mssql_db
+    restart: always
+    environment:
+      ACCEPT_EULA: 'Y'
+      SA_PASSWORD: 'P4ssw0rd'
+    ports:
+      - '1433:1433'
+    volumes:
+      - catalog_mssql_data:/var/opt/catalog_mssql
+
+  # Throw CosmosNullReferenceException all the time
+  # Use local Emulator instead
+  # cart_cosmos_db:
+  #   image: mcr.microsoft.com/cosmosdb/linux/azure-cosmos-emulator:vnext-preview
+  #   container_name: cart_cosmos_db
+  #   restart: always
+  #   ports:
+  #     - '8081:8081'
+  #     - '1234:1234' # Web Explorer
+  #   volumes:
+  #     - cart_cosmos_data:/var/opt/cart_cosmos
+
+  servicebus_emulator:
+    container_name: 'servicebus-emulator'
+    image: mcr.microsoft.com/azure-messaging/servicebus-emulator:latest
+    volumes:
+      - '${CONFIG_PATH}:/ServiceBus_Emulator/ConfigFiles/Config.json'
+    ports:
+      - '5672:5672'
+    environment:
+      SQL_SERVER: sqledge
+      MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD}
+      ACCEPT_EULA: ${ACCEPT_EULA}
+    depends_on:
+      - sqledge
+    networks:
+      sb-emulator:
+        aliases:
+          - 'sb-emulator'
+  sqledge:
+    container_name: 'sqledge'
+    image: 'mcr.microsoft.com/azure-sql-edge:latest'
+    networks:
+      sb-emulator:
+        aliases:
+          - 'sqledge'
+    environment:
+      ACCEPT_EULA: ${ACCEPT_EULA}
+      MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD}
+
+networks:
+  sb-emulator:
+
+volumes:
+  catalog_mssql_data:
+  cart_cosmos_data:
