@@ -1,3 +1,5 @@
+version: '3.9'
+
 services:
   cart_service:
     build:
@@ -5,9 +7,17 @@ services:
       dockerfile: Dockerfile
     container_name: cart_service
     ports:
-      - '9501:80'
+      - '9501:8080'
     environment:
-      - ASPNETCORE_URLS=http://0.0.0.0:80
       - ASPNETCORE_ENVIRONMENT=Production
-      - CosmosDb__Endpoint=mongodb://admin:password@localhost:27017/?authSource=admin
-      - MessageBus__ConnectionString=Endpoint=sb://localhost;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=SAS_KEY_VALUE;UseDevelopmentEmulator=true;
+      - MongoDb__ConnectionString=mongodb://admin:password@cart_mongo_db:27017/?authSource=admin
+      - MessageBus__ConnectionString=Endpoint=sb://servicebus_emulator;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=SAS_KEY_VALUE;UseDevelopmentEmulator=true;
+    networks:
+      - service_bus_net
+      - cart_net
+
+networks:
+  service_bus_net:
+    external: true
+  cart_net:
+    external: true

@@ -21,21 +21,22 @@ internal class OutboxMessageListener(
     [UnconditionalSuppressMessage("Trimming", "IL2026:Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code", Justification = "<Pending>")]
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        // Wait Emulator run
-        await Task.Delay(60_000, stoppingToken);
-
         await using var receiver = busClient.CreateReceiver(Constants.ProductsQueueName);
 
         while (!stoppingToken.IsCancellationRequested)
         {
             try
             {
+                logger.LogInformation("Looking for messages");
+
                 var busMessage = await receiver.ReceiveMessageAsync(cancellationToken: stoppingToken);
                 if (busMessage is null)
                 {
                     await Task.Delay(NotFoundMessageDelayMilliseconds, stoppingToken);
                     continue;
                 }
+
+                logger.LogInformation("Message found, starting processing");
 
                 using var _ = logger.BeginScope(
                     "Received new message {MessageId} from message bus. CorrelationId: {CorrelationId}",
