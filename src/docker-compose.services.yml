@@ -1,0 +1,13 @@
+services:
+  cart_service:
+    build:
+      context: ./Cart.Service
+      dockerfile: Dockerfile
+    container_name: cart_service
+    ports:
+      - '9501:80'
+    environment:
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+      - ASPNETCORE_ENVIRONMENT=Production
+      - CosmosDb__Endpoint=mongodb://admin:password@localhost:27017/?authSource=admin
+      - MessageBus__ConnectionString=Endpoint=sb://localhost;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=SAS_KEY_VALUE;UseDevelopmentEmulator=true;
