@@ -13,17 +13,16 @@ services:
     volumes:
       - catalog_mssql_data:/var/opt/catalog_mssql
 
-  # Throw CosmosNullReferenceException all the time
-  # Use local Emulator instead
-  # cart_cosmos_db:
-  #   image: mcr.microsoft.com/cosmosdb/linux/azure-cosmos-emulator:vnext-preview
-  #   container_name: cart_cosmos_db
-  #   restart: always
-  #   ports:
-  #     - '8081:8081'
-  #     - '1234:1234' # Web Explorer
-  #   volumes:
-  #     - cart_cosmos_data:/var/opt/cart_cosmos
+  cart_mongo_db:
+    image: mongodb/mongodb-community-server:latest
+    container_name: cart_mongo_db
+    ports:
+      - '27017:27017'
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+    volumes:
+      - cart_mongo_data:/var/opt/cart_mongo
 
   servicebus_emulator:
     container_name: 'servicebus-emulator'
@@ -58,4 +57,4 @@ networks:
 
 volumes:
   catalog_mssql_data:
-  cart_cosmos_data:
+  cart_mongo_data:

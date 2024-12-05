@@ -1,44 +1,51 @@
-﻿using Azure.Identity;
-using Cart.Service.DataAccess.Options;
+﻿using Cart.Service.DataAccess.Options;
 using Cart.Service.DataAccess.Repositories;
 using Cart.Service.DataAccess.Repositories.Abstractions;
-using Cart.Service.Platform.Serialization;
-using Microsoft.Azure.Cosmos;
 using Microsoft.Extensions.Options;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization;
+using MongoDB.Bson.Serialization.Serializers;
+using MongoDB.Driver;
 
 namespace Cart.Service.DataAccess;
 
 public static class Registrations
 {
-    public const string DbName = "mentoring-shop";
+    public const string DatabaseName = "mentoring-shop";
 
     public static IServiceCollection ConfigureDataAccessServices(this IServiceCollection services, IConfiguration configuration)
     {
+        SetBsonDefaults();
+
         services.Configure<CosmosDbOptions>(configuration.GetSection(CosmosDbOptions.Position));
 
         services
+            .AddSingleton<IMongoClient, MongoClient>(sp =>
+            {
+                var options = sp.GetRequiredService<IOptions<CosmosDbOptions>>();
+
+                return new MongoClient(options.Value.Endpoint);
+            })
             .AddSingleton(sp =>
             {
-                var cosmosDbOptions = sp.GetRequiredService<IOptions<CosmosDbOptions>>().Value;
+                var mongoClient = sp.GetRequiredService<IMongoClient>();
+                var mongoDatabase = mongoClient.GetDatabase(DatabaseName);
 
-                var credential = new DefaultAzureCredential();
-                var client = new CosmosClient(
-                    accountEndpoint: cosmosDbOptions.Endpoint,
-                    authKeyOrResourceToken: cosmosDbOptions.ResourceToken,
-                    clientOptions: new CosmosClientOptions
-                    {
-                        ConnectionMode = ConnectionMode.Direct,
-                        IdleTcpConnectionTimeout = TimeSpan.FromMinutes(60),
-                        UseSystemTextJsonSerializerWithOptions = new System.Text.Json.JsonSerializerOptions()
-                        {
-                            TypeInfoResolver = AppJsonSerializerContext.Default,
-                        },
-                    });
-
-                return client;
+                return mongoDatabase;
             })
             .AddSingleton<ICartRepository, CartRepository>();
 
         return services;
+    }
+
+    private static void SetBsonDefaults()
+    {
+        BsonSerializer.RegisterSerializer(new GuidSerializer(GuidRepresentation.Standard));
+        BsonSerializer.RegisterSerializer(new DateTimeSerializer(BsonType.DateTime));
+        BsonSerializer.RegisterSerializer(new DateTimeOffsetSerializer(BsonType.Document));
+
+        BsonSerializer.RegisterSerializer(new ObjectSerializer(type => true));
+
+        BsonClassMap.RegisterClassMap<Models.Cart>();
     }
 }
