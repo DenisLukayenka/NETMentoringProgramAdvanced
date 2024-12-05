@@ -21,3 +21,5 @@ networks:
     external: true
   cart_net:
     external: true
+  catalog_net:
+    external: true
