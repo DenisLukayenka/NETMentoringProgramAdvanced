@@ -17,14 +17,14 @@ public static class Registrations
     {
         SetBsonDefaults();
 
-        services.Configure<CosmosDbOptions>(configuration.GetSection(CosmosDbOptions.Position));
+        services.Configure<MongoDbOptions>(configuration.GetSection(MongoDbOptions.Position));
 
         services
             .AddSingleton<IMongoClient, MongoClient>(sp =>
             {
-                var options = sp.GetRequiredService<IOptions<CosmosDbOptions>>();
+                var options = sp.GetRequiredService<IOptions<MongoDbOptions>>();
 
-                return new MongoClient(options.Value.Endpoint);
+                return new MongoClient(options.Value.ConnectionString);
             })
             .AddSingleton(sp =>
             {

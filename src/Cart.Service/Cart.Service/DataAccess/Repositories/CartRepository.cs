@@ -30,12 +30,12 @@ public class CartRepository(IMongoDatabase database) : ICartRepository
 
         if (!string.IsNullOrEmpty(newName))
         {
-            filter &= Builders<Models.Cart>.Filter.Where(x => x.Items.Any(i => i.Name != newName));
+            filter &= Builders<Models.Cart>.Filter.Where(x => x.Items.Any(i => i.ItemId == itemId && i.Name != newName));
         }
 
         if (newPrice.HasValue)
         {
-            filter &= Builders<Models.Cart>.Filter.Where(x => x.Items.Any(i => i.Price != newPrice.Value));
+            filter &= Builders<Models.Cart>.Filter.Where(x => x.Items.Any(i => i.ItemId == itemId && i.Price != newPrice.Value));
         }
 
         var options = new FindOptions<Models.Cart>()
