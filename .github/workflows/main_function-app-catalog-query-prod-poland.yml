@@ -1,20 +1,17 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/azure/functions-action
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: function-app-catalog-QUERY-prod-poland
+name: Build and deploy dotnet core project to Azure Function App - function-app-catalog-query-prod-poland
 
 on:
   push:
     branches:
       - main
-    paths:
-      - 'src/Catalog.Service/**'
-      - '.github/workflows/main_function-app-catalog-query-prod-poland.yml'
   workflow_dispatch:
 
 env:
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: 'src/Catalog.Service/API.Queries' # set this to the path to your web app project, defaults to the repository root
-  DOTNET_VERSION: '8.x' # set this to the dotnet version to use
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.' # set this to the path to your web app project, defaults to the repository root
+  DOTNET_VERSION: '8' # set this to the dotnet version to use
 
 jobs:
   build-and-deploy:
@@ -37,13 +34,13 @@ jobs:
           pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
           dotnet build --configuration Release --output ./output
           popd
-
+      
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_CATALOG_QUERIES }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_CATALOG_QUERIES }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_CATALOG_QUERIES }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_99755B88E7A54D61A3C503BFBF297880 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_6E59AE387582416DBD96CB3415DC4B56 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_4A3FC3DC44194B2A90D90852458FA56B }}
 
       - name: 'Run Azure Functions Action'
         uses: Azure/functions-action@v1
@@ -52,3 +49,4 @@ jobs:
           app-name: 'function-app-catalog-query-prod-poland'
           slot-name: 'Production'
           package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
+          
