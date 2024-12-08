@@ -27,12 +27,16 @@ internal class OutboxMessageListener(
         {
             try
             {
+                logger.LogInformation("Looking for messages");
+
                 var busMessage = await receiver.ReceiveMessageAsync(cancellationToken: stoppingToken);
                 if (busMessage is null)
                 {
                     await Task.Delay(NotFoundMessageDelayMilliseconds, stoppingToken);
                     continue;
                 }
+
+                logger.LogInformation("Message found, starting processing");
 
                 using var _ = logger.BeginScope(
                     "Received new message {MessageId} from message bus. CorrelationId: {CorrelationId}",
