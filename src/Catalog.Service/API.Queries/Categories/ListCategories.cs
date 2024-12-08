@@ -6,7 +6,7 @@ public class ListCategories(ILogger<ListCategories> logger, IMediator sender)
 {
     [Function("ListCategories")]
     public async Task<IActionResult> Run(
-        [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "categories")] HttpRequest req,
+        [HttpTrigger(AuthorizationLevel.Function, "get", Route = "categories")] HttpRequest req,
         CancellationToken cancellationToken)
     {
         logger.LogInformation("{FunctionName} was called", nameof(ListCategories));
