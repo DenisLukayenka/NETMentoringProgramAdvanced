@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy ASP.Net Core app to Azure Web App - web-app-cart-prod-poland
+name: CI/CD Prod Cart.Service
 
 on:
   push:
@@ -58,9 +58,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_44D1323102C94082964529B22016169C }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_2B64AE293E88442AB589878B285C30C1 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_B826C31E089C4EEF8224BB975A34C885 }}
+          client-id: ${{ secrets.AZURE_GITHUB_DEPLOY_SERVICES_CLIENTID }}
+          tenant-id: ${{ secrets.AZURE_GITHUB_DEPLOY_SERVICES_TENANTID }}
+          subscription-id: ${{ secrets.AZURE_GITHUB_DEPLOY_SERVICES_SUBSCRIPTIONID }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
