@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/azure/functions-action
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy dotnet core project to Azure Function App - function-app-catalog-mainten-prod-poland
+name: CI/CD Prod Catalog.Maintenance
 
 on:
   push:
@@ -41,9 +41,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_CED8C7FC5ED542C8AADDC6FCD8D2AABF }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_B1B6566FAD804B3898CB1F882C236720 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_E82BD60B4F37491AA40A061BA27CA80A }}
+          client-id: ${{ secrets.AZURE_GITHUB_DEPLOY_SERVICES_CLIENTID }}
+          tenant-id: ${{ secrets.AZURE_GITHUB_DEPLOY_SERVICES_TENANTID }}
+          subscription-id: ${{ secrets.AZURE_GITHUB_DEPLOY_SERVICES_SUBSCRIPTIONID }}
 
       - name: 'Run Azure Functions Action'
         uses: Azure/functions-action@v1
