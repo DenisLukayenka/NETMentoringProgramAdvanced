@@ -1,0 +1,70 @@
+version: '3.9'
+
+services:
+  catalog_mssql_db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: catalog_mssql_db
+    restart: always
+    environment:
+      ACCEPT_EULA: 'Y'
+      SA_PASSWORD: 'P4ssw0rd'
+    ports:
+      - '1433:1433'
+    volumes:
+      - catalog_mssql_data:/var/opt/catalog_mssql
+    networks:
+      - catalog_net
+
+  cart_mongo_db:
+    image: mongodb/mongodb-community-server:latest
+    container_name: cart_mongo_db
+    ports:
+      - '27017:27017'
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+    volumes:
+      - cart_mongo_data:/var/opt/cart_mongo
+    networks:
+      - cart_net
+
+  servicebus_emulator:
+    container_name: 'servicebus-emulator'
+    image: mcr.microsoft.com/azure-messaging/servicebus-emulator:latest
+    volumes:
+      - '${CONFIG_PATH}:/ServiceBus_Emulator/ConfigFiles/Config.json'
+    ports:
+      - '5672:5672'
+    environment:
+      SQL_SERVER: sqledge
+      MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD}
+      ACCEPT_EULA: ${ACCEPT_EULA}
+    depends_on:
+      - sqledge
+    networks:
+      - service_bus_net
+  sqledge:
+    container_name: 'sqledge'
+    image: 'mcr.microsoft.com/azure-sql-edge:latest'
+    environment:
+      ACCEPT_EULA: ${ACCEPT_EULA}
+      MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD}
+    networks:
+      - service_bus_net
+
+networks:
+  service_bus_net:
+    name: service_bus_net
+    driver: bridge
+  cart_net:
+    name: cart_net
+    driver: bridge
+  catalog_net:
+    name: catalog_net
+    driver: bridge
+
+volumes:
+  catalog_mssql_data:
+    driver: local
+
+  cart_mongo_data:

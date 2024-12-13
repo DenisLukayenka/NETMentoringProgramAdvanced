@@ -1,0 +1,18 @@
+.dockerignore
+**/node_modules/
+
+# directories
+**/bin/
+**/obj/
+**/out/
+
+# files
+Dockerfile*
+**/*.trx
+**/*.md
+**/*.ps1
+**/*.cmd
+**/*.sh
+
+bin/
+obj/

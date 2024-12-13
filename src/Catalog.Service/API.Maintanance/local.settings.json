@@ -3,7 +3,7 @@
   "Values": {
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
     "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
-    "SqlDatabaseConnectionString": "Data Source=localhost;Initial Catalog=Catalog;Integrated Security=True;TrustServerCertificate=True",
-    "MessageBusConnectionString": "<Use your connection string!>"
+    "SqlDatabaseConnectionString": "Data Source=wsl.localhost,1433;Initial Catalog=Catalog;User Id=sa;Password=P4ssw0rd;TrustServerCertificate=True",
+    "MessageBusConnectionString": "Endpoint=sb://wsl.localhost;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=SAS_KEY_VALUE;UseDevelopmentEmulator=true;"
   }
 }
