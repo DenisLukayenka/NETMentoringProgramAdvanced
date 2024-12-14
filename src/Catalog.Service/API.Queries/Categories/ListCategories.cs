@@ -1,10 +1,14 @@
 using ApplicationCore.Categories.Queries.ListCategories;
+using Domain.Entities;
+using Microsoft.Azure.WebJobs.Extensions.OpenApi.Core.Attributes;
 
 namespace API.Queries.Categories;
 
 public class ListCategories(ILogger<ListCategories> logger, IMediator sender)
 {
-    [Function("ListCategories")]
+    [Function(nameof(ListCategories))]
+    [OpenApiOperation(operationId: nameof(ListCategories), tags: ["Categories"])]
+    [OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, contentType: MediaTypeNames.Application.Json, bodyType: typeof(Category[]))]
     public async Task<IActionResult> Run(
         [HttpTrigger(AuthorizationLevel.Function, "get", Route = "categories")] HttpRequest req,
         CancellationToken cancellationToken)

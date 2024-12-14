@@ -1,10 +1,15 @@
 ﻿using ApplicationCore.Categories.Commands.CreateCategory;
+using Domain.Entities;
+using Microsoft.Azure.WebJobs.Extensions.OpenApi.Core.Attributes;
 
 namespace API.Commands.Categories;
 
 public class CreateCategory(ILogger<CreateCategory> logger, IMediator sender)
 {
-    [Function("CreateCategory")]
+    [Function(nameof(CreateCategory))]
+    [OpenApiOperation(operationId: nameof(CreateCategory), tags: ["Categories"])]
+    [OpenApiRequestBody(MediaTypeNames.Application.Json, typeof(CreateCategoryCommand))]
+    [OpenApiResponseWithBody(statusCode: HttpStatusCode.Created, contentType: MediaTypeNames.Application.Json, bodyType: typeof(Category))]
     public async Task<IActionResult> Run(
         [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "categories")] HttpRequest req,
         [FromBody] CreateCategoryCommand command,

@@ -4,7 +4,7 @@ namespace API.Maintanance.OutboxEvents;
 
 public class SendOutboxMessages(ILogger<SendOutboxMessages> logger, IMediator sender)
 {
-    [Function("SendOutboxMessages")]
+    [Function(nameof(SendOutboxMessages))]
     public async Task<IActionResult> Run([TimerTrigger("0 */20 * * * *")] TimerInfo myTimer)
     {
         logger.LogInformation("{FunctionName} was called", nameof(SendOutboxMessages));
