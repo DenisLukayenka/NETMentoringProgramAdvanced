@@ -13,7 +13,7 @@ Content-Type: application/json
 
 ###
 # @name UpdateCategory
-PUT {{function_url}}/categories/2
+PUT {{function_url}}/categories/1
 Content-Type: application/json
 
 {

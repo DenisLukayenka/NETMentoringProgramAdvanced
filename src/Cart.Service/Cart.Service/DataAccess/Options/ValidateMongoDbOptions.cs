@@ -4,6 +4,6 @@ using Microsoft.Extensions.Options;
 namespace Cart.Service.Options;
 
 [OptionsValidator]
-public partial class ValidateCosmosDbOptions : IValidateOptions<CosmosDbOptions>
+public partial class ValidateMongoDbOptions : IValidateOptions<MongoDbOptions>
 {
 }
