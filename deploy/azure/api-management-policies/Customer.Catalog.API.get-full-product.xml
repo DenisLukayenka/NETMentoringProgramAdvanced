@@ -1,0 +1,52 @@
+<!--
+    - Policies are applied in the order they appear.
+    - Position <base/> inside a section to inherit policies from the outer scope.
+    - Comments within policies are not preserved.
+-->
+<!-- Add policies as children to the <inbound>, <outbound>, <backend>, and <on-error> elements -->
+<policies>
+    <!-- Throttle, authorize, validate, cache, or transform the requests -->
+    <inbound>
+        <base />
+        <set-variable name="productId" value="@(context.Request.MatchedParameters["productId"])" />
+        <send-request mode="new" response-variable-name="product" timeout="10" ignore-error="true">
+            <set-url>@($"https://function-app-catalog-query-prod-poland.azurewebsites.net/api/products/{(string)context.Variables["productId"]}")</set-url>
+            <set-method>GET</set-method>
+        </send-request>
+        <send-request mode="new" response-variable-name="productproperties" timeout="10" ignore-error="true">
+            <set-url>@($"https://function-app-catalog-query-prod-poland.azurewebsites.net/api/products/{(string)context.Variables["productId"]}/properties")</set-url>
+            <set-method>GET</set-method>
+        </send-request>
+    </inbound>
+    <!-- Control if and how the requests are forwarded to services  -->
+    <backend />
+    <!-- Customize the responses -->
+    <outbound>
+        <set-variable name="productStatusCode" value="@(((IResponse)context.Variables["product"]).StatusCode)" />
+        <set-variable name="productPropertiesStatusCode" value="@(((IResponse)context.Variables["productproperties"]).StatusCode)" />
+        <choose>
+            <when condition="@((int)context.Variables["productStatusCode"] != 200)">
+                <set-status code="404" reason="Product response is empty" />
+            </when>
+            <when condition="@((int)context.Variables["productPropertiesStatusCode"] != 200)">
+                <set-status code="404" reason="Product properties response is empty" />
+            </when>
+            <otherwise>
+                <set-body>@{
+                    var productObj = ((IResponse)context.Variables["product"]).Body.As<JObject>();
+                    var productPropertiesObj = ((IResponse)context.Variables["productproperties"]).Body.As<JObject>();
+
+                    return new JObject(
+                        new JProperty("product", productObj),  
+                        new JProperty("properties", productPropertiesObj))
+                        .ToString();
+                }</set-body>
+                </otherwise>
+            </choose>
+            <base />
+        </outbound>
+        <!-- Handle exceptions and customize error responses  -->
+        <on-error>
+            <base />
+        </on-error>
+    </policies>
