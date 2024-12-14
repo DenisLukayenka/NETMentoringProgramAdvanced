@@ -10,7 +10,9 @@ public class GetProductProperties(ILogger<GetProductProperties> logger)
 
         var properties = new Dictionary<string, string>
         {
-            { "category", "TestCategory" }
+            { "category", "TestCategory" },
+            { "model", "s10" },
+            { "quantity", "100" }
         };
 
         return new OkObjectResult(properties);
