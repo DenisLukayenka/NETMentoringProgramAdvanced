@@ -12,7 +12,7 @@ public class UpdateCategory(ILogger<UpdateCategory> logger, IMediator sender)
     [OpenApiRequestBody(MediaTypeNames.Application.Json, typeof(UpdateCategoryCommand))]
     [OpenApiResponseWithoutBody(statusCode: HttpStatusCode.OK)]
     public async Task<IActionResult> Run(
-        [HttpTrigger(AuthorizationLevel.Anonymous, "put", Route = "categories/{categoryId:int}")] HttpRequest req,
+        [HttpTrigger(AuthorizationLevel.Function, "put", Route = "categories/{categoryId:int}")] HttpRequest req,
         [FromBody] UpdateCategoryCommand command,
         int categoryId,
         CancellationToken cancellationToken)

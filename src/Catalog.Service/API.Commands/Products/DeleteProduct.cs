@@ -11,7 +11,7 @@ public class DeleteProduct(ILogger<DeleteProduct> logger, IMediator sender)
     [OpenApiParameter(nameof(productId), Required = true, In = ParameterLocation.Path, Type = typeof(int))]
     [OpenApiResponseWithoutBody(statusCode: HttpStatusCode.OK)]
     public async Task<IActionResult> Run(
-        [HttpTrigger(AuthorizationLevel.Anonymous, "delete", Route = "products/{productId:int}")] HttpRequest req,
+        [HttpTrigger(AuthorizationLevel.Function, "delete", Route = "products/{productId:int}")] HttpRequest req,
         int productId,
         CancellationToken cancellationToken)
     {

@@ -11,7 +11,7 @@ public class CreateProduct(ILogger<CreateProduct> logger, IMediator sender)
     [OpenApiRequestBody(MediaTypeNames.Application.Json, typeof(CreateProductCommand))]
     [OpenApiResponseWithBody(statusCode: HttpStatusCode.Created, contentType: MediaTypeNames.Application.Json, bodyType: typeof(Product))]
     public async Task<IActionResult> Run(
-        [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "products")] HttpRequest req,
+        [HttpTrigger(AuthorizationLevel.Function, "post", Route = "products")] HttpRequest req,
         [FromBody] CreateProductCommand command,
         CancellationToken cancellationToken)
     {

@@ -12,7 +12,7 @@ public class UpdateProduct(ILogger<UpdateProduct> logger, IMediator sender)
     [OpenApiRequestBody(MediaTypeNames.Application.Json, typeof(UpdateProductCommand))]
     [OpenApiResponseWithoutBody(statusCode: HttpStatusCode.OK)]
     public async Task<IActionResult> Run(
-        [HttpTrigger(AuthorizationLevel.Anonymous, "put", Route = "products/{productId:int}")] HttpRequest req,
+        [HttpTrigger(AuthorizationLevel.Function, "put", Route = "products/{productId:int}")] HttpRequest req,
         [FromBody] UpdateProductCommand command,
         int productId,
         CancellationToken cancellationToken)

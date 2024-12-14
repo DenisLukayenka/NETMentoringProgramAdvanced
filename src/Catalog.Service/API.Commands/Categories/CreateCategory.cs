@@ -11,7 +11,7 @@ public class CreateCategory(ILogger<CreateCategory> logger, IMediator sender)
     [OpenApiRequestBody(MediaTypeNames.Application.Json, typeof(CreateCategoryCommand))]
     [OpenApiResponseWithBody(statusCode: HttpStatusCode.Created, contentType: MediaTypeNames.Application.Json, bodyType: typeof(Category))]
     public async Task<IActionResult> Run(
-        [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "categories")] HttpRequest req,
+        [HttpTrigger(AuthorizationLevel.Function, "post", Route = "categories")] HttpRequest req,
         [FromBody] CreateCategoryCommand command,
         CancellationToken cancellationToken)
     {

@@ -10,7 +10,7 @@ public class GetProductProperties(ILogger<GetProductProperties> logger)
     [OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, contentType: MediaTypeNames.Application.Json, bodyType: typeof(Dictionary<string, string>))]
     [OpenApiResponseWithoutBody(statusCode: HttpStatusCode.NotFound)]
     public async Task<IActionResult> Run(
-        [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "products/{productId:int}/properties")] HttpRequest req,
+        [HttpTrigger(AuthorizationLevel.Function, "get", Route = "products/{productId:int}/properties")] HttpRequest req,
         int productId)
     {
         logger.LogInformation("{FunctionName} was called", nameof(GetProductProperties));

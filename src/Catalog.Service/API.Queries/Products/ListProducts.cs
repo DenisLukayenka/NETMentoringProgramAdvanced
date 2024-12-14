@@ -13,7 +13,7 @@ public class ListProducts(ILogger<ListProducts> logger, IMediator sender)
     [OpenApiParameter(nameof(ListProductsQuery.CurrentPage), Required = false, In = ParameterLocation.Query, Type = typeof(int?))]
     [OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, contentType: MediaTypeNames.Application.Json, bodyType: typeof(Product[]))]
     public async Task<IActionResult> Run(
-        [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "products")] HttpRequest req,
+        [HttpTrigger(AuthorizationLevel.Function, "get", Route = "products")] HttpRequest req,
         int? pageSize,
         int? categoryId,
         int? currentPage,

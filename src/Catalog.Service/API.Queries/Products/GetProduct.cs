@@ -12,7 +12,7 @@ public class GetProduct(ILogger<GetProduct> logger, IMediator sender)
     [OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, contentType: MediaTypeNames.Application.Json, bodyType: typeof(Product))]
     [OpenApiResponseWithoutBody(statusCode: HttpStatusCode.NotFound)]
     public async Task<IActionResult> Run(
-        [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "products/{productId:int}")] HttpRequest req,
+        [HttpTrigger(AuthorizationLevel.Function, "get", Route = "products/{productId:int}")] HttpRequest req,
         int productId,
         CancellationToken cancellationToken)
     {
