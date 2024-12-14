@@ -9,7 +9,7 @@ public class GetProductProperties(ILogger<GetProductProperties> logger)
     [OpenApiParameter(nameof(productId), Required = true, In = ParameterLocation.Path, Type = typeof(int))]
     [OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, contentType: MediaTypeNames.Application.Json, bodyType: typeof(Dictionary<string, string>))]
     [OpenApiResponseWithoutBody(statusCode: HttpStatusCode.NotFound)]
-    public async Task<IActionResult> Run(
+    public IActionResult Run(
         [HttpTrigger(AuthorizationLevel.Function, "get", Route = "products/{productId:int}/properties")] HttpRequest req,
         int productId)
     {
