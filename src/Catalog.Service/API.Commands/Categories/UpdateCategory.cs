@@ -1,12 +1,18 @@
 using ApplicationCore.Categories.Commands.UpdateCategory;
+using Microsoft.Azure.WebJobs.Extensions.OpenApi.Core.Attributes;
+using Microsoft.OpenApi.Models;
 
 namespace API.Commands.Categories;
 
 public class UpdateCategory(ILogger<UpdateCategory> logger, IMediator sender)
 {
-    [Function("UpdateCategory")]
+    [Function(nameof(UpdateCategory))]
+    [OpenApiOperation(operationId: nameof(UpdateCategory), tags: ["Categories"])]
+    [OpenApiParameter(nameof(categoryId), Required = true, In = ParameterLocation.Path, Type = typeof(int))]
+    [OpenApiRequestBody(MediaTypeNames.Application.Json, typeof(UpdateCategoryCommand))]
+    [OpenApiResponseWithoutBody(statusCode: HttpStatusCode.OK)]
     public async Task<IActionResult> Run(
-        [HttpTrigger(AuthorizationLevel.Anonymous, "put", Route = "categories/{categoryId:int}")] HttpRequest req,
+        [HttpTrigger(AuthorizationLevel.Function, "put", Route = "categories/{categoryId:int}")] HttpRequest req,
         [FromBody] UpdateCategoryCommand command,
         int categoryId,
         CancellationToken cancellationToken)
