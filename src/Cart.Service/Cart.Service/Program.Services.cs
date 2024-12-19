@@ -23,12 +23,16 @@ public static class ProgramServices
         var messageBusOptions = new MessageBusOptions();
         builder.Configuration.GetSection(MessageBusOptions.Position).Bind(messageBusOptions);
 
-        builder.Services.AddAzureClients(builder =>
+        if (messageBusOptions.Enabled)
         {
-            builder.AddServiceBusClient(messageBusOptions.ConnectionString);
-        });
+            builder.Services.AddAzureClients(builder =>
+            {
+                builder.AddServiceBusClient(messageBusOptions.ConnectionString);
+            });
 
-        builder.Services.AddHostedService<OutboxMessageListener>();
+            builder.Services.AddHostedService<OutboxMessageListener>();
+        }
+
         builder.Services
             .ConfigureBusinessLogicServices(builder.Configuration)
             .ConfigureDataAccessServices(builder.Configuration);
