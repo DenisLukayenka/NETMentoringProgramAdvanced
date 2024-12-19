@@ -1,0 +1,52 @@
+name: CI Catalog.Service
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/Catalog.Service/**'
+      - '.github/workflows/Catalog.Service.CI.yml'
+  pull_request:
+    branches:
+      - main
+
+env:
+  DOTNET_VERSION: '8.x' # set this to the dotnet version to use
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout GitHub Action'
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 8.0 Environment
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Navigate to project folder
+        run: cd src/Catalog.Service
+
+      - name: 'Restore API services'
+        shell: bash
+        run: |
+          dotnet restore API.Commands/API.Commands.csproj
+          dotnet restore API.Queries/API.Queries.csproj
+          dotnet restore API.Maintanance/API.Maintanance.csproj
+
+      - name: 'Build API services'
+        shell: bash
+        run: |
+          dotnet build API.Commands/API.Commands.csproj --configuration Release
+          dotnet build API.Queries/API.Queries.csproj --configuration Release
+          dotnet build API.Maintanance/API.Maintanance.csproj --configuration Release
+
+      - name: 'Test API services'
+        shell: bash
+        run: |
+          dotnet test API.Commands/API.Commands.csproj --configuration Release --no-build --verbosity normal
+          dotnet test API.Queries/API.Queries.csproj --configuration Release --no-build --verbosity normal
+          dotnet test API.Maintanance/API.Maintanance.csproj --configuration Release --no-build --verbosity normal
