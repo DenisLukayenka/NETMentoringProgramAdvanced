@@ -1,0 +1,14 @@
+﻿@using Catalog.Web.Models
+@model Category
+
+@{
+    ViewData["Title"] = "Category Create Page";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+@using (Html.BeginForm("Create", "Category", FormMethod.Post))
+{
+    @Html.EditorFor(x => x.Name)
+    <input id="Submit" type="submit" value="submit" />
+}
