@@ -1,0 +1,16 @@
+﻿@if (User.Identity.IsAuthenticated)
+{
+    <div>
+        <span>User name: @(User.Identity.Name ?? "undefined")</span>
+        <br />
+        <form method="get" asp-area="MicrosoftIdentity" asp-controller="Account" asp-action="SignOut">
+            <button type="submit" class="btn btn-primary">Sign Out</button>
+        </form>
+    </div>
+}
+else
+{
+    <form method="get" asp-area="MicrosoftIdentity" asp-controller="Account" asp-action="SignIn">
+        <button type="submit" class="btn btn-primary">Sign Up/In</button>
+    </form>
+}

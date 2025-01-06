@@ -1,0 +1,21 @@
+﻿@using Catalog.Web.Models
+@model IEnumerable<Category>
+@{
+    ViewData["Title"] = "Category Page";
+}
+
+<h2>Category Index</h2>
+
+@if(User.Identity.IsAuthenticated)
+{
+    @Html.ActionLink("Create Category", "Create")
+}
+
+@foreach(var category in Model)
+{
+    <hr />
+    <h4>Category</h4>
+    <p>Id: @category.Id</p>
+    <p>Name: @category.Name</p>
+    <hr />
+}
