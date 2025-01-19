@@ -31,6 +31,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SharedLibs", "SharedLibs", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lunis.SharedLibs.Catalog.OutboxMessages", "Lunis.SharedLibs.Catalog.OutboxMessages\Lunis.SharedLibs.Catalog.OutboxMessages.csproj", "{165C58C3-C1BA-4DF1-B66A-C3729A113626}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{2A7D5996-28BF-42A1-A007-7CBC90D0F078}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationCore.Test", "ApplicationCore.Test\ApplicationCore.Test.csproj", "{1079C1CB-2E4F-4C80-9ED7-C0EDE36B82E9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,10 @@ Global
 		{165C58C3-C1BA-4DF1-B66A-C3729A113626}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{165C58C3-C1BA-4DF1-B66A-C3729A113626}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{165C58C3-C1BA-4DF1-B66A-C3729A113626}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1079C1CB-2E4F-4C80-9ED7-C0EDE36B82E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1079C1CB-2E4F-4C80-9ED7-C0EDE36B82E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1079C1CB-2E4F-4C80-9ED7-C0EDE36B82E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1079C1CB-2E4F-4C80-9ED7-C0EDE36B82E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,6 +88,7 @@ Global
 		{EA90A2F1-026A-4A02-BB34-C40B63F2DF2B} = {7E9AA3BA-D691-4908-BC34-737D8FCE301F}
 		{9F577E90-9876-44AE-BDD1-BD50EF89A5B3} = {7E9AA3BA-D691-4908-BC34-737D8FCE301F}
 		{165C58C3-C1BA-4DF1-B66A-C3729A113626} = {7B52EF14-697A-4B30-BBB8-EEBE93D7C972}
+		{1079C1CB-2E4F-4C80-9ED7-C0EDE36B82E9} = {2A7D5996-28BF-42A1-A007-7CBC90D0F078}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FF74334C-68F7-4390-AD40-F0A7DBFAE068}
